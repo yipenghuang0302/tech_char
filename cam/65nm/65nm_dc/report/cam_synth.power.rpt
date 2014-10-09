@@ -1,0 +1,94 @@
+Loading db file '/vlsidl/dk/TSMC/tcbn65gplus/TSMCHOME/digital/Front_End/timing_power_noise/CCS/tcbn65gplus_200a/tcbn65gplustc_ccs.db'
+Information: Propagating switching activity (low effort zero delay simulation). (PWR-6)
+Warning: Design has unannotated primary inputs. (PWR-414)
+Warning: Design has unannotated sequential cell outputs. (PWR-415)
+ 
+****************************************
+Report : power
+        -analysis_effort low
+Design : cam
+Version: I-2013.12-SP1
+Date   : Thu Oct  9 00:01:10 2014
+****************************************
+
+
+Library(s) Used:
+
+    tcbn65gplustc_ccs (File: /vlsidl/dk/TSMC/tcbn65gplus/TSMCHOME/digital/Front_End/timing_power_noise/CCS/tcbn65gplus_200a/tcbn65gplustc_ccs.db)
+
+
+Operating Conditions: NCCOM   Library: tcbn65gplustc_ccs
+Wire Load Model Mode: segmented
+
+Design        Wire Load Model            Library
+------------------------------------------------
+cam                    TSMC8K_Lowk_Conservative
+                                         tcbn65gplustc_ccs
+cam_word_0             ZeroWireload      tcbn65gplustc_ccs
+cam_word_1             ZeroWireload      tcbn65gplustc_ccs
+cam_word_2             ZeroWireload      tcbn65gplustc_ccs
+cam_word_3             ZeroWireload      tcbn65gplustc_ccs
+cam_word_4             ZeroWireload      tcbn65gplustc_ccs
+cam_word_5             ZeroWireload      tcbn65gplustc_ccs
+cam_word_6             ZeroWireload      tcbn65gplustc_ccs
+cam_word_7             ZeroWireload      tcbn65gplustc_ccs
+cam_word_8             ZeroWireload      tcbn65gplustc_ccs
+cam_word_9             ZeroWireload      tcbn65gplustc_ccs
+cam_word_10            ZeroWireload      tcbn65gplustc_ccs
+cam_word_11            ZeroWireload      tcbn65gplustc_ccs
+cam_word_12            ZeroWireload      tcbn65gplustc_ccs
+cam_word_13            ZeroWireload      tcbn65gplustc_ccs
+cam_word_14            ZeroWireload      tcbn65gplustc_ccs
+cam_word_15            ZeroWireload      tcbn65gplustc_ccs
+cam_word_16            ZeroWireload      tcbn65gplustc_ccs
+cam_word_17            ZeroWireload      tcbn65gplustc_ccs
+cam_word_18            ZeroWireload      tcbn65gplustc_ccs
+cam_word_19            ZeroWireload      tcbn65gplustc_ccs
+cam_word_20            ZeroWireload      tcbn65gplustc_ccs
+cam_word_21            ZeroWireload      tcbn65gplustc_ccs
+cam_word_22            ZeroWireload      tcbn65gplustc_ccs
+cam_word_23            ZeroWireload      tcbn65gplustc_ccs
+cam_word_24            ZeroWireload      tcbn65gplustc_ccs
+cam_word_25            ZeroWireload      tcbn65gplustc_ccs
+cam_word_26            ZeroWireload      tcbn65gplustc_ccs
+cam_word_27            ZeroWireload      tcbn65gplustc_ccs
+cam_word_28            ZeroWireload      tcbn65gplustc_ccs
+cam_word_29            ZeroWireload      tcbn65gplustc_ccs
+cam_word_30            ZeroWireload      tcbn65gplustc_ccs
+cam_word_31            ZeroWireload      tcbn65gplustc_ccs
+decoder_5_32_1         ZeroWireload      tcbn65gplustc_ccs
+priority_encoder       ZeroWireload      tcbn65gplustc_ccs
+mux                    ZeroWireload      tcbn65gplustc_ccs
+decoder_5_32_0         ZeroWireload      tcbn65gplustc_ccs
+
+
+Global Operating Voltage = 1    
+Power-specific unit information :
+    Voltage Units = 1V
+    Capacitance Units = 1.000000pf
+    Time Units = 1ns
+    Dynamic Power Units = 1mW    (derived from V,C,T units)
+    Leakage Power Units = 1nW
+
+
+  Cell Internal Power  =   4.0541 mW   (99%)
+  Net Switching Power  =  56.6118 uW    (1%)
+                         ---------
+Total Dynamic Power    =   4.1107 mW  (100%)
+
+Cell Leakage Power     =  69.1109 uW
+
+
+                 Internal         Switching           Leakage            Total
+Power Group      Power            Power               Power              Power   (   %    )  Attrs
+--------------------------------------------------------------------------------------------------
+io_pad             0.0000            0.0000            0.0000            0.0000  (   0.00%)
+memory             0.0000            0.0000            0.0000            0.0000  (   0.00%)
+black_box          0.0000            0.0000            0.0000            0.0000  (   0.00%)
+clock_network      0.0000            0.0000            0.0000            0.0000  (   0.00%)
+register           3.9952        3.0640e-03        3.7001e+04            4.0353  (  96.54%)
+sequential         0.0000            0.0000            0.0000            0.0000  (   0.00%)
+combinational  5.8889e-02        5.3548e-02        3.2110e+04            0.1445  (   3.46%)
+--------------------------------------------------------------------------------------------------
+Total              4.0541 mW     5.6612e-02 mW     6.9111e+04 nW         4.1798 mW
+1

@@ -1,1 +1,0 @@
-read_file -format verilog cam.nl.v

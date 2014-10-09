@@ -1,0 +1,201 @@
+ 
+****************************************
+Report : compile_options
+Design : cam
+Version: I-2013.12-SP1
+Date   : Thu Oct  9 00:01:10 2014
+****************************************
+
+Design                                   Compile Option         Value
+--------------------------------------------------------------------------------
+cam                                      flatten                false
+                                         structure              true
+                                         structure_boolean      false
+                                         structure_timing       true
+                                         fix_multiple_port_nets feedthroughs
+                                                                constants
+                                                                outputs
+                                                                buffer_constants
+                                         isolate_port           disabled
+
+cam_word_0                               flatten                false
+                                         structure              true
+                                         structure_boolean      false
+                                         structure_timing       true
+
+cam_word_1                               flatten                false
+                                         structure              true
+                                         structure_boolean      false
+                                         structure_timing       true
+
+cam_word_2                               flatten                false
+                                         structure              true
+                                         structure_boolean      false
+                                         structure_timing       true
+
+cam_word_3                               flatten                false
+                                         structure              true
+                                         structure_boolean      false
+                                         structure_timing       true
+
+cam_word_4                               flatten                false
+                                         structure              true
+                                         structure_boolean      false
+                                         structure_timing       true
+
+cam_word_5                               flatten                false
+                                         structure              true
+                                         structure_boolean      false
+                                         structure_timing       true
+
+cam_word_6                               flatten                false
+                                         structure              true
+                                         structure_boolean      false
+                                         structure_timing       true
+
+cam_word_7                               flatten                false
+                                         structure              true
+                                         structure_boolean      false
+                                         structure_timing       true
+
+cam_word_8                               flatten                false
+                                         structure              true
+                                         structure_boolean      false
+                                         structure_timing       true
+
+cam_word_9                               flatten                false
+                                         structure              true
+                                         structure_boolean      false
+                                         structure_timing       true
+
+cam_word_10                              flatten                false
+                                         structure              true
+                                         structure_boolean      false
+                                         structure_timing       true
+
+cam_word_11                              flatten                false
+                                         structure              true
+                                         structure_boolean      false
+                                         structure_timing       true
+
+cam_word_12                              flatten                false
+                                         structure              true
+                                         structure_boolean      false
+                                         structure_timing       true
+
+cam_word_13                              flatten                false
+                                         structure              true
+                                         structure_boolean      false
+                                         structure_timing       true
+
+cam_word_14                              flatten                false
+                                         structure              true
+                                         structure_boolean      false
+                                         structure_timing       true
+
+cam_word_15                              flatten                false
+                                         structure              true
+                                         structure_boolean      false
+                                         structure_timing       true
+
+cam_word_16                              flatten                false
+                                         structure              true
+                                         structure_boolean      false
+                                         structure_timing       true
+
+cam_word_17                              flatten                false
+                                         structure              true
+                                         structure_boolean      false
+                                         structure_timing       true
+
+cam_word_18                              flatten                false
+                                         structure              true
+                                         structure_boolean      false
+                                         structure_timing       true
+
+cam_word_19                              flatten                false
+                                         structure              true
+                                         structure_boolean      false
+                                         structure_timing       true
+
+cam_word_20                              flatten                false
+                                         structure              true
+                                         structure_boolean      false
+                                         structure_timing       true
+
+cam_word_21                              flatten                false
+                                         structure              true
+                                         structure_boolean      false
+                                         structure_timing       true
+
+cam_word_22                              flatten                false
+                                         structure              true
+                                         structure_boolean      false
+                                         structure_timing       true
+
+cam_word_23                              flatten                false
+                                         structure              true
+                                         structure_boolean      false
+                                         structure_timing       true
+
+cam_word_24                              flatten                false
+                                         structure              true
+                                         structure_boolean      false
+                                         structure_timing       true
+
+cam_word_25                              flatten                false
+                                         structure              true
+                                         structure_boolean      false
+                                         structure_timing       true
+
+cam_word_26                              flatten                false
+                                         structure              true
+                                         structure_boolean      false
+                                         structure_timing       true
+
+cam_word_27                              flatten                false
+                                         structure              true
+                                         structure_boolean      false
+                                         structure_timing       true
+
+cam_word_28                              flatten                false
+                                         structure              true
+                                         structure_boolean      false
+                                         structure_timing       true
+
+cam_word_29                              flatten                false
+                                         structure              true
+                                         structure_boolean      false
+                                         structure_timing       true
+
+cam_word_30                              flatten                false
+                                         structure              true
+                                         structure_boolean      false
+                                         structure_timing       true
+
+cam_word_31                              flatten                false
+                                         structure              true
+                                         structure_boolean      false
+                                         structure_timing       true
+
+decoder_5_32_1                           flatten                false
+                                         structure              true
+                                         structure_boolean      false
+                                         structure_timing       true
+
+decoder_5_32_0                           flatten                false
+                                         structure              true
+                                         structure_boolean      false
+                                         structure_timing       true
+
+priority_encoder                         flatten                false
+                                         structure              true
+                                         structure_boolean      false
+                                         structure_timing       true
+
+mux                                      flatten                false
+                                         structure              true
+                                         structure_boolean      false
+                                         structure_timing       true
+--------------------------------------------------------------------------------
+1

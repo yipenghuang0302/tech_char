@@ -1,0 +1,905 @@
+ 
+****************************************
+Report : reference
+Design : cam
+Version: I-2013.12-SP1
+Date   : Thu Oct  9 00:01:10 2014
+****************************************
+
+Attributes:
+    b - black box (unknown)
+   bo - allows boundary optimization
+    d - dont_touch
+   mo - map_only
+    h - hierarchical
+    n - noncombinational
+    r - removable
+    s - synthetic operator
+    u - contains unmapped logic
+
+Reference          Library       Unit Area   Count    Total Area   Attributes
+-----------------------------------------------------------------------------
+AN4D0              tcbn65gplustc_ccs     2.880000       2     5.760000
+CKND2D0            tcbn65gplustc_ccs     1.440000       1     1.440000
+ND4D0              tcbn65gplustc_ccs     2.520000       2     5.040000
+NR4D0              tcbn65gplustc_ccs     2.520000      16    40.320000
+OA21D0             tcbn65gplustc_ccs     2.520000       1     2.520000
+cam_word_0                      466.560012       1    466.560012  h, n
+cam_word_1                      465.120012       1    465.120012  h, n
+cam_word_2                      465.120012       1    465.120012  h, n
+cam_word_3                      465.120012       1    465.120012  h, n
+cam_word_4                      465.120012       1    465.120012  h, n
+cam_word_5                      465.120012       1    465.120012  h, n
+cam_word_6                      465.120012       1    465.120012  h, n
+cam_word_7                      465.120012       1    465.120012  h, n
+cam_word_8                      465.120012       1    465.120012  h, n
+cam_word_9                      465.120012       1    465.120012  h, n
+cam_word_10                     465.120012       1    465.120012  h, n
+cam_word_11                     465.120012       1    465.120012  h, n
+cam_word_12                     465.120012       1    465.120012  h, n
+cam_word_13                     465.120012       1    465.120012  h, n
+cam_word_14                     465.120012       1    465.120012  h, n
+cam_word_15                     465.120012       1    465.120012  h, n
+cam_word_16                     470.160011       1    470.160011  h, n
+cam_word_17                     465.120012       1    465.120012  h, n
+cam_word_18                     465.840012       1    465.840012  h, n
+cam_word_19                     465.120012       1    465.120012  h, n
+cam_word_20                     465.120012       1    465.120012  h, n
+cam_word_21                     465.120012       1    465.120012  h, n
+cam_word_22                     465.120012       1    465.120012  h, n
+cam_word_23                     465.120012       1    465.120012  h, n
+cam_word_24                     465.120012       1    465.120012  h, n
+cam_word_25                     465.120012       1    465.120012  h, n
+cam_word_26                     465.120012       1    465.120012  h, n
+cam_word_27                     465.120012       1    465.120012  h, n
+cam_word_28                     465.120012       1    465.120012  h, n
+cam_word_29                     465.120012       1    465.120012  h, n
+cam_word_30                     465.120012       1    465.120012  h, n
+cam_word_31                     465.120012       1    465.120012  h, n
+decoder_5_32_0                   73.440003       1     73.440003  h
+decoder_5_32_1                   73.440003       1     73.440003  h
+mux                            1793.879995       1   1793.879995  h
+priority_encoder                138.960003       1    138.960003  h
+-----------------------------------------------------------------------------
+Total 41 references                                 17025.840374
+
+****************************************
+Design: cam_word_0 
+****************************************
+Reference          Library       Unit Area   Count    Total Area   Attributes
+-----------------------------------------------------------------------------
+AN3D0              tcbn65gplustc_ccs     2.520000       1     2.520000
+AN4D0              tcbn65gplustc_ccs     2.880000       1     2.880000
+AO21D1             tcbn65gplustc_ccs     2.520000       1     2.520000
+AO22D0             tcbn65gplustc_ccs     2.880000      32    92.160004
+AOI21D2            tcbn65gplustc_ccs     3.240000       1     3.240000
+AOI22D1            tcbn65gplustc_ccs     2.520000       2     5.040000
+AOI221D0           tcbn65gplustc_ccs     2.880000      14    40.320002
+CKND0              tcbn65gplustc_ccs     1.080000      12    12.960001
+CKND1              tcbn65gplustc_ccs     1.080000      20    21.600001
+CKND2D1            tcbn65gplustc_ccs     1.440000       1     1.440000
+DFQD1              tcbn65gplustc_ccs     6.840000      33   225.720005 n
+ND4D0              tcbn65gplustc_ccs     2.520000       4    10.080000
+NR2D2              tcbn65gplustc_ccs     2.520000       1     2.520000
+NR4D0              tcbn65gplustc_ccs     2.520000       1     2.520000
+OA22D0             tcbn65gplustc_ccs     2.880000       2     5.760000
+OAI22D0            tcbn65gplustc_ccs     2.520000      14    35.280000
+-----------------------------------------------------------------------------
+Total 16 references                                   466.560012
+
+****************************************
+Design: cam_word_1 
+****************************************
+Reference          Library       Unit Area   Count    Total Area   Attributes
+-----------------------------------------------------------------------------
+AN3D0              tcbn65gplustc_ccs     2.520000       1     2.520000
+AO21D0             tcbn65gplustc_ccs     2.520000       1     2.520000
+AO22D0             tcbn65gplustc_ccs     2.880000      32    92.160004
+AOI21D2            tcbn65gplustc_ccs     3.240000       1     3.240000
+AOI22D1            tcbn65gplustc_ccs     2.520000       2     5.040000
+AOI221D0           tcbn65gplustc_ccs     2.880000      14    40.320002
+CKND0              tcbn65gplustc_ccs     1.080000      30    32.400001
+CKND1              tcbn65gplustc_ccs     1.080000       2     2.160000
+CKND2D1            tcbn65gplustc_ccs     1.440000       1     1.440000
+DFQD1              tcbn65gplustc_ccs     6.840000      33   225.720005 n
+ND4D1              tcbn65gplustc_ccs     2.520000       4    10.080000
+NR2D1              tcbn65gplustc_ccs     1.440000       1     1.440000
+NR2D2              tcbn65gplustc_ccs     2.520000       1     2.520000
+NR4D0              tcbn65gplustc_ccs     2.520000       1     2.520000
+OAI22D1            tcbn65gplustc_ccs     2.520000      14    35.280000
+OAI221D0           tcbn65gplustc_ccs     2.880000       2     5.760000
+-----------------------------------------------------------------------------
+Total 16 references                                   465.120012
+
+****************************************
+Design: cam_word_2 
+****************************************
+Reference          Library       Unit Area   Count    Total Area   Attributes
+-----------------------------------------------------------------------------
+AN3D0              tcbn65gplustc_ccs     2.520000       1     2.520000
+AO21D0             tcbn65gplustc_ccs     2.520000       1     2.520000
+AO22D0             tcbn65gplustc_ccs     2.880000      32    92.160004
+AOI21D2            tcbn65gplustc_ccs     3.240000       1     3.240000
+AOI22D1            tcbn65gplustc_ccs     2.520000       2     5.040000
+AOI221D0           tcbn65gplustc_ccs     2.880000      14    40.320002
+CKND0              tcbn65gplustc_ccs     1.080000      30    32.400001
+CKND1              tcbn65gplustc_ccs     1.080000       2     2.160000
+CKND2D1            tcbn65gplustc_ccs     1.440000       1     1.440000
+DFQD1              tcbn65gplustc_ccs     6.840000      33   225.720005 n
+ND4D1              tcbn65gplustc_ccs     2.520000       4    10.080000
+NR2D1              tcbn65gplustc_ccs     1.440000       1     1.440000
+NR2D2              tcbn65gplustc_ccs     2.520000       1     2.520000
+NR4D0              tcbn65gplustc_ccs     2.520000       1     2.520000
+OAI22D1            tcbn65gplustc_ccs     2.520000      14    35.280000
+OAI221D0           tcbn65gplustc_ccs     2.880000       2     5.760000
+-----------------------------------------------------------------------------
+Total 16 references                                   465.120012
+
+****************************************
+Design: cam_word_3 
+****************************************
+Reference          Library       Unit Area   Count    Total Area   Attributes
+-----------------------------------------------------------------------------
+AN3D0              tcbn65gplustc_ccs     2.520000       1     2.520000
+AO21D0             tcbn65gplustc_ccs     2.520000       1     2.520000
+AO22D0             tcbn65gplustc_ccs     2.880000      32    92.160004
+AOI21D2            tcbn65gplustc_ccs     3.240000       1     3.240000
+AOI22D1            tcbn65gplustc_ccs     2.520000       2     5.040000
+AOI221D0           tcbn65gplustc_ccs     2.880000      14    40.320002
+CKND0              tcbn65gplustc_ccs     1.080000      32    34.560001
+CKND2D1            tcbn65gplustc_ccs     1.440000       1     1.440000
+DFQD1              tcbn65gplustc_ccs     6.840000      33   225.720005 n
+ND4D1              tcbn65gplustc_ccs     2.520000       4    10.080000
+NR2D1              tcbn65gplustc_ccs     1.440000       1     1.440000
+NR2D2              tcbn65gplustc_ccs     2.520000       1     2.520000
+NR4D0              tcbn65gplustc_ccs     2.520000       1     2.520000
+OAI22D1            tcbn65gplustc_ccs     2.520000      14    35.280000
+OAI221D0           tcbn65gplustc_ccs     2.880000       2     5.760000
+-----------------------------------------------------------------------------
+Total 15 references                                   465.120012
+
+****************************************
+Design: cam_word_4 
+****************************************
+Reference          Library       Unit Area   Count    Total Area   Attributes
+-----------------------------------------------------------------------------
+AN3D0              tcbn65gplustc_ccs     2.520000       1     2.520000
+AO21D0             tcbn65gplustc_ccs     2.520000       1     2.520000
+AO22D0             tcbn65gplustc_ccs     2.880000      32    92.160004
+AOI21D2            tcbn65gplustc_ccs     3.240000       1     3.240000
+AOI22D0            tcbn65gplustc_ccs     2.520000       2     5.040000
+AOI221D0           tcbn65gplustc_ccs     2.880000      14    40.320002
+CKND0              tcbn65gplustc_ccs     1.080000      32    34.560001
+CKND2D1            tcbn65gplustc_ccs     1.440000       1     1.440000
+DFQD1              tcbn65gplustc_ccs     6.840000      33   225.720005 n
+ND4D1              tcbn65gplustc_ccs     2.520000       4    10.080000
+NR2D1              tcbn65gplustc_ccs     1.440000       1     1.440000
+NR2D2              tcbn65gplustc_ccs     2.520000       1     2.520000
+NR4D0              tcbn65gplustc_ccs     2.520000       1     2.520000
+OAI22D1            tcbn65gplustc_ccs     2.520000      14    35.280000
+OAI221D0           tcbn65gplustc_ccs     2.880000       2     5.760000
+-----------------------------------------------------------------------------
+Total 15 references                                   465.120012
+
+****************************************
+Design: cam_word_5 
+****************************************
+Reference          Library       Unit Area   Count    Total Area   Attributes
+-----------------------------------------------------------------------------
+AN3D0              tcbn65gplustc_ccs     2.520000       1     2.520000
+AO21D0             tcbn65gplustc_ccs     2.520000       1     2.520000
+AO22D0             tcbn65gplustc_ccs     2.880000      32    92.160004
+AOI21D2            tcbn65gplustc_ccs     3.240000       1     3.240000
+AOI22D1            tcbn65gplustc_ccs     2.520000       2     5.040000
+AOI221D0           tcbn65gplustc_ccs     2.880000      14    40.320002
+CKND0              tcbn65gplustc_ccs     1.080000      32    34.560001
+CKND2D1            tcbn65gplustc_ccs     1.440000       1     1.440000
+DFQD1              tcbn65gplustc_ccs     6.840000      33   225.720005 n
+ND4D1              tcbn65gplustc_ccs     2.520000       4    10.080000
+NR2D1              tcbn65gplustc_ccs     1.440000       1     1.440000
+NR2D2              tcbn65gplustc_ccs     2.520000       1     2.520000
+NR4D0              tcbn65gplustc_ccs     2.520000       1     2.520000
+OAI22D1            tcbn65gplustc_ccs     2.520000      14    35.280000
+OAI221D0           tcbn65gplustc_ccs     2.880000       2     5.760000
+-----------------------------------------------------------------------------
+Total 15 references                                   465.120012
+
+****************************************
+Design: cam_word_6 
+****************************************
+Reference          Library       Unit Area   Count    Total Area   Attributes
+-----------------------------------------------------------------------------
+AN3D0              tcbn65gplustc_ccs     2.520000       1     2.520000
+AO21D0             tcbn65gplustc_ccs     2.520000       1     2.520000
+AO22D0             tcbn65gplustc_ccs     2.880000      32    92.160004
+AOI21D2            tcbn65gplustc_ccs     3.240000       1     3.240000
+AOI22D1            tcbn65gplustc_ccs     2.520000       2     5.040000
+AOI221D0           tcbn65gplustc_ccs     2.880000      14    40.320002
+CKND0              tcbn65gplustc_ccs     1.080000      32    34.560001
+CKND2D1            tcbn65gplustc_ccs     1.440000       1     1.440000
+DFQD1              tcbn65gplustc_ccs     6.840000      33   225.720005 n
+ND4D1              tcbn65gplustc_ccs     2.520000       4    10.080000
+NR2D1              tcbn65gplustc_ccs     1.440000       1     1.440000
+NR2D2              tcbn65gplustc_ccs     2.520000       1     2.520000
+NR4D0              tcbn65gplustc_ccs     2.520000       1     2.520000
+OAI22D1            tcbn65gplustc_ccs     2.520000      14    35.280000
+OAI221D0           tcbn65gplustc_ccs     2.880000       2     5.760000
+-----------------------------------------------------------------------------
+Total 15 references                                   465.120012
+
+****************************************
+Design: cam_word_7 
+****************************************
+Reference          Library       Unit Area   Count    Total Area   Attributes
+-----------------------------------------------------------------------------
+AN3D0              tcbn65gplustc_ccs     2.520000       1     2.520000
+AO21D0             tcbn65gplustc_ccs     2.520000       1     2.520000
+AO22D0             tcbn65gplustc_ccs     2.880000      32    92.160004
+AOI21D2            tcbn65gplustc_ccs     3.240000       1     3.240000
+AOI22D1            tcbn65gplustc_ccs     2.520000       2     5.040000
+AOI221D0           tcbn65gplustc_ccs     2.880000      14    40.320002
+CKND0              tcbn65gplustc_ccs     1.080000      32    34.560001
+CKND2D1            tcbn65gplustc_ccs     1.440000       1     1.440000
+DFQD1              tcbn65gplustc_ccs     6.840000      33   225.720005 n
+ND4D1              tcbn65gplustc_ccs     2.520000       4    10.080000
+NR2D1              tcbn65gplustc_ccs     1.440000       1     1.440000
+NR2D2              tcbn65gplustc_ccs     2.520000       1     2.520000
+NR4D0              tcbn65gplustc_ccs     2.520000       1     2.520000
+OAI22D1            tcbn65gplustc_ccs     2.520000      14    35.280000
+OAI221D0           tcbn65gplustc_ccs     2.880000       2     5.760000
+-----------------------------------------------------------------------------
+Total 15 references                                   465.120012
+
+****************************************
+Design: cam_word_8 
+****************************************
+Reference          Library       Unit Area   Count    Total Area   Attributes
+-----------------------------------------------------------------------------
+AN3D0              tcbn65gplustc_ccs     2.520000       1     2.520000
+AO21D1             tcbn65gplustc_ccs     2.520000       1     2.520000
+AO22D0             tcbn65gplustc_ccs     2.880000      32    92.160004
+AOI21D2            tcbn65gplustc_ccs     3.240000       1     3.240000
+AOI22D1            tcbn65gplustc_ccs     2.520000       2     5.040000
+AOI221D0           tcbn65gplustc_ccs     2.880000      14    40.320002
+CKND0              tcbn65gplustc_ccs     1.080000      32    34.560001
+CKND2D1            tcbn65gplustc_ccs     1.440000       1     1.440000
+DFQD1              tcbn65gplustc_ccs     6.840000      33   225.720005 n
+ND4D1              tcbn65gplustc_ccs     2.520000       4    10.080000
+NR2D1              tcbn65gplustc_ccs     1.440000       1     1.440000
+NR2D2              tcbn65gplustc_ccs     2.520000       1     2.520000
+NR4D0              tcbn65gplustc_ccs     2.520000       1     2.520000
+OAI22D1            tcbn65gplustc_ccs     2.520000      14    35.280000
+OAI221D0           tcbn65gplustc_ccs     2.880000       2     5.760000
+-----------------------------------------------------------------------------
+Total 15 references                                   465.120012
+
+****************************************
+Design: cam_word_9 
+****************************************
+Reference          Library       Unit Area   Count    Total Area   Attributes
+-----------------------------------------------------------------------------
+AN3D0              tcbn65gplustc_ccs     2.520000       1     2.520000
+AO21D0             tcbn65gplustc_ccs     2.520000       1     2.520000
+AO22D0             tcbn65gplustc_ccs     2.880000      32    92.160004
+AOI21D2            tcbn65gplustc_ccs     3.240000       1     3.240000
+AOI22D1            tcbn65gplustc_ccs     2.520000       2     5.040000
+AOI221D0           tcbn65gplustc_ccs     2.880000      14    40.320002
+CKND0              tcbn65gplustc_ccs     1.080000      32    34.560001
+CKND2D1            tcbn65gplustc_ccs     1.440000       1     1.440000
+DFQD1              tcbn65gplustc_ccs     6.840000      33   225.720005 n
+ND4D1              tcbn65gplustc_ccs     2.520000       4    10.080000
+NR2D1              tcbn65gplustc_ccs     1.440000       1     1.440000
+NR2D2              tcbn65gplustc_ccs     2.520000       1     2.520000
+NR4D0              tcbn65gplustc_ccs     2.520000       1     2.520000
+OAI22D1            tcbn65gplustc_ccs     2.520000      14    35.280000
+OAI221D0           tcbn65gplustc_ccs     2.880000       2     5.760000
+-----------------------------------------------------------------------------
+Total 15 references                                   465.120012
+
+****************************************
+Design: cam_word_10 
+****************************************
+Reference          Library       Unit Area   Count    Total Area   Attributes
+-----------------------------------------------------------------------------
+AN3D0              tcbn65gplustc_ccs     2.520000       1     2.520000
+AO21D0             tcbn65gplustc_ccs     2.520000       1     2.520000
+AO22D0             tcbn65gplustc_ccs     2.880000      32    92.160004
+AOI21D2            tcbn65gplustc_ccs     3.240000       1     3.240000
+AOI22D1            tcbn65gplustc_ccs     2.520000       2     5.040000
+AOI221D0           tcbn65gplustc_ccs     2.880000      14    40.320002
+CKND0              tcbn65gplustc_ccs     1.080000      32    34.560001
+CKND2D1            tcbn65gplustc_ccs     1.440000       1     1.440000
+DFQD1              tcbn65gplustc_ccs     6.840000      33   225.720005 n
+ND4D1              tcbn65gplustc_ccs     2.520000       4    10.080000
+NR2D1              tcbn65gplustc_ccs     1.440000       1     1.440000
+NR2D2              tcbn65gplustc_ccs     2.520000       1     2.520000
+NR4D0              tcbn65gplustc_ccs     2.520000       1     2.520000
+OAI22D1            tcbn65gplustc_ccs     2.520000      14    35.280000
+OAI221D0           tcbn65gplustc_ccs     2.880000       2     5.760000
+-----------------------------------------------------------------------------
+Total 15 references                                   465.120012
+
+****************************************
+Design: cam_word_11 
+****************************************
+Reference          Library       Unit Area   Count    Total Area   Attributes
+-----------------------------------------------------------------------------
+AN3D0              tcbn65gplustc_ccs     2.520000       1     2.520000
+AO21D0             tcbn65gplustc_ccs     2.520000       1     2.520000
+AO22D0             tcbn65gplustc_ccs     2.880000      32    92.160004
+AOI21D2            tcbn65gplustc_ccs     3.240000       1     3.240000
+AOI22D1            tcbn65gplustc_ccs     2.520000       2     5.040000
+AOI221D0           tcbn65gplustc_ccs     2.880000      14    40.320002
+CKND0              tcbn65gplustc_ccs     1.080000      32    34.560001
+CKND2D1            tcbn65gplustc_ccs     1.440000       1     1.440000
+DFQD1              tcbn65gplustc_ccs     6.840000      33   225.720005 n
+ND4D1              tcbn65gplustc_ccs     2.520000       4    10.080000
+NR2D1              tcbn65gplustc_ccs     1.440000       1     1.440000
+NR2D2              tcbn65gplustc_ccs     2.520000       1     2.520000
+NR4D0              tcbn65gplustc_ccs     2.520000       1     2.520000
+OAI22D1            tcbn65gplustc_ccs     2.520000      14    35.280000
+OAI221D0           tcbn65gplustc_ccs     2.880000       2     5.760000
+-----------------------------------------------------------------------------
+Total 15 references                                   465.120012
+
+****************************************
+Design: cam_word_12 
+****************************************
+Reference          Library       Unit Area   Count    Total Area   Attributes
+-----------------------------------------------------------------------------
+AN3D0              tcbn65gplustc_ccs     2.520000       1     2.520000
+AO21D1             tcbn65gplustc_ccs     2.520000       1     2.520000
+AO22D0             tcbn65gplustc_ccs     2.880000      32    92.160004
+AOI21D2            tcbn65gplustc_ccs     3.240000       1     3.240000
+AOI22D1            tcbn65gplustc_ccs     2.520000       2     5.040000
+AOI221D0           tcbn65gplustc_ccs     2.880000      14    40.320002
+CKND0              tcbn65gplustc_ccs     1.080000      32    34.560001
+CKND2D1            tcbn65gplustc_ccs     1.440000       1     1.440000
+DFQD1              tcbn65gplustc_ccs     6.840000      33   225.720005 n
+ND4D1              tcbn65gplustc_ccs     2.520000       4    10.080000
+NR2D1              tcbn65gplustc_ccs     1.440000       1     1.440000
+NR2D2              tcbn65gplustc_ccs     2.520000       1     2.520000
+NR4D0              tcbn65gplustc_ccs     2.520000       1     2.520000
+OAI22D1            tcbn65gplustc_ccs     2.520000      14    35.280000
+OAI221D0           tcbn65gplustc_ccs     2.880000       2     5.760000
+-----------------------------------------------------------------------------
+Total 15 references                                   465.120012
+
+****************************************
+Design: cam_word_13 
+****************************************
+Reference          Library       Unit Area   Count    Total Area   Attributes
+-----------------------------------------------------------------------------
+AN3D0              tcbn65gplustc_ccs     2.520000       1     2.520000
+AO21D0             tcbn65gplustc_ccs     2.520000       1     2.520000
+AO22D0             tcbn65gplustc_ccs     2.880000      32    92.160004
+AOI21D2            tcbn65gplustc_ccs     3.240000       1     3.240000
+AOI22D1            tcbn65gplustc_ccs     2.520000       2     5.040000
+AOI221D0           tcbn65gplustc_ccs     2.880000      14    40.320002
+CKND0              tcbn65gplustc_ccs     1.080000      32    34.560001
+CKND2D1            tcbn65gplustc_ccs     1.440000       1     1.440000
+DFQD1              tcbn65gplustc_ccs     6.840000      33   225.720005 n
+ND4D1              tcbn65gplustc_ccs     2.520000       4    10.080000
+NR2D1              tcbn65gplustc_ccs     1.440000       1     1.440000
+NR2D2              tcbn65gplustc_ccs     2.520000       1     2.520000
+NR4D0              tcbn65gplustc_ccs     2.520000       1     2.520000
+OAI22D1            tcbn65gplustc_ccs     2.520000      14    35.280000
+OAI221D0           tcbn65gplustc_ccs     2.880000       2     5.760000
+-----------------------------------------------------------------------------
+Total 15 references                                   465.120012
+
+****************************************
+Design: cam_word_14 
+****************************************
+Reference          Library       Unit Area   Count    Total Area   Attributes
+-----------------------------------------------------------------------------
+AN3D0              tcbn65gplustc_ccs     2.520000       1     2.520000
+AO21D0             tcbn65gplustc_ccs     2.520000       1     2.520000
+AO22D0             tcbn65gplustc_ccs     2.880000      32    92.160004
+AOI21D2            tcbn65gplustc_ccs     3.240000       1     3.240000
+AOI22D1            tcbn65gplustc_ccs     2.520000       2     5.040000
+AOI221D0           tcbn65gplustc_ccs     2.880000      14    40.320002
+CKND0              tcbn65gplustc_ccs     1.080000      32    34.560001
+CKND2D1            tcbn65gplustc_ccs     1.440000       1     1.440000
+DFQD1              tcbn65gplustc_ccs     6.840000      33   225.720005 n
+ND4D1              tcbn65gplustc_ccs     2.520000       4    10.080000
+NR2D1              tcbn65gplustc_ccs     1.440000       1     1.440000
+NR2D2              tcbn65gplustc_ccs     2.520000       1     2.520000
+NR4D0              tcbn65gplustc_ccs     2.520000       1     2.520000
+OAI22D1            tcbn65gplustc_ccs     2.520000      14    35.280000
+OAI221D0           tcbn65gplustc_ccs     2.880000       2     5.760000
+-----------------------------------------------------------------------------
+Total 15 references                                   465.120012
+
+****************************************
+Design: cam_word_15 
+****************************************
+Reference          Library       Unit Area   Count    Total Area   Attributes
+-----------------------------------------------------------------------------
+AN3D0              tcbn65gplustc_ccs     2.520000       1     2.520000
+AO21D0             tcbn65gplustc_ccs     2.520000       1     2.520000
+AO22D0             tcbn65gplustc_ccs     2.880000      32    92.160004
+AOI21D2            tcbn65gplustc_ccs     3.240000       1     3.240000
+AOI22D1            tcbn65gplustc_ccs     2.520000       2     5.040000
+AOI221D0           tcbn65gplustc_ccs     2.880000      14    40.320002
+CKND0              tcbn65gplustc_ccs     1.080000      32    34.560001
+CKND2D1            tcbn65gplustc_ccs     1.440000       1     1.440000
+DFQD1              tcbn65gplustc_ccs     6.840000      33   225.720005 n
+ND4D1              tcbn65gplustc_ccs     2.520000       4    10.080000
+NR2D1              tcbn65gplustc_ccs     1.440000       1     1.440000
+NR2D2              tcbn65gplustc_ccs     2.520000       1     2.520000
+NR4D0              tcbn65gplustc_ccs     2.520000       1     2.520000
+OAI22D1            tcbn65gplustc_ccs     2.520000      14    35.280000
+OAI221D0           tcbn65gplustc_ccs     2.880000       2     5.760000
+-----------------------------------------------------------------------------
+Total 15 references                                   465.120012
+
+****************************************
+Design: cam_word_16 
+****************************************
+Reference          Library       Unit Area   Count    Total Area   Attributes
+-----------------------------------------------------------------------------
+AN3D0              tcbn65gplustc_ccs     2.520000       1     2.520000
+AO21D0             tcbn65gplustc_ccs     2.520000       1     2.520000
+AO22D0             tcbn65gplustc_ccs     2.880000      34    97.920004
+AOI21D2            tcbn65gplustc_ccs     3.240000       1     3.240000
+AOI22D0            tcbn65gplustc_ccs     2.520000       4    10.080000
+AOI22D1            tcbn65gplustc_ccs     2.520000       2     5.040000
+AOI221D0           tcbn65gplustc_ccs     2.880000       8    23.040001
+CKND0              tcbn65gplustc_ccs     1.080000      32    34.560001
+CKND2D0            tcbn65gplustc_ccs     1.440000       1     1.440000
+CKND2D1            tcbn65gplustc_ccs     1.440000       1     1.440000
+DFQD1              tcbn65gplustc_ccs     6.840000      33   225.720005 n
+IND4D0             tcbn65gplustc_ccs     2.880000       1     2.880000
+ND4D0              tcbn65gplustc_ccs     2.520000       3     7.560000
+NR2D0              tcbn65gplustc_ccs     1.440000       1     1.440000
+NR2D2              tcbn65gplustc_ccs     2.520000       1     2.520000
+NR4D0              tcbn65gplustc_ccs     2.520000       3     7.560000
+OAI22D0            tcbn65gplustc_ccs     2.520000      10    25.200000
+OAI22D1            tcbn65gplustc_ccs     2.520000       5    12.600000
+OAI221D0           tcbn65gplustc_ccs     2.880000       1     2.880000
+-----------------------------------------------------------------------------
+Total 19 references                                   470.160011
+
+****************************************
+Design: cam_word_17 
+****************************************
+Reference          Library       Unit Area   Count    Total Area   Attributes
+-----------------------------------------------------------------------------
+AN3D0              tcbn65gplustc_ccs     2.520000       1     2.520000
+AO21D0             tcbn65gplustc_ccs     2.520000       1     2.520000
+AO22D0             tcbn65gplustc_ccs     2.880000      32    92.160004
+AOI21D2            tcbn65gplustc_ccs     3.240000       1     3.240000
+AOI22D0            tcbn65gplustc_ccs     2.520000       2     5.040000
+AOI221D0           tcbn65gplustc_ccs     2.880000      14    40.320002
+CKND0              tcbn65gplustc_ccs     1.080000      32    34.560001
+CKND2D1            tcbn65gplustc_ccs     1.440000       1     1.440000
+DFQD1              tcbn65gplustc_ccs     6.840000      33   225.720005 n
+ND4D1              tcbn65gplustc_ccs     2.520000       4    10.080000
+NR2D1              tcbn65gplustc_ccs     1.440000       1     1.440000
+NR2D2              tcbn65gplustc_ccs     2.520000       1     2.520000
+NR4D0              tcbn65gplustc_ccs     2.520000       1     2.520000
+OAI22D0            tcbn65gplustc_ccs     2.520000      14    35.280000
+OAI221D0           tcbn65gplustc_ccs     2.880000       2     5.760000
+-----------------------------------------------------------------------------
+Total 15 references                                   465.120012
+
+****************************************
+Design: cam_word_18 
+****************************************
+Reference          Library       Unit Area   Count    Total Area   Attributes
+-----------------------------------------------------------------------------
+AN3D0              tcbn65gplustc_ccs     2.520000       1     2.520000
+AO21D0             tcbn65gplustc_ccs     2.520000       1     2.520000
+AO22D0             tcbn65gplustc_ccs     2.880000      33    95.040004
+AOI21D2            tcbn65gplustc_ccs     3.240000       1     3.240000
+AOI22D0            tcbn65gplustc_ccs     2.520000       6    15.120000
+AOI221D0           tcbn65gplustc_ccs     2.880000       9    25.920001
+CKND0              tcbn65gplustc_ccs     1.080000      32    34.560001
+CKND2D1            tcbn65gplustc_ccs     1.440000       1     1.440000
+DFQD1              tcbn65gplustc_ccs     6.840000      33   225.720005 n
+ND4D0              tcbn65gplustc_ccs     2.520000       3     7.560000
+NR2D2              tcbn65gplustc_ccs     2.520000       1     2.520000
+NR3D0              tcbn65gplustc_ccs     2.160000       1     2.160000
+NR4D0              tcbn65gplustc_ccs     2.520000       2     5.040000
+OAI22D0            tcbn65gplustc_ccs     2.520000      10    25.200000
+OAI221D0           tcbn65gplustc_ccs     2.880000       6    17.280001
+-----------------------------------------------------------------------------
+Total 15 references                                   465.840012
+
+****************************************
+Design: cam_word_19 
+****************************************
+Reference          Library       Unit Area   Count    Total Area   Attributes
+-----------------------------------------------------------------------------
+AN3D0              tcbn65gplustc_ccs     2.520000       1     2.520000
+AO21D0             tcbn65gplustc_ccs     2.520000       1     2.520000
+AO22D0             tcbn65gplustc_ccs     2.880000      32    92.160004
+AOI21D2            tcbn65gplustc_ccs     3.240000       1     3.240000
+AOI22D0            tcbn65gplustc_ccs     2.520000       2     5.040000
+AOI221D0           tcbn65gplustc_ccs     2.880000      14    40.320002
+CKND0              tcbn65gplustc_ccs     1.080000      32    34.560001
+CKND2D1            tcbn65gplustc_ccs     1.440000       1     1.440000
+DFQD1              tcbn65gplustc_ccs     6.840000      33   225.720005 n
+ND4D0              tcbn65gplustc_ccs     2.520000       1     2.520000
+ND4D1              tcbn65gplustc_ccs     2.520000       3     7.560000
+NR2D1              tcbn65gplustc_ccs     1.440000       1     1.440000
+NR2D2              tcbn65gplustc_ccs     2.520000       1     2.520000
+NR4D0              tcbn65gplustc_ccs     2.520000       1     2.520000
+OAI22D0            tcbn65gplustc_ccs     2.520000      14    35.280000
+OAI221D0           tcbn65gplustc_ccs     2.880000       2     5.760000
+-----------------------------------------------------------------------------
+Total 16 references                                   465.120012
+
+****************************************
+Design: cam_word_20 
+****************************************
+Reference          Library       Unit Area   Count    Total Area   Attributes
+-----------------------------------------------------------------------------
+AN3D0              tcbn65gplustc_ccs     2.520000       1     2.520000
+AO21D0             tcbn65gplustc_ccs     2.520000       1     2.520000
+AO22D0             tcbn65gplustc_ccs     2.880000      32    92.160004
+AOI21D2            tcbn65gplustc_ccs     3.240000       1     3.240000
+AOI22D0            tcbn65gplustc_ccs     2.520000       2     5.040000
+AOI221D0           tcbn65gplustc_ccs     2.880000      14    40.320002
+CKND0              tcbn65gplustc_ccs     1.080000      32    34.560001
+CKND2D1            tcbn65gplustc_ccs     1.440000       1     1.440000
+DFQD1              tcbn65gplustc_ccs     6.840000      33   225.720005 n
+ND4D0              tcbn65gplustc_ccs     2.520000       1     2.520000
+ND4D1              tcbn65gplustc_ccs     2.520000       3     7.560000
+NR2D1              tcbn65gplustc_ccs     1.440000       1     1.440000
+NR2D2              tcbn65gplustc_ccs     2.520000       1     2.520000
+NR4D0              tcbn65gplustc_ccs     2.520000       1     2.520000
+OAI22D0            tcbn65gplustc_ccs     2.520000      14    35.280000
+OAI221D0           tcbn65gplustc_ccs     2.880000       2     5.760000
+-----------------------------------------------------------------------------
+Total 16 references                                   465.120012
+
+****************************************
+Design: cam_word_21 
+****************************************
+Reference          Library       Unit Area   Count    Total Area   Attributes
+-----------------------------------------------------------------------------
+AN3D0              tcbn65gplustc_ccs     2.520000       1     2.520000
+AO21D0             tcbn65gplustc_ccs     2.520000       1     2.520000
+AO22D0             tcbn65gplustc_ccs     2.880000      32    92.160004
+AOI21D2            tcbn65gplustc_ccs     3.240000       1     3.240000
+AOI22D0            tcbn65gplustc_ccs     2.520000       2     5.040000
+AOI221D0           tcbn65gplustc_ccs     2.880000      14    40.320002
+CKND0              tcbn65gplustc_ccs     1.080000      32    34.560001
+CKND2D1            tcbn65gplustc_ccs     1.440000       1     1.440000
+DFQD1              tcbn65gplustc_ccs     6.840000      33   225.720005 n
+ND4D0              tcbn65gplustc_ccs     2.520000       1     2.520000
+ND4D1              tcbn65gplustc_ccs     2.520000       3     7.560000
+NR2D1              tcbn65gplustc_ccs     1.440000       1     1.440000
+NR2D2              tcbn65gplustc_ccs     2.520000       1     2.520000
+NR4D0              tcbn65gplustc_ccs     2.520000       1     2.520000
+OAI22D0            tcbn65gplustc_ccs     2.520000      14    35.280000
+OAI221D0           tcbn65gplustc_ccs     2.880000       2     5.760000
+-----------------------------------------------------------------------------
+Total 16 references                                   465.120012
+
+****************************************
+Design: cam_word_22 
+****************************************
+Reference          Library       Unit Area   Count    Total Area   Attributes
+-----------------------------------------------------------------------------
+AN3D0              tcbn65gplustc_ccs     2.520000       1     2.520000
+AO21D0             tcbn65gplustc_ccs     2.520000       1     2.520000
+AO22D0             tcbn65gplustc_ccs     2.880000      32    92.160004
+AOI21D2            tcbn65gplustc_ccs     3.240000       1     3.240000
+AOI22D0            tcbn65gplustc_ccs     2.520000       2     5.040000
+AOI221D0           tcbn65gplustc_ccs     2.880000      14    40.320002
+CKND0              tcbn65gplustc_ccs     1.080000      32    34.560001
+CKND2D1            tcbn65gplustc_ccs     1.440000       1     1.440000
+DFQD1              tcbn65gplustc_ccs     6.840000      33   225.720005 n
+ND4D0              tcbn65gplustc_ccs     2.520000       1     2.520000
+ND4D1              tcbn65gplustc_ccs     2.520000       3     7.560000
+NR2D1              tcbn65gplustc_ccs     1.440000       1     1.440000
+NR2D2              tcbn65gplustc_ccs     2.520000       1     2.520000
+NR4D0              tcbn65gplustc_ccs     2.520000       1     2.520000
+OAI22D0            tcbn65gplustc_ccs     2.520000      14    35.280000
+OAI221D0           tcbn65gplustc_ccs     2.880000       2     5.760000
+-----------------------------------------------------------------------------
+Total 16 references                                   465.120012
+
+****************************************
+Design: cam_word_23 
+****************************************
+Reference          Library       Unit Area   Count    Total Area   Attributes
+-----------------------------------------------------------------------------
+AN3D0              tcbn65gplustc_ccs     2.520000       1     2.520000
+AO21D0             tcbn65gplustc_ccs     2.520000       1     2.520000
+AO22D0             tcbn65gplustc_ccs     2.880000      32    92.160004
+AOI21D2            tcbn65gplustc_ccs     3.240000       1     3.240000
+AOI22D0            tcbn65gplustc_ccs     2.520000       2     5.040000
+AOI221D0           tcbn65gplustc_ccs     2.880000      14    40.320002
+CKND0              tcbn65gplustc_ccs     1.080000      32    34.560001
+CKND2D1            tcbn65gplustc_ccs     1.440000       1     1.440000
+DFQD1              tcbn65gplustc_ccs     6.840000      33   225.720005 n
+ND4D0              tcbn65gplustc_ccs     2.520000       1     2.520000
+ND4D1              tcbn65gplustc_ccs     2.520000       3     7.560000
+NR2D1              tcbn65gplustc_ccs     1.440000       1     1.440000
+NR2D2              tcbn65gplustc_ccs     2.520000       1     2.520000
+NR4D0              tcbn65gplustc_ccs     2.520000       1     2.520000
+OAI22D0            tcbn65gplustc_ccs     2.520000      14    35.280000
+OAI221D0           tcbn65gplustc_ccs     2.880000       2     5.760000
+-----------------------------------------------------------------------------
+Total 16 references                                   465.120012
+
+****************************************
+Design: cam_word_24 
+****************************************
+Reference          Library       Unit Area   Count    Total Area   Attributes
+-----------------------------------------------------------------------------
+AN3D0              tcbn65gplustc_ccs     2.520000       1     2.520000
+AO21D0             tcbn65gplustc_ccs     2.520000       1     2.520000
+AO22D0             tcbn65gplustc_ccs     2.880000      32    92.160004
+AOI21D2            tcbn65gplustc_ccs     3.240000       1     3.240000
+AOI22D0            tcbn65gplustc_ccs     2.520000       2     5.040000
+AOI221D0           tcbn65gplustc_ccs     2.880000      14    40.320002
+CKND0              tcbn65gplustc_ccs     1.080000      32    34.560001
+CKND2D1            tcbn65gplustc_ccs     1.440000       1     1.440000
+DFQD1              tcbn65gplustc_ccs     6.840000      33   225.720005 n
+ND4D0              tcbn65gplustc_ccs     2.520000       1     2.520000
+ND4D1              tcbn65gplustc_ccs     2.520000       3     7.560000
+NR2D1              tcbn65gplustc_ccs     1.440000       1     1.440000
+NR2D2              tcbn65gplustc_ccs     2.520000       1     2.520000
+NR4D0              tcbn65gplustc_ccs     2.520000       1     2.520000
+OAI22D0            tcbn65gplustc_ccs     2.520000      14    35.280000
+OAI221D0           tcbn65gplustc_ccs     2.880000       2     5.760000
+-----------------------------------------------------------------------------
+Total 16 references                                   465.120012
+
+****************************************
+Design: cam_word_25 
+****************************************
+Reference          Library       Unit Area   Count    Total Area   Attributes
+-----------------------------------------------------------------------------
+AN3D0              tcbn65gplustc_ccs     2.520000       1     2.520000
+AO21D0             tcbn65gplustc_ccs     2.520000       1     2.520000
+AO22D0             tcbn65gplustc_ccs     2.880000      32    92.160004
+AOI21D2            tcbn65gplustc_ccs     3.240000       1     3.240000
+AOI22D0            tcbn65gplustc_ccs     2.520000       2     5.040000
+AOI221D0           tcbn65gplustc_ccs     2.880000      14    40.320002
+CKND0              tcbn65gplustc_ccs     1.080000      32    34.560001
+CKND2D1            tcbn65gplustc_ccs     1.440000       1     1.440000
+DFQD1              tcbn65gplustc_ccs     6.840000      33   225.720005 n
+ND4D0              tcbn65gplustc_ccs     2.520000       1     2.520000
+ND4D1              tcbn65gplustc_ccs     2.520000       3     7.560000
+NR2D1              tcbn65gplustc_ccs     1.440000       1     1.440000
+NR2D2              tcbn65gplustc_ccs     2.520000       1     2.520000
+NR4D0              tcbn65gplustc_ccs     2.520000       1     2.520000
+OAI22D0            tcbn65gplustc_ccs     2.520000      14    35.280000
+OAI221D0           tcbn65gplustc_ccs     2.880000       2     5.760000
+-----------------------------------------------------------------------------
+Total 16 references                                   465.120012
+
+****************************************
+Design: cam_word_26 
+****************************************
+Reference          Library       Unit Area   Count    Total Area   Attributes
+-----------------------------------------------------------------------------
+AN3D0              tcbn65gplustc_ccs     2.520000       1     2.520000
+AO21D0             tcbn65gplustc_ccs     2.520000       1     2.520000
+AO22D0             tcbn65gplustc_ccs     2.880000      32    92.160004
+AOI21D2            tcbn65gplustc_ccs     3.240000       1     3.240000
+AOI22D0            tcbn65gplustc_ccs     2.520000       2     5.040000
+AOI221D0           tcbn65gplustc_ccs     2.880000      14    40.320002
+CKND0              tcbn65gplustc_ccs     1.080000      32    34.560001
+CKND2D1            tcbn65gplustc_ccs     1.440000       1     1.440000
+DFQD1              tcbn65gplustc_ccs     6.840000      33   225.720005 n
+ND4D0              tcbn65gplustc_ccs     2.520000       1     2.520000
+ND4D1              tcbn65gplustc_ccs     2.520000       3     7.560000
+NR2D1              tcbn65gplustc_ccs     1.440000       1     1.440000
+NR2D2              tcbn65gplustc_ccs     2.520000       1     2.520000
+NR4D0              tcbn65gplustc_ccs     2.520000       1     2.520000
+OAI22D0            tcbn65gplustc_ccs     2.520000      14    35.280000
+OAI221D0           tcbn65gplustc_ccs     2.880000       2     5.760000
+-----------------------------------------------------------------------------
+Total 16 references                                   465.120012
+
+****************************************
+Design: cam_word_27 
+****************************************
+Reference          Library       Unit Area   Count    Total Area   Attributes
+-----------------------------------------------------------------------------
+AN3D0              tcbn65gplustc_ccs     2.520000       1     2.520000
+AO21D0             tcbn65gplustc_ccs     2.520000       1     2.520000
+AO22D0             tcbn65gplustc_ccs     2.880000      32    92.160004
+AOI21D2            tcbn65gplustc_ccs     3.240000       1     3.240000
+AOI22D0            tcbn65gplustc_ccs     2.520000       2     5.040000
+AOI221D0           tcbn65gplustc_ccs     2.880000      14    40.320002
+CKND0              tcbn65gplustc_ccs     1.080000      32    34.560001
+CKND2D1            tcbn65gplustc_ccs     1.440000       1     1.440000
+DFQD1              tcbn65gplustc_ccs     6.840000      33   225.720005 n
+ND4D0              tcbn65gplustc_ccs     2.520000       3     7.560000
+ND4D1              tcbn65gplustc_ccs     2.520000       1     2.520000
+NR2D1              tcbn65gplustc_ccs     1.440000       1     1.440000
+NR2D2              tcbn65gplustc_ccs     2.520000       1     2.520000
+NR4D0              tcbn65gplustc_ccs     2.520000       1     2.520000
+OAI22D0            tcbn65gplustc_ccs     2.520000      14    35.280000
+OAI221D0           tcbn65gplustc_ccs     2.880000       2     5.760000
+-----------------------------------------------------------------------------
+Total 16 references                                   465.120012
+
+****************************************
+Design: cam_word_28 
+****************************************
+Reference          Library       Unit Area   Count    Total Area   Attributes
+-----------------------------------------------------------------------------
+AN3D0              tcbn65gplustc_ccs     2.520000       1     2.520000
+AO21D0             tcbn65gplustc_ccs     2.520000       1     2.520000
+AO22D0             tcbn65gplustc_ccs     2.880000      32    92.160004
+AOI21D2            tcbn65gplustc_ccs     3.240000       1     3.240000
+AOI22D0            tcbn65gplustc_ccs     2.520000       2     5.040000
+AOI221D0           tcbn65gplustc_ccs     2.880000      14    40.320002
+CKND0              tcbn65gplustc_ccs     1.080000      32    34.560001
+CKND2D1            tcbn65gplustc_ccs     1.440000       1     1.440000
+DFQD1              tcbn65gplustc_ccs     6.840000      33   225.720005 n
+ND4D0              tcbn65gplustc_ccs     2.520000       1     2.520000
+ND4D1              tcbn65gplustc_ccs     2.520000       3     7.560000
+NR2D1              tcbn65gplustc_ccs     1.440000       1     1.440000
+NR2D2              tcbn65gplustc_ccs     2.520000       1     2.520000
+NR4D0              tcbn65gplustc_ccs     2.520000       1     2.520000
+OAI22D0            tcbn65gplustc_ccs     2.520000      14    35.280000
+OAI221D0           tcbn65gplustc_ccs     2.880000       2     5.760000
+-----------------------------------------------------------------------------
+Total 16 references                                   465.120012
+
+****************************************
+Design: cam_word_29 
+****************************************
+Reference          Library       Unit Area   Count    Total Area   Attributes
+-----------------------------------------------------------------------------
+AN3D0              tcbn65gplustc_ccs     2.520000       1     2.520000
+AO21D0             tcbn65gplustc_ccs     2.520000       1     2.520000
+AO22D0             tcbn65gplustc_ccs     2.880000      32    92.160004
+AOI21D2            tcbn65gplustc_ccs     3.240000       1     3.240000
+AOI22D0            tcbn65gplustc_ccs     2.520000       2     5.040000
+AOI221D0           tcbn65gplustc_ccs     2.880000      14    40.320002
+CKND0              tcbn65gplustc_ccs     1.080000      32    34.560001
+CKND2D1            tcbn65gplustc_ccs     1.440000       1     1.440000
+DFQD1              tcbn65gplustc_ccs     6.840000      33   225.720005 n
+ND4D0              tcbn65gplustc_ccs     2.520000       1     2.520000
+ND4D1              tcbn65gplustc_ccs     2.520000       3     7.560000
+NR2D1              tcbn65gplustc_ccs     1.440000       1     1.440000
+NR2D2              tcbn65gplustc_ccs     2.520000       1     2.520000
+NR4D0              tcbn65gplustc_ccs     2.520000       1     2.520000
+OAI22D0            tcbn65gplustc_ccs     2.520000      14    35.280000
+OAI221D0           tcbn65gplustc_ccs     2.880000       2     5.760000
+-----------------------------------------------------------------------------
+Total 16 references                                   465.120012
+
+****************************************
+Design: cam_word_30 
+****************************************
+Reference          Library       Unit Area   Count    Total Area   Attributes
+-----------------------------------------------------------------------------
+AN3D0              tcbn65gplustc_ccs     2.520000       1     2.520000
+AO21D0             tcbn65gplustc_ccs     2.520000       1     2.520000
+AO22D0             tcbn65gplustc_ccs     2.880000      32    92.160004
+AOI21D2            tcbn65gplustc_ccs     3.240000       1     3.240000
+AOI22D0            tcbn65gplustc_ccs     2.520000       2     5.040000
+AOI221D0           tcbn65gplustc_ccs     2.880000      14    40.320002
+CKND0              tcbn65gplustc_ccs     1.080000      32    34.560001
+CKND2D1            tcbn65gplustc_ccs     1.440000       1     1.440000
+DFQD1              tcbn65gplustc_ccs     6.840000      33   225.720005 n
+ND4D0              tcbn65gplustc_ccs     2.520000       1     2.520000
+ND4D1              tcbn65gplustc_ccs     2.520000       3     7.560000
+NR2D1              tcbn65gplustc_ccs     1.440000       1     1.440000
+NR2D2              tcbn65gplustc_ccs     2.520000       1     2.520000
+NR4D0              tcbn65gplustc_ccs     2.520000       1     2.520000
+OAI22D0            tcbn65gplustc_ccs     2.520000      14    35.280000
+OAI221D0           tcbn65gplustc_ccs     2.880000       2     5.760000
+-----------------------------------------------------------------------------
+Total 16 references                                   465.120012
+
+****************************************
+Design: cam_word_31 
+****************************************
+Reference          Library       Unit Area   Count    Total Area   Attributes
+-----------------------------------------------------------------------------
+AN3D0              tcbn65gplustc_ccs     2.520000       1     2.520000
+AO21D0             tcbn65gplustc_ccs     2.520000       1     2.520000
+AO22D0             tcbn65gplustc_ccs     2.880000      32    92.160004
+AOI21D2            tcbn65gplustc_ccs     3.240000       1     3.240000
+AOI22D0            tcbn65gplustc_ccs     2.520000       2     5.040000
+AOI221D0           tcbn65gplustc_ccs     2.880000      14    40.320002
+CKND0              tcbn65gplustc_ccs     1.080000      32    34.560001
+CKND2D1            tcbn65gplustc_ccs     1.440000       1     1.440000
+DFQD1              tcbn65gplustc_ccs     6.840000      33   225.720005 n
+ND4D0              tcbn65gplustc_ccs     2.520000       1     2.520000
+ND4D1              tcbn65gplustc_ccs     2.520000       3     7.560000
+NR2D1              tcbn65gplustc_ccs     1.440000       1     1.440000
+NR2D2              tcbn65gplustc_ccs     2.520000       1     2.520000
+NR4D0              tcbn65gplustc_ccs     2.520000       1     2.520000
+OAI22D0            tcbn65gplustc_ccs     2.520000      14    35.280000
+OAI221D0           tcbn65gplustc_ccs     2.880000       2     5.760000
+-----------------------------------------------------------------------------
+Total 16 references                                   465.120012
+
+****************************************
+Design: decoder_5_32_0 
+****************************************
+Reference          Library       Unit Area   Count    Total Area   Attributes
+-----------------------------------------------------------------------------
+INVD1              tcbn65gplustc_ccs     1.080000       4     4.320000
+ND2D1              tcbn65gplustc_ccs     1.440000       8    11.520000
+ND3D1              tcbn65gplustc_ccs     2.160000       4     8.640000
+NR2D1              tcbn65gplustc_ccs     1.440000      34    48.960002
+-----------------------------------------------------------------------------
+Total 4 references                                     73.440003
+
+****************************************
+Design: decoder_5_32_1 
+****************************************
+Reference          Library       Unit Area   Count    Total Area   Attributes
+-----------------------------------------------------------------------------
+CKND0              tcbn65gplustc_ccs     1.080000       4     4.320000
+CKND2D0            tcbn65gplustc_ccs     1.440000       2     2.880000
+CKND2D1            tcbn65gplustc_ccs     1.440000       3     4.320000
+ND2D1              tcbn65gplustc_ccs     1.440000       3     4.320000
+ND3D0              tcbn65gplustc_ccs     2.160000       4     8.640000
+NR2D0              tcbn65gplustc_ccs     1.440000      19    27.360001
+NR2D1              tcbn65gplustc_ccs     1.440000       2     2.880000
+NR2XD0             tcbn65gplustc_ccs     1.440000      13    18.720001
+-----------------------------------------------------------------------------
+Total 8 references                                     73.440003
+
+****************************************
+Design: mux 
+****************************************
+Reference          Library       Unit Area   Count    Total Area   Attributes
+-----------------------------------------------------------------------------
+AOI22D0            tcbn65gplustc_ccs     2.520000     512  1290.239990
+IND2D1             tcbn65gplustc_ccs     2.160000       1     2.160000
+INVD1              tcbn65gplustc_ccs     1.080000       5     5.400000
+ND2D1              tcbn65gplustc_ccs     1.440000      14    20.160001
+ND3D1              tcbn65gplustc_ccs     2.160000       2     4.320000
+ND4D0              tcbn65gplustc_ccs     2.520000     128   322.559998
+NR2D1              tcbn65gplustc_ccs     1.440000      32    46.080002
+NR3D1              tcbn65gplustc_ccs     3.240000       2     6.480000
+OR2XD1             tcbn65gplustc_ccs     2.160000       2     4.320000
+OR4D0              tcbn65gplustc_ccs     2.880000      32    92.160004
+-----------------------------------------------------------------------------
+Total 10 references                                  1793.879995
+
+****************************************
+Design: priority_encoder 
+****************************************
+Reference          Library       Unit Area   Count    Total Area   Attributes
+-----------------------------------------------------------------------------
+AOI21D0            tcbn65gplustc_ccs     2.160000       1     2.160000
+AOI31D1            tcbn65gplustc_ccs     2.520000       1     2.520000
+AOI32D1            tcbn65gplustc_ccs     2.880000       1     2.880000
+AOI211D0           tcbn65gplustc_ccs     2.520000       1     2.520000
+AOI211XD0          tcbn65gplustc_ccs     2.520000       2     5.040000
+AOI221D0           tcbn65gplustc_ccs     2.880000       8    23.040001
+AOI221D1           tcbn65gplustc_ccs     3.240000       3     9.720000
+CKND0              tcbn65gplustc_ccs     1.080000       8     8.640000
+CKND1              tcbn65gplustc_ccs     1.080000       1     1.080000
+IAO21D0            tcbn65gplustc_ccs     2.520000       1     2.520000
+IINR4D0            tcbn65gplustc_ccs     3.600000       1     3.600000
+IND2D1             tcbn65gplustc_ccs     2.160000       1     2.160000
+IND3D1             tcbn65gplustc_ccs     2.520000       2     5.040000
+IND4D0             tcbn65gplustc_ccs     2.880000       1     2.880000
+INR2D1             tcbn65gplustc_ccs     2.160000       1     2.160000
+INVD0              tcbn65gplustc_ccs     1.080000       1     1.080000
+INVD1              tcbn65gplustc_ccs     1.080000       3     3.240000
+IOA21D1            tcbn65gplustc_ccs     2.520000       1     2.520000
+ND2D1              tcbn65gplustc_ccs     1.440000       3     4.320000
+ND3D0              tcbn65gplustc_ccs     2.160000       1     2.160000
+NR2D0              tcbn65gplustc_ccs     1.440000       5     7.200000
+NR2D1              tcbn65gplustc_ccs     1.440000       7    10.080000
+NR3D0              tcbn65gplustc_ccs     2.160000       1     2.160000
+NR4D0              tcbn65gplustc_ccs     2.520000       4    10.080000
+OA31D0             tcbn65gplustc_ccs     2.880000       1     2.880000
+OAI21D0            tcbn65gplustc_ccs     2.160000       3     6.480000
+OAI31D1            tcbn65gplustc_ccs     2.520000       1     2.520000
+OAI211D0           tcbn65gplustc_ccs     2.520000       1     2.520000
+OR4D1              tcbn65gplustc_ccs     2.880000       1     2.880000
+OR4XD1             tcbn65gplustc_ccs     2.880000       1     2.880000
+-----------------------------------------------------------------------------
+Total 30 references                                   138.960003
+1

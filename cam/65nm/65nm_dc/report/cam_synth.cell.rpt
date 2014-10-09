@@ -1,0 +1,134 @@
+ 
+****************************************
+Report : cell
+Design : cam
+Version: I-2013.12-SP1
+Date   : Thu Oct  9 00:01:10 2014
+****************************************
+
+Attributes:
+    b - black box (unknown)
+    h - hierarchical
+    n - noncombinational
+    r - removable
+    u - contains unmapped logic
+
+Cell                      Reference       Library             Area  Attributes
+--------------------------------------------------------------------------------
+U23                       NR4D0           tcbn65gplustc_ccs
+                                                          2.520000  
+U24                       NR4D0           tcbn65gplustc_ccs
+                                                          2.520000  
+U25                       NR4D0           tcbn65gplustc_ccs
+                                                          2.520000  
+U26                       NR4D0           tcbn65gplustc_ccs
+                                                          2.520000  
+U27                       ND4D0           tcbn65gplustc_ccs
+                                                          2.520000  
+U28                       NR4D0           tcbn65gplustc_ccs
+                                                          2.520000  
+U29                       NR4D0           tcbn65gplustc_ccs
+                                                          2.520000  
+U30                       NR4D0           tcbn65gplustc_ccs
+                                                          2.520000  
+U31                       NR4D0           tcbn65gplustc_ccs
+                                                          2.520000  
+U32                       ND4D0           tcbn65gplustc_ccs
+                                                          2.520000  
+U33                       OA21D0          tcbn65gplustc_ccs
+                                                          2.520000  
+U34                       NR4D0           tcbn65gplustc_ccs
+                                                          2.520000  
+U35                       NR4D0           tcbn65gplustc_ccs
+                                                          2.520000  
+U36                       NR4D0           tcbn65gplustc_ccs
+                                                          2.520000  
+U37                       NR4D0           tcbn65gplustc_ccs
+                                                          2.520000  
+U38                       AN4D0           tcbn65gplustc_ccs
+                                                          2.880000  
+U39                       NR4D0           tcbn65gplustc_ccs
+                                                          2.520000  
+U40                       NR4D0           tcbn65gplustc_ccs
+                                                          2.520000  
+U41                       NR4D0           tcbn65gplustc_ccs
+                                                          2.520000  
+U42                       NR4D0           tcbn65gplustc_ccs
+                                                          2.520000  
+U43                       AN4D0           tcbn65gplustc_ccs
+                                                          2.880000  
+U44                       CKND2D0         tcbn65gplustc_ccs
+                                                          1.440000  
+read_dcdr                 decoder_5_32_1                  73.440003 h
+read_mux                  mux                             1793.879995
+                                                                    h
+search_ecdr               priority_encoder                138.960003
+                                                                    h
+words[0]                  cam_word_0                      466.560012
+                                                                    h, n
+words[1]                  cam_word_1                      465.120012
+                                                                    h, n
+words[2]                  cam_word_2                      465.120012
+                                                                    h, n
+words[3]                  cam_word_3                      465.120012
+                                                                    h, n
+words[4]                  cam_word_4                      465.120012
+                                                                    h, n
+words[5]                  cam_word_5                      465.120012
+                                                                    h, n
+words[6]                  cam_word_6                      465.120012
+                                                                    h, n
+words[7]                  cam_word_7                      465.120012
+                                                                    h, n
+words[8]                  cam_word_8                      465.120012
+                                                                    h, n
+words[9]                  cam_word_9                      465.120012
+                                                                    h, n
+words[10]                 cam_word_10                     465.120012
+                                                                    h, n
+words[11]                 cam_word_11                     465.120012
+                                                                    h, n
+words[12]                 cam_word_12                     465.120012
+                                                                    h, n
+words[13]                 cam_word_13                     465.120012
+                                                                    h, n
+words[14]                 cam_word_14                     465.120012
+                                                                    h, n
+words[15]                 cam_word_15                     465.120012
+                                                                    h, n
+words[16]                 cam_word_16                     470.160011
+                                                                    h, n
+words[17]                 cam_word_17                     465.120012
+                                                                    h, n
+words[18]                 cam_word_18                     465.840012
+                                                                    h, n
+words[19]                 cam_word_19                     465.120012
+                                                                    h, n
+words[20]                 cam_word_20                     465.120012
+                                                                    h, n
+words[21]                 cam_word_21                     465.120012
+                                                                    h, n
+words[22]                 cam_word_22                     465.120012
+                                                                    h, n
+words[23]                 cam_word_23                     465.120012
+                                                                    h, n
+words[24]                 cam_word_24                     465.120012
+                                                                    h, n
+words[25]                 cam_word_25                     465.120012
+                                                                    h, n
+words[26]                 cam_word_26                     465.120012
+                                                                    h, n
+words[27]                 cam_word_27                     465.120012
+                                                                    h, n
+words[28]                 cam_word_28                     465.120012
+                                                                    h, n
+words[29]                 cam_word_29                     465.120012
+                                                                    h, n
+words[30]                 cam_word_30                     465.120012
+                                                                    h, n
+words[31]                 cam_word_31                     465.120012
+                                                                    h, n
+write_dcdr                decoder_5_32_0                  73.440003 h
+--------------------------------------------------------------------------------
+Total 58 cells                                            17025.840374
+1
