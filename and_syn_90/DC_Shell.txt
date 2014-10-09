@@ -1,0 +1,2 @@
+dc_shell-xg-t -f dsyn.tcl
+design_vision-xg -f view.tcl

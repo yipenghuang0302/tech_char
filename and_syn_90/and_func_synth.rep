@@ -1,0 +1,63 @@
+ 
+****************************************
+Report : timing
+        -path full
+        -delay max
+        -max_paths 1
+Design : and_func
+Version: F-2011.09-SP2
+Date   : Wed Oct  8 19:10:06 2014
+****************************************
+
+Operating Conditions: TYPICAL   Library: saed90nm_typ
+Wire Load Model Mode: enclosed
+
+  Startpoint: a (input port)
+  Endpoint: y (output port)
+  Path Group: (none)
+  Path Type: max
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  and_func           ForQA                 saed90nm_typ
+
+  Point                                    Incr       Path
+  -----------------------------------------------------------
+  input external delay                     0.00       0.00 r
+  a (in)                                   0.00       0.00 r
+  U2/Q (AND2X1)                            0.08       0.08 r
+  y (out)                                  0.00       0.08 r
+  data arrival time                                   0.08
+  -----------------------------------------------------------
+  (Path is unconstrained)
+
+
+1
+ 
+****************************************
+Report : area
+Design : and_func
+Version: F-2011.09-SP2
+Date   : Wed Oct  8 19:10:06 2014
+****************************************
+
+Library(s) Used:
+
+    saed90nm_typ (File: /sim/synopsys/SAED_EDK90nm/Digital_Standard_Cell_Library/synopsys/models/saed90nm_typ.db)
+
+Number of ports:                            3
+Number of nets:                             3
+Number of cells:                            1
+Number of combinational cells:              1
+Number of sequential cells:                 0
+Number of macros:                           0
+Number of buf/inv:                          0
+Number of references:                       1
+
+Combinational area:          7.372800
+Noncombinational area:       0.000000
+Net Interconnect area:       0.248251  
+
+Total cell area:             7.372800
+Total area:                  7.621051
+1
