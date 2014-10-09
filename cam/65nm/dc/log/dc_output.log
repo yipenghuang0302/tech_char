@@ -1,0 +1,722 @@
+
+                      Design Compiler Graphical
+                            DC Ultra (TM)
+                             DFTMAX (TM)
+                         Power Compiler (TM)
+                           DesignWare (R)
+                           DC Expert (TM)
+                         Design Vision (TM)
+                          HDL Compiler (TM)
+                         VHDL Compiler (TM)
+                            DFT Compiler
+                        Library Compiler (TM)
+                         Design Compiler(R)
+
+          Version I-2013.12-SP1 for RHEL64 -- Jan 20, 2014
+               Copyright (c) 1988-2013 Synopsys, Inc.
+
+This software and the associated documentation are confidential and 
+proprietary to Synopsys, Inc. Your use or disclosure of this software 
+is subject to the terms and conditions of a written license agreement 
+between you, or your company, and Synopsys, Inc.
+
+Initializing...
+##################################################################
+# SYNTHESIS LIBRARIES
+##################################################################
+set SynopsysInstall [getenv "SYNOPSYS"]
+/usr/cad/syn
+# set designDB /sim/synopsys/SAED_EDK90nm/Digital_Standard_Cell_Library/synopsys/models/saed90nm_typ.db
+set designDB /vlsidl/dk/TSMC/tcbn65gplus/TSMCHOME/digital/Front_End/timing_power_noise/CCS/tcbn65gplus_200a/tcbn65gplustc_ccs.db
+/vlsidl/dk/TSMC/tcbn65gplus/TSMCHOME/digital/Front_End/timing_power_noise/CCS/tcbn65gplus_200a/tcbn65gplustc_ccs.db
+# set designDB /proj/arcade/synopsys/SAED32_EDK/lib/stdcell_rvt/db_ccs/saed32rvt_tt1p05v25c.db
+# This parameter is used to specify the synthesis tool all the paths that it should search when looking for a synthesis technology library for reference during synthesis.
+set search_path [list . [format "%s%s" $SynopsysInstall /dw/sim_ver]]
+. /usr/cad/syn/dw/sim_ver
+# The parameter specifies the file that contains all the logic cells that should used for mapping during synthesis. In other words, the tool during synthesis maps a design to the logic cells present in this library.
+set target_library $designDB
+/vlsidl/dk/TSMC/tcbn65gplus/TSMCHOME/digital/Front_End/timing_power_noise/CCS/tcbn65gplus_200a/tcbn65gplustc_ccs.db
+# Implementation for standard operators, such as +, *
+set synthetic_library [list dw_foundation.sldb]
+dw_foundation.sldb
+# This parameter points to the library that contains information on the logic gates in the synthesis technology library. The tool uses this library solely for reference but does not use the cells present in it for mapping as in the case of target_library.
+set link_library [concat [concat "*" $target_library] $synthetic_library]
+* /vlsidl/dk/TSMC/tcbn65gplus/TSMCHOME/digital/Front_End/timing_power_noise/CCS/tcbn65gplus_200a/tcbn65gplustc_ccs.db dw_foundation.sldb
+# This parameter points to the library that contains the “visual” information on the logic cells in the synthesis technology library. All logic cells have a symbolic representation and information about the symbols is stored in this library.
+set symbol_library [list generic.sdb]
+generic.sdb
+define_design_lib WORK -path ./WORK
+1
+##################################################################
+# DESIGN INFORMATION
+##################################################################
+set myFiles [glob ../../*.sv]
+../../mux.sv ../../ff.sv ../../priority_encoder.sv ../../cam.sv ../../cam_word.sv ../../decoder_5_32.sv
+set fileFormat sverilog; # verilog or sverilog
+sverilog
+set basename cam; # Top-level module name
+cam
+# Clock information
+set CLK "clk"; # The name of your clock
+clk
+set virtual 0; # 1 if virtual clock, 0 if real clock
+0
+# Timing information
+set clkPeriodNS 2.5 ; # Desired clock period (in ns)
+2.5
+# Input delay tells DC how long after the clock before an input becomes valid.
+set inDelayNS [expr $clkPeriodNS*.1]; # Delay from clock to inputs valid
+0.25
+set outDelayNS [expr $clkPeriodNS*.1]; # Delay from clock to output valid
+0.25
+# Driving and loading information
+# We assume all inputs to the design are driven by a fanout 16 inverter
+set inputDrive GINVD8
+GINVD8
+##################################################################
+# SYNTHESIS SETTINGS
+##################################################################
+# Controls whether a warning message is issued if a latch is inferred from a design.
+set hdlin_check_no_latch true
+true
+# Compiler switches.
+set useUltra 1 ; # 1 for compile_ultra, 0 for compile
+1
+# mapEffort, useUngroup are for non-ultra compile.
+set mapEffort1 high; # First pass - low, medium, or high
+high
+set mapEffort2 high; # second pass - low, medium, or high
+high
+set useUngroup 1 ; # 0 if no flatten, 1 if flatten
+1
+# Control the writing of result files
+set stage synth; # Name appended to output files
+synth
+# The following control which output files you want. They should be set to 1 if you want the file, 0 if not
+set writeV 1; # Compiled structural Verilog file
+1
+set writeDDC 1; # Compiled file in ddc format (XG-mode)
+1
+set writeSDF 1; # sdf file for back-annotated timing sim
+1
+set writeSDC 1; # sdc constraint file for place and route
+1
+set reportTiming 1; # Timing estimate
+1
+set reportArea 1; # Area estimate
+1
+set reportPower 1; # Power estimate
+1
+set reportReference 1; #
+1
+set reportDesign 1; #
+1
+set reportCell 1; #
+1
+set reportCompileOptions 1; #
+1
+set reportConstraint 1; #
+1
+##################################################################
+# READ IN THE DESIGN - the following shoudn't need modification
+##################################################################
+# Analyze and elaborate the files
+analyze -format $fileFormat -lib WORK $myFiles
+Running PRESTO HDLC
+Compiling source file ../../mux.sv
+Compiling source file ../../ff.sv
+Compiling source file ../../priority_encoder.sv
+Compiling source file ../../cam.sv
+Compiling source file ../../cam_word.sv
+Compiling source file ../../decoder_5_32.sv
+Presto compilation completed successfully.
+Loading db file '/vlsidl/dk/TSMC/tcbn65gplus/TSMCHOME/digital/Front_End/timing_power_noise/CCS/tcbn65gplus_200a/tcbn65gplustc_ccs.db'
+Information: Using CCS timing libraries. (TIM-024)
+Loading db file '/usr/cad/syn/libraries/syn/dw_foundation.sldb'
+1
+elaborate $basename -lib WORK -update
+Warning: Detected use of obsolete/unsupported feature.  The following
+	will not be available in a future release of the application:
+	elaborate -update. Use plain elaborate instead (CMD-100)
+Loading db file '/usr/cad/syn/libraries/syn/gtech.db'
+Loading db file '/usr/cad/syn/libraries/syn/standard.sldb'
+  Loading link library 'tcbn65gplustc_ccs'
+  Loading link library 'gtech'
+Running PRESTO HDLC
+Presto compilation completed successfully.
+Elaborated 1 design.
+Current design is now 'cam'.
+Information: Building the design 'cam_word'. (HDL-193)
+Presto compilation completed successfully.
+Information: Building the design 'decoder_5_32'. (HDL-193)
+
+Statistics for case statements in always block at line 8 in file
+	'../../decoder_5_32.sv'
+===============================================
+|           Line           |  full/ parallel  |
+===============================================
+|            9             |    auto/auto     |
+===============================================
+Presto compilation completed successfully.
+Information: Building the design 'priority_encoder'. (HDL-193)
+
+Statistics for case statements in always block at line 12 in file
+	'../../priority_encoder.sv'
+===============================================
+|           Line           |  full/ parallel  |
+===============================================
+|            13            |    auto/auto     |
+===============================================
+Presto compilation completed successfully.
+Information: Building the design 'mux'. (HDL-193)
+
+Statistics for case statements in always block at line 5 in file
+	'../../mux.sv'
+===============================================
+|           Line           |  full/ parallel  |
+===============================================
+|            6             |    auto/auto     |
+===============================================
+Presto compilation completed successfully.
+Information: Building the design 'FF' instantiated from design 'cam_word' with
+	the parameters "WIDTH=32". (HDL-193)
+
+Inferred memory devices in process
+	in routine FF_WIDTH32 line 8 in file
+		'../../ff.sv'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|      data_reg       | Flip-flop |  32   |  Y  | N  | N  | N  | N  | N  | N  |
+===============================================================================
+Presto compilation completed successfully.
+Information: Building the design 'FF'. (HDL-193)
+
+Inferred memory devices in process
+	in routine FF line 8 in file
+		'../../ff.sv'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|      data_reg       | Flip-flop |   1   |  N  | N  | N  | N  | N  | N  | N  |
+===============================================================================
+Presto compilation completed successfully.
+1
+list_designs
+FF                      cam_word                priority_encoder
+FF_WIDTH32              decoder_5_32
+cam (*)                 mux
+1
+current_design $basename
+Current design is 'cam'.
+{cam}
+check_design > report/${basename}.check_design.rpt
+# The link command makes sure that all the required design parts are linked together.
+link
+
+  Linking design 'cam'
+  Using the following designs and libraries:
+  --------------------------------------------------------------------------
+  * (7 designs)               /q/vlsidl5/p1/vlsidl/projects/hcdc/dc/yh_cam/tech_char/cam/65nm/dc/cam.db, etc
+  tcbn65gplustc_ccs (library) /vlsidl/dk/TSMC/tcbn65gplus/TSMCHOME/digital/Front_End/timing_power_noise/CCS/tcbn65gplus_200a/tcbn65gplustc_ccs.db
+  dw_foundation.sldb (library)
+                              /usr/cad/syn/libraries/syn/dw_foundation.sldb
+
+1
+# The uniquify command makes unique copies of replicated modules.
+uniquify
+Information: Uniquified 32 instances of design 'cam_word'. (OPT-1056)
+Information: Uniquified 2 instances of design 'decoder_5_32'. (OPT-1056)
+Information: Uniquified 32 instances of design 'FF_WIDTH32'. (OPT-1056)
+Information: Uniquified 32 instances of design 'FF'. (OPT-1056)
+1
+##################################################################
+# SET TIMING, LOADING, DRIVING INFORMATION
+##################################################################
+# Now you can create clocks for the design and set other constraints
+if { $virtual == 0 } {
+	create_clock -period $clkPeriodNS $CLK
+} else {
+	create_clock -period $clkPeriodNS -name $CLK
+}
+1
+# Try to fix hold time issues
+set_fix_hold $CLK
+1
+# Set the input and output delay relative to CLK
+if { $virtual == 0 } {
+	set_input_delay $inDelayNS -clock $CLK [all_inputs] 
+} else {
+	set_input_delay $inDelayNS -clock $CLK [remove_from_collection [all_inputs] $CLK]
+}
+1
+set_output_delay $outDelayNS -clock $CLK [all_outputs]
+1
+# Set the driving cell for all inputs except the clock The clock has infinite drive by default. This is usually what you want for synthesis because you will use other tools (like SOC Encounter) to build the clock tree (or define it by hand).
+if { $virtual == 0 } {
+	set_driving_cell -lib_cell $inputDrive [all_inputs]
+} else {
+	set_driving_cell -lib_cell $inputDrive [remove_from_collection [all_inputs] $CLK]
+}
+Warning: Design rule attributes from the driving cell will be
+	set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+	set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+	set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+	set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+	set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+	set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+	set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+	set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+	set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+	set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+	set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+	set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+	set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+	set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+	set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+	set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+	set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+	set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+	set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+	set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+	set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+	set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+	set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+	set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+	set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+	set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+	set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+	set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+	set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+	set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+	set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+	set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+	set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+	set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+	set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+	set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+	set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+	set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+	set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+	set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+	set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+	set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+	set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+	set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+	set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+	set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+	set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+	set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+	set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+	set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+	set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+	set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+	set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+	set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+	set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+	set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+	set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+	set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+	set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+	set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+	set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+	set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+	set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+	set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+	set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+	set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+	set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+	set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+	set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+	set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+	set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+	set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+	set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+	set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+	set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+	set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+	set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+	set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+	set on the port. (UID-401)
+1
+# Set the load of the circuit outputs in terms of the load of the next cell that they will drive
+set_load 13 [all_outputs]
+1
+# Define the load model for the wires
+set_wire_load_model -name ForQA
+Error: Wire load 'ForQA' not found. (UID-40)
+0
+# Minimize area
+set_max_area 0
+1
+# This command will fix the problem of having assign statements left in your structural file. But, it will insert pairs of inverters for feedthroughs!
+set_fix_multiple_port_nets -all -buffer_constants
+1
+##################################################################
+# Check for design errors
+# Designer should examine log file, look for:
+# - inferred latches not in syn.lib
+# - fanout nets other than clk
+##################################################################
+##################################################################
+# COMPILE
+##################################################################
+# Now compile the design with given mapping effort and do a second compile with incremental mapping or use the compile_ultra meta-command
+if { $useUltra == 1 } {
+	compile_ultra
+} else {
+	if { $useUngroup == 1 } {
+		compile -ungroup_all -map_effort $mapEffort1
+		compile -incremental_mapping -map_effort $mapEffort2
+	} else {
+		compile -map_effort $mapEffort1
+		compile -incremental_mapping -map_effort $mapEffort2
+	}
+}
+Analyzing: "/vlsidl/dk/TSMC/tcbn65gplus/TSMCHOME/digital/Front_End/timing_power_noise/CCS/tcbn65gplus_200a/tcbn65gplustc_ccs.db"
+Library analysis succeeded.
+Information: Evaluating DesignWare library utilization. (UISN-27)
+
+============================================================================
+| DesignWare Building Block Library  |         Version         | Available |
+============================================================================
+| Basic DW Building Blocks           | I-2013.12-DWBB_201312.1 |     *     |
+| Licensed DW Building Blocks        | I-2013.12-DWBB_201312.1 |     *     |
+============================================================================
+
+Information: Sequential output inversion is enabled.  SVF file must be used for formal verification. (OPT-1208)
+
+Loaded alib file './alib-52/tcbn65gplustc_ccs.db.alib'
+  Building model 'DW01_NAND2'
+Information: Ungrouping hierarchy read_dcdr before Pass 1 (OPT-776)
+Information: Ungrouping hierarchy search_ecdr before Pass 1 (OPT-776)
+Information: Ungrouping hierarchy words[31] before Pass 1 (OPT-776)
+Information: Ungrouping hierarchy words[0] before Pass 1 (OPT-776)
+Information: Ungrouping hierarchy words[1] before Pass 1 (OPT-776)
+Information: Ungrouping hierarchy words[2] before Pass 1 (OPT-776)
+Information: Ungrouping hierarchy words[3] before Pass 1 (OPT-776)
+Information: Ungrouping hierarchy words[4] before Pass 1 (OPT-776)
+Information: Ungrouping hierarchy words[5] before Pass 1 (OPT-776)
+Information: Ungrouping hierarchy words[6] before Pass 1 (OPT-776)
+Information: Ungrouping hierarchy words[7] before Pass 1 (OPT-776)
+Information: Ungrouping hierarchy words[8] before Pass 1 (OPT-776)
+Information: Ungrouping hierarchy words[9] before Pass 1 (OPT-776)
+Information: Ungrouping hierarchy words[10] before Pass 1 (OPT-776)
+Information: Ungrouping hierarchy words[11] before Pass 1 (OPT-776)
+Information: Ungrouping hierarchy words[12] before Pass 1 (OPT-776)
+Information: Ungrouping hierarchy words[13] before Pass 1 (OPT-776)
+Information: Ungrouping hierarchy words[14] before Pass 1 (OPT-776)
+Information: Ungrouping hierarchy words[15] before Pass 1 (OPT-776)
+Information: Ungrouping hierarchy words[16] before Pass 1 (OPT-776)
+Information: Ungrouping hierarchy words[17] before Pass 1 (OPT-776)
+Information: Ungrouping hierarchy words[18] before Pass 1 (OPT-776)
+Information: Ungrouping hierarchy words[19] before Pass 1 (OPT-776)
+Information: Ungrouping hierarchy words[20] before Pass 1 (OPT-776)
+Information: Ungrouping hierarchy words[21] before Pass 1 (OPT-776)
+Information: Ungrouping hierarchy words[22] before Pass 1 (OPT-776)
+Information: Ungrouping hierarchy words[23] before Pass 1 (OPT-776)
+Information: Ungrouping hierarchy words[24] before Pass 1 (OPT-776)
+Information: Ungrouping hierarchy words[25] before Pass 1 (OPT-776)
+Information: Ungrouping hierarchy words[26] before Pass 1 (OPT-776)
+Information: Ungrouping hierarchy words[27] before Pass 1 (OPT-776)
+Information: Ungrouping hierarchy words[28] before Pass 1 (OPT-776)
+Information: Ungrouping hierarchy words[29] before Pass 1 (OPT-776)
+Information: Ungrouping hierarchy words[30] before Pass 1 (OPT-776)
+Information: Ungrouping hierarchy write_dcdr before Pass 1 (OPT-776)
+Information: Ungrouping hierarchy words[31]/data_ff before Pass 1 (OPT-776)
+Information: Ungrouping hierarchy words[31]/valid_ff before Pass 1 (OPT-776)
+Information: Ungrouping hierarchy words[0]/data_ff before Pass 1 (OPT-776)
+Information: Ungrouping hierarchy words[1]/data_ff before Pass 1 (OPT-776)
+Information: Ungrouping hierarchy words[2]/data_ff before Pass 1 (OPT-776)
+Information: Ungrouping hierarchy words[3]/data_ff before Pass 1 (OPT-776)
+Information: Ungrouping hierarchy words[4]/data_ff before Pass 1 (OPT-776)
+Information: Ungrouping hierarchy words[5]/data_ff before Pass 1 (OPT-776)
+Information: Ungrouping hierarchy words[6]/data_ff before Pass 1 (OPT-776)
+Information: Ungrouping hierarchy words[7]/data_ff before Pass 1 (OPT-776)
+Information: Ungrouping hierarchy words[8]/data_ff before Pass 1 (OPT-776)
+Information: Ungrouping hierarchy words[9]/data_ff before Pass 1 (OPT-776)
+Information: Ungrouping hierarchy words[10]/data_ff before Pass 1 (OPT-776)
+Information: Ungrouping hierarchy words[11]/data_ff before Pass 1 (OPT-776)
+Information: Ungrouping hierarchy words[12]/data_ff before Pass 1 (OPT-776)
+Information: Ungrouping hierarchy words[13]/data_ff before Pass 1 (OPT-776)
+Information: Ungrouping hierarchy words[14]/data_ff before Pass 1 (OPT-776)
+Information: Ungrouping hierarchy words[15]/data_ff before Pass 1 (OPT-776)
+Information: Ungrouping hierarchy words[16]/data_ff before Pass 1 (OPT-776)
+Information: Ungrouping hierarchy words[17]/data_ff before Pass 1 (OPT-776)
+Information: Ungrouping hierarchy words[18]/data_ff before Pass 1 (OPT-776)
+Information: Ungrouping hierarchy words[19]/data_ff before Pass 1 (OPT-776)
+Information: Ungrouping hierarchy words[20]/data_ff before Pass 1 (OPT-776)
+Information: Ungrouping hierarchy words[21]/data_ff before Pass 1 (OPT-776)
+Information: Ungrouping hierarchy words[22]/data_ff before Pass 1 (OPT-776)
+Information: Ungrouping hierarchy words[23]/data_ff before Pass 1 (OPT-776)
+Information: Ungrouping hierarchy words[24]/data_ff before Pass 1 (OPT-776)
+Information: Ungrouping hierarchy words[25]/data_ff before Pass 1 (OPT-776)
+Information: Ungrouping hierarchy words[26]/data_ff before Pass 1 (OPT-776)
+Information: Ungrouping hierarchy words[27]/data_ff before Pass 1 (OPT-776)
+Information: Ungrouping hierarchy words[28]/data_ff before Pass 1 (OPT-776)
+Information: Ungrouping hierarchy words[29]/data_ff before Pass 1 (OPT-776)
+Information: Ungrouping hierarchy words[30]/data_ff before Pass 1 (OPT-776)
+Information: Ungrouping hierarchy words[0]/valid_ff before Pass 1 (OPT-776)
+Information: Ungrouping hierarchy words[1]/valid_ff before Pass 1 (OPT-776)
+Information: Ungrouping hierarchy words[2]/valid_ff before Pass 1 (OPT-776)
+Information: Ungrouping hierarchy words[3]/valid_ff before Pass 1 (OPT-776)
+Information: Ungrouping hierarchy words[4]/valid_ff before Pass 1 (OPT-776)
+Information: Ungrouping hierarchy words[5]/valid_ff before Pass 1 (OPT-776)
+Information: Ungrouping hierarchy words[6]/valid_ff before Pass 1 (OPT-776)
+Information: Ungrouping hierarchy words[7]/valid_ff before Pass 1 (OPT-776)
+Information: Ungrouping hierarchy words[8]/valid_ff before Pass 1 (OPT-776)
+Information: Ungrouping hierarchy words[9]/valid_ff before Pass 1 (OPT-776)
+Information: Ungrouping hierarchy words[10]/valid_ff before Pass 1 (OPT-776)
+Information: Ungrouping hierarchy words[11]/valid_ff before Pass 1 (OPT-776)
+Information: Ungrouping hierarchy words[12]/valid_ff before Pass 1 (OPT-776)
+Information: Ungrouping hierarchy words[13]/valid_ff before Pass 1 (OPT-776)
+Information: Ungrouping hierarchy words[14]/valid_ff before Pass 1 (OPT-776)
+Information: Ungrouping hierarchy words[15]/valid_ff before Pass 1 (OPT-776)
+Information: Ungrouping hierarchy words[16]/valid_ff before Pass 1 (OPT-776)
+Information: Ungrouping hierarchy words[17]/valid_ff before Pass 1 (OPT-776)
+Information: Ungrouping hierarchy words[18]/valid_ff before Pass 1 (OPT-776)
+Information: Ungrouping hierarchy words[19]/valid_ff before Pass 1 (OPT-776)
+Information: Ungrouping hierarchy words[20]/valid_ff before Pass 1 (OPT-776)
+Information: Ungrouping hierarchy words[21]/valid_ff before Pass 1 (OPT-776)
+Information: Ungrouping hierarchy words[22]/valid_ff before Pass 1 (OPT-776)
+Information: Ungrouping hierarchy words[23]/valid_ff before Pass 1 (OPT-776)
+Information: Ungrouping hierarchy words[24]/valid_ff before Pass 1 (OPT-776)
+Information: Ungrouping hierarchy words[25]/valid_ff before Pass 1 (OPT-776)
+Information: Ungrouping hierarchy words[26]/valid_ff before Pass 1 (OPT-776)
+Information: Ungrouping hierarchy words[27]/valid_ff before Pass 1 (OPT-776)
+Information: Ungrouping hierarchy words[28]/valid_ff before Pass 1 (OPT-776)
+Information: Ungrouping hierarchy words[29]/valid_ff before Pass 1 (OPT-776)
+Information: Ungrouping hierarchy words[30]/valid_ff before Pass 1 (OPT-776)
+Information: Ungrouping 99 of 101 hierarchies before Pass 1 (OPT-775)
+
+  Beginning Pass 1 Mapping
+  ------------------------
+  Processing 'cam'
+Information: Added key list 'DesignWare' to design 'cam'. (DDB-72)
+  Processing 'mux'
+
+  Updating timing information
+Information: Updating design information... (UID-85)
+
+  Beginning Mapping Optimizations  (Ultra High effort)
+  -------------------------------
+  Mapping Optimization (Phase 1)
+
+                                  TOTAL                                                
+   ELAPSED            WORST NEG   SETUP    DESIGN                             MIN DELAY
+    TIME      AREA      SLACK     COST    RULE COST         ENDPOINT            COST   
+  --------- --------- --------- --------- --------- ------------------------- ---------
+    0:00:46   22781.9      1.05      38.4     636.1                                0.00
+    0:00:47   22781.9      1.05      38.4     636.1                                0.00
+    0:00:47   22781.9      1.05      38.4     636.1                                0.00
+    0:00:48   22775.0      1.05      38.4     636.1                                0.00
+  Re-synthesis Optimization (Phase 1)
+  Re-synthesis Optimization (Phase 2)
+  Global Optimization (Phase 1)
+  Global Optimization (Phase 2)
+  Global Optimization (Phase 3)
+  Global Optimization (Phase 4)
+  Global Optimization (Phase 5)
+  Global Optimization (Phase 6)
+  Global Optimization (Phase 7)
+  Global Optimization (Phase 8)
+  Global Optimization (Phase 9)
+  Global Optimization (Phase 10)
+  Global Optimization (Phase 11)
+  Global Optimization (Phase 12)
+  Global Optimization (Phase 13)
+  Global Optimization (Phase 14)
+  Global Optimization (Phase 15)
+  Global Optimization (Phase 16)
+  Global Optimization (Phase 17)
+  Global Optimization (Phase 18)
+  Global Optimization (Phase 19)
+  Global Optimization (Phase 20)
+  Global Optimization (Phase 21)
+  Global Optimization (Phase 22)
+  Global Optimization (Phase 23)
+  Global Optimization (Phase 24)
+  Global Optimization (Phase 25)
+  Global Optimization (Phase 26)
+  Global Optimization (Phase 27)
+  Global Optimization (Phase 28)
+  Global Optimization (Phase 29)
+  Global Optimization (Phase 30)
+
+
+
+  Beginning Delay Optimization Phase
+  ----------------------------------
+
+                                  TOTAL                                                
+   ELAPSED            WORST NEG   SETUP    DESIGN                             MIN DELAY
+    TIME      AREA      SLACK     COST    RULE COST         ENDPOINT            COST   
+  --------- --------- --------- --------- --------- ------------------------- ---------
+    0:01:19   17524.8      0.89      30.5     634.6                                0.00
+    0:01:21   17585.6      0.86      30.3     634.6                                0.00
+    0:01:23   17816.0      0.86      29.3     632.9                                0.00
+    0:01:25   17920.4      0.86      28.9     632.9                                0.00
+    0:01:26   17937.7      0.86      28.8     632.9                                0.00
+    0:01:40   18839.5      0.85      28.7     633.0                                0.00
+    0:01:40   18839.5      0.85      28.7     633.0                                0.00
+    0:01:41   18977.4      0.83      28.7     633.0                                0.00
+    0:01:41   18977.4      0.83      28.7     633.0                                0.00
+    0:02:06   19934.6      0.82      28.6     633.0                                0.00
+    0:02:06   19934.6      0.82      28.6     633.0                                0.00
+    0:03:15   21133.8      0.78      28.3     633.1                                0.00
+    0:03:15   21133.8      0.78      28.3     633.1                                0.00
+    0:03:56   21107.5      0.78      28.3     633.1                                0.00
+
+  Beginning Delay Optimization
+  ----------------------------
+    0:03:56   21107.5      0.78      28.3     633.1                                0.00
+    0:04:09   21209.8      0.78      28.3     633.1                                0.00
+    0:04:09   21209.8      0.78      28.3     633.1                                0.00
+    0:05:04   21264.5      0.78      28.3     633.1                                0.00
+    0:05:04   21264.5      0.78      28.3     633.1                                0.00
+    0:05:12   21302.6      0.78      28.3     633.1                                0.00
+    0:05:12   21302.6      0.78      28.3     633.1                                0.00
+    0:05:14   21302.6      0.78      28.3     633.1                                0.00
+
+
+  Beginning Design Rule Fixing  (max_transition)  (max_capacitance)
+  ----------------------------
+
+                                  TOTAL                                                
+   ELAPSED            WORST NEG   SETUP    DESIGN                             MIN DELAY
+    TIME      AREA      SLACK     COST    RULE COST         ENDPOINT            COST   
+  --------- --------- --------- --------- --------- ------------------------- ---------
+    0:05:14   21302.6      0.78      28.3     633.1                                0.00
+  Global Optimization (Phase 31)
+  Global Optimization (Phase 32)
+  Global Optimization (Phase 33)
+    0:05:16   21412.4      0.78      28.4     632.9 search_index[1]                0.00
+    0:05:18   21422.9      0.90      32.0     634.6 net10398                       0.00
+    0:05:21   21398.4      0.89      32.4     634.3 search_index[1]                0.00
+    0:05:24   21335.4      0.88      32.4     634.3 search_index[2]                0.00
+    0:05:26   21330.4      0.90      32.5     634.2                                0.00
+    0:05:29   20917.8      0.82      28.0     637.8                                0.00
+    0:05:29   20917.8      0.82      28.0     637.8                                0.00
+    0:05:39   20872.1      0.80      27.9     637.8                                0.00
+    0:06:04   21160.4      0.79      27.8     637.7                                0.00
+
+                                  TOTAL                                                
+   ELAPSED            WORST NEG   SETUP    DESIGN                             MIN DELAY
+    TIME      AREA      SLACK     COST    RULE COST         ENDPOINT            COST   
+  --------- --------- --------- --------- --------- ------------------------- ---------
+    0:06:05   21160.4      0.79      27.8     637.7                                0.00
+    0:06:05   21172.3      0.79      27.8     637.7                                0.00
+    0:06:10   21203.3      0.78      27.8     637.8                                0.00
+
+
+  Beginning Area-Recovery Phase  (max_area 0)
+  -----------------------------
+
+                                  TOTAL                                                
+   ELAPSED            WORST NEG   SETUP    DESIGN                             MIN DELAY
+    TIME      AREA      SLACK     COST    RULE COST         ENDPOINT            COST   
+  --------- --------- --------- --------- --------- ------------------------- ---------
+    0:06:10   21203.3      0.78      27.8     637.8                                0.00
+  Global Optimization (Phase 34)
+  Global Optimization (Phase 35)
+  Global Optimization (Phase 36)
+  Global Optimization (Phase 37)
+  Global Optimization (Phase 38)
+  Global Optimization (Phase 39)
+  Global Optimization (Phase 40)
+  Global Optimization (Phase 41)
+  Global Optimization (Phase 42)
+  Global Optimization (Phase 43)
+  Global Optimization (Phase 44)
+  Global Optimization (Phase 45)
+  Global Optimization (Phase 46)
+  Global Optimization (Phase 47)
+  Global Optimization (Phase 48)
+  Global Optimization (Phase 49)
+  Global Optimization (Phase 50)
+  Global Optimization (Phase 51)
+  Global Optimization (Phase 52)
+  Global Optimization (Phase 53)
+  Global Optimization (Phase 54)
+  Global Optimization (Phase 55)
+  Global Optimization (Phase 56)
+    0:06:23   19714.3      0.86      29.3     637.3 search_index[2]                0.00
+    0:06:23   19729.8      0.86      29.3     637.3                                0.00

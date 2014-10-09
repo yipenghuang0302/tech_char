@@ -2,9 +2,9 @@
 # SYNTHESIS LIBRARIES
 ##################################################################
 set SynopsysInstall [getenv "SYNOPSYS"]
-# set designDB /sim/synopsys/SAED_EDK90nm/Digital_Standard_Cell_Library/synopsys/models/saed90nm_typ.db
+set designDB /sim/synopsys/SAED_EDK90nm/Digital_Standard_Cell_Library/synopsys/models/saed90nm_typ.db
 # set designDB /vlsidl/dk/TSMC/tcbn65gplus/TSMCHOME/digital/Front_End/timing_power_noise/CCS/tcbn65gplus_140b/tcbn65gplustc.db
-set designDB /proj/arcade/synopsys/SAED32_EDK/lib/stdcell_rvt/db_ccs/saed32rvt_tt1p05v25c.db
+# set designDB /proj/arcade/synopsys/SAED32_EDK/lib/stdcell_rvt/db_ccs/saed32rvt_tt1p05v25c.db
 
 # This parameter is used to specify the synthesis tool all the paths that it should search when looking for a synthesis technology library for reference during synthesis.
 set search_path [list . [format "%s%s" $SynopsysInstall /dw/sim_ver]]
@@ -36,8 +36,8 @@ set inDelayNS [expr $clkPeriodNS*.1]; # Delay from clock to inputs valid
 set outDelayNS [expr $clkPeriodNS*.1]; # Delay from clock to output valid
 
 # Driving and loading information
-# We assume all inputs to the design are driven by a fanout 16 inverter
-set inputDrive INVX16_RVT
+# We assume all inputs to the design are driven by a fanout 8 inverter
+set inputDrive INVX8
 
 ##################################################################
 # SYNTHESIS SETTINGS
@@ -151,7 +151,7 @@ if { $useUltra == 1 } {
 }
 
 check_library
-report_lib saed32rvt_tt1p05v25c > report/report_lib.rpt
+report_lib saed90nm_typ > report/report_lib.rpt
 
 ##################################################################
 # WRITE NETLIST & OTHER INFO FOR LAYOUT

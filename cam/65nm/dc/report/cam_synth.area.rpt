@@ -1,0 +1,32 @@
+ 
+****************************************
+Report : area
+Design : cam
+Version: I-2013.12-SP1
+Date   : Wed Oct  8 23:31:01 2014
+****************************************
+
+Library(s) Used:
+
+    gtech (File: /usr/cad/syn/libraries/syn/gtech.db)
+
+Number of ports:                          118
+Number of nets:                          1330
+Number of cells:                           98
+Number of combinational cells:             62
+Number of sequential cells:                 0
+Number of macros/black boxes:               0
+Number of buf/inv:                          0
+Number of references:                      37
+
+Combinational area:                  0.000000
+Buf/Inv area:                        0.000000
+Noncombinational area:               0.000000
+Macro/Black Box area:                0.000000
+Net Interconnect area:      undefined  (No wire load specified)
+
+Total cell area:                     0.000000
+Total area:                 undefined
+
+Information: This design contains unmapped logic. (RPT-7)
+1

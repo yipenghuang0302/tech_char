@@ -1,0 +1,118 @@
+ 
+****************************************
+Report : cell
+Design : cam
+Version: I-2013.12-SP1
+Date   : Wed Oct  8 23:31:02 2014
+****************************************
+
+Attributes:
+    b - black box (unknown)
+    h - hierarchical
+    n - noncombinational
+    r - removable
+    u - contains unmapped logic
+
+Cell                      Reference       Library             Area  Attributes
+--------------------------------------------------------------------------------
+C8                        GTECH_OR2       gtech           0.000000  u
+C9                        GTECH_OR2       gtech           0.000000  u
+C10                       GTECH_OR2       gtech           0.000000  u
+C11                       GTECH_OR2       gtech           0.000000  u
+C12                       GTECH_OR2       gtech           0.000000  u
+C13                       GTECH_OR2       gtech           0.000000  u
+C14                       GTECH_OR2       gtech           0.000000  u
+C15                       GTECH_OR2       gtech           0.000000  u
+C16                       GTECH_OR2       gtech           0.000000  u
+C17                       GTECH_OR2       gtech           0.000000  u
+C18                       GTECH_OR2       gtech           0.000000  u
+C19                       GTECH_OR2       gtech           0.000000  u
+C20                       GTECH_OR2       gtech           0.000000  u
+C21                       GTECH_OR2       gtech           0.000000  u
+C22                       GTECH_OR2       gtech           0.000000  u
+C23                       GTECH_OR2       gtech           0.000000  u
+C24                       GTECH_OR2       gtech           0.000000  u
+C25                       GTECH_OR2       gtech           0.000000  u
+C26                       GTECH_OR2       gtech           0.000000  u
+C27                       GTECH_OR2       gtech           0.000000  u
+C28                       GTECH_OR2       gtech           0.000000  u
+C29                       GTECH_OR2       gtech           0.000000  u
+C30                       GTECH_OR2       gtech           0.000000  u
+C31                       GTECH_OR2       gtech           0.000000  u
+C32                       GTECH_OR2       gtech           0.000000  u
+C33                       GTECH_OR2       gtech           0.000000  u
+C34                       GTECH_OR2       gtech           0.000000  u
+C35                       GTECH_OR2       gtech           0.000000  u
+C36                       GTECH_OR2       gtech           0.000000  u
+C37                       GTECH_OR2       gtech           0.000000  u
+C38                       GTECH_OR2       gtech           0.000000  u
+C39                       GTECH_OR2       gtech           0.000000  u
+C40                       GTECH_OR2       gtech           0.000000  u
+C41                       GTECH_OR2       gtech           0.000000  u
+C42                       GTECH_OR2       gtech           0.000000  u
+C43                       GTECH_OR2       gtech           0.000000  u
+C44                       GTECH_OR2       gtech           0.000000  u
+C45                       GTECH_OR2       gtech           0.000000  u
+C46                       GTECH_OR2       gtech           0.000000  u
+C47                       GTECH_OR2       gtech           0.000000  u
+C48                       GTECH_OR2       gtech           0.000000  u
+C49                       GTECH_OR2       gtech           0.000000  u
+C50                       GTECH_OR2       gtech           0.000000  u
+C51                       GTECH_OR2       gtech           0.000000  u
+C52                       GTECH_OR2       gtech           0.000000  u
+C53                       GTECH_OR2       gtech           0.000000  u
+C54                       GTECH_OR2       gtech           0.000000  u
+C55                       GTECH_OR2       gtech           0.000000  u
+C56                       GTECH_OR2       gtech           0.000000  u
+C57                       GTECH_OR2       gtech           0.000000  u
+C58                       GTECH_OR2       gtech           0.000000  u
+C59                       GTECH_OR2       gtech           0.000000  u
+C60                       GTECH_OR2       gtech           0.000000  u
+C61                       GTECH_OR2       gtech           0.000000  u
+C62                       GTECH_OR2       gtech           0.000000  u
+C63                       GTECH_OR2       gtech           0.000000  u
+C64                       GTECH_OR2       gtech           0.000000  u
+C65                       GTECH_OR2       gtech           0.000000  u
+C66                       GTECH_OR2       gtech           0.000000  u
+C67                       GTECH_OR2       gtech           0.000000  u
+C68                       GTECH_OR2       gtech           0.000000  u
+C69                       GTECH_OR2       gtech           0.000000  u
+read_dcdr                 decoder_5_32_1                  0.000000  h, u
+read_mux                  mux                             0.000000  h, u
+search_ecdr               priority_encoder                0.000000  h, u
+words[0]                  cam_word_0                      0.000000  h, n, u
+words[1]                  cam_word_1                      0.000000  h, n, u
+words[2]                  cam_word_2                      0.000000  h, n, u
+words[3]                  cam_word_3                      0.000000  h, n, u
+words[4]                  cam_word_4                      0.000000  h, n, u
+words[5]                  cam_word_5                      0.000000  h, n, u
+words[6]                  cam_word_6                      0.000000  h, n, u
+words[7]                  cam_word_7                      0.000000  h, n, u
+words[8]                  cam_word_8                      0.000000  h, n, u
+words[9]                  cam_word_9                      0.000000  h, n, u
+words[10]                 cam_word_10                     0.000000  h, n, u
+words[11]                 cam_word_11                     0.000000  h, n, u
+words[12]                 cam_word_12                     0.000000  h, n, u
+words[13]                 cam_word_13                     0.000000  h, n, u
+words[14]                 cam_word_14                     0.000000  h, n, u
+words[15]                 cam_word_15                     0.000000  h, n, u
+words[16]                 cam_word_16                     0.000000  h, n, u
+words[17]                 cam_word_17                     0.000000  h, n, u
+words[18]                 cam_word_18                     0.000000  h, n, u
+words[19]                 cam_word_19                     0.000000  h, n, u
+words[20]                 cam_word_20                     0.000000  h, n, u
+words[21]                 cam_word_21                     0.000000  h, n, u
+words[22]                 cam_word_22                     0.000000  h, n, u
+words[23]                 cam_word_23                     0.000000  h, n, u
+words[24]                 cam_word_24                     0.000000  h, n, u
+words[25]                 cam_word_25                     0.000000  h, n, u
+words[26]                 cam_word_26                     0.000000  h, n, u
+words[27]                 cam_word_27                     0.000000  h, n, u
+words[28]                 cam_word_28                     0.000000  h, n, u
+words[29]                 cam_word_29                     0.000000  h, n, u
+words[30]                 cam_word_30                     0.000000  h, n, u
+words[31]                 cam_word_31                     0.000000  h, n, u
+write_dcdr                decoder_5_32_0                  0.000000  h, u
+--------------------------------------------------------------------------------
+Total 98 cells                                            0.000000
+1

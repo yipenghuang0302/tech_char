@@ -2,8 +2,8 @@
 # SYNTHESIS LIBRARIES
 ##################################################################
 set SynopsysInstall [getenv "SYNOPSYS"]
-set designDB /sim/synopsys/SAED_EDK90nm/Digital_Standard_Cell_Library/synopsys/models/saed90nm_typ.db
-# set designDB /vlsidl/dk/TSMC/tcbn65gplus/TSMCHOME/digital/Front_End/timing_power_noise/CCS/tcbn65gplus_140b/tcbn65gplustc.db
+# set designDB /sim/synopsys/SAED_EDK90nm/Digital_Standard_Cell_Library/synopsys/models/saed90nm_typ.db
+set designDB /vlsidl/dk/TSMC/tcbn65gplus/TSMCHOME/digital/Front_End/timing_power_noise/CCS/tcbn65gplus_200a/tcbn65gplustc_ccs.db
 # set designDB /proj/arcade/synopsys/SAED32_EDK/lib/stdcell_rvt/db_ccs/saed32rvt_tt1p05v25c.db
 
 # This parameter is used to specify the synthesis tool all the paths that it should search when looking for a synthesis technology library for reference during synthesis.
@@ -37,7 +37,7 @@ set outDelayNS [expr $clkPeriodNS*.1]; # Delay from clock to output valid
 
 # Driving and loading information
 # We assume all inputs to the design are driven by a fanout 16 inverter
-set inputDrive INVX16
+set inputDrive GINVD8
 
 ##################################################################
 # SYNTHESIS SETTINGS
@@ -116,7 +116,7 @@ if { $virtual == 0 } {
 }
 
 # Set the load of the circuit outputs in terms of the load of the next cell that they will drive
-set_load 13 [all_outputs]
+set_load .013 [all_outputs]
 
 # Define the load model for the wires
 set_wire_load_model -name ForQA
@@ -151,7 +151,7 @@ if { $useUltra == 1 } {
 }
 
 check_library
-report_lib saed90nm_typ > report/report_lib.rpt
+report_lib tcbn65gplustc > report/report_lib.rpt
 
 ##################################################################
 # WRITE NETLIST & OTHER INFO FOR LAYOUT

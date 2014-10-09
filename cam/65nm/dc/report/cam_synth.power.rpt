@@ -1,0 +1,54 @@
+Warning: Main library 'dw_foundation.sldb' does not specify the following units required for power: 'Leakage Power, Capacitance, Voltage, Time'. (PWR-424)
+Information: Propagating switching activity (low effort zero delay simulation). (PWR-6)
+Warning: Design has unannotated primary inputs. (PWR-414)
+Warning: Design has unannotated sequential cell outputs. (PWR-415)
+ 
+****************************************
+Report : power
+        -analysis_effort low
+Design : cam
+Version: I-2013.12-SP1
+Date   : Wed Oct  8 23:31:02 2014
+****************************************
+
+
+Library(s) Used:
+
+    gtech (File: /usr/cad/syn/libraries/syn/gtech.db)
+
+
+Operating Conditions: nom_pvt   Library: dw_foundation.sldb
+Wire Load Model Mode: top
+
+
+Global Operating Voltage = 5    
+Power-specific unit information :
+    Voltage Units = Unitless
+    Capacitance Units = Unitless
+    Time Units = Unitless
+    Dynamic Power Units = Unitless    (derived from V,C,T units)
+    Leakage Power Units = Unitless
+
+
+  Cell Internal Power  =   0.0000     (0%)
+  Net Switching Power  =  32.9483   (100%)
+                         ---------
+Total Dynamic Power    =  32.9483   (100%)
+
+Cell Leakage Power     =   0.0000 
+
+Error: Either dynamic power or leakage power, in the library, is unitless. Unable to display complete power group summary. (PWR-799)
+
+                 Internal         Switching           Leakage            Total
+Power Group      Power            Power               Power              Power   (   %    )  Attrs
+--------------------------------------------------------------------------------------------------
+io_pad             0.0000            0.0000            0.0000               NA   (     N/A)
+memory             0.0000            0.0000            0.0000               NA   (     N/A)
+black_box          0.0000            0.0000            0.0000               NA   (     N/A)
+clock_network      0.0000            0.0000            0.0000               NA   (     N/A)
+register           0.0000            0.0000            0.0000               NA   (     N/A)
+sequential         0.0000            0.0000            0.0000               NA   (     N/A)
+combinational      0.0000           32.9483            0.0000               NA   (     N/A)
+--------------------------------------------------------------------------------------------------
+Total              0.0000           32.9483            0.0000               NA        
+1
