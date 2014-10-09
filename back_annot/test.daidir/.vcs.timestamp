@@ -1,0 +1,84 @@
+1        
+0 cam_synth.sdf_c
+27
++define+SV
++define+VPD
++itf+/sim/synopsys64/vcs/amd64/lib/vcsdp.tab
++vcsd
+-Mamsrun=
+-Masflags=
+-Mcc=gcc
+-Mcfl= -pipe -O -I/sim/synopsys64/vcs/include
+-Mcplusplus=g++
+-Mcrt0=
+-Mcrtn=
+-Mcsrc=
+-Mldflags=
+-Mobjects= /sim/synopsys64/vcs/amd64/lib/libvirsim.so /sim/synopsys64/vcs/amd64/lib/liberrorinf.so /sim/synopsys64/vcs/amd64/lib/libsnpsmalloc.so
+-Mout=test
+-Msaverestoreobj=/sim/synopsys64/vcs/amd64/lib/vcs_save_restore_new.o
+-Msyslibs=-ldl -lm
+-Mvcsaceobjs=
+-full64
+-gen_obj
+-o test
+-pp_used
+-sverilog
+/sim/synopsys64/vcs/amd64/bin/vcs1
+cam_synth.v
+cam_test.sv
+saed32nm.v
+40
+sysc_uni_pwd=/home/kbhardwaj/4340_files/Lab3/back_annot
+WORKON_HOME=/home/kbhardwaj/.virtualenvs
+VMR_MODE_FLAG=64
+VIRTUALENVWRAPPER_PROJECT_FILENAME=.project
+VIRTUALENVWRAPPER_LOG_DIR=/home/kbhardwaj/.virtualenvs
+VIRTUALENVWRAPPER_HOOK_DIR=/home/kbhardwaj/.virtualenvs
+VCS_MODE_FLAG=64
+VCS_HOME=/sim/synopsys64/vcs
+VCS_DEPTH=0
+VCS_ARG_ADDED_FOR_TMP=1
+VCS_ARCH=amd64
+UNAME=/bin/uname
+TOOL_HOME=/sim/synopsys64/vcs/amd64
+SYN_DIR=/sim/synopsys64
+SYNTH_HOME=/sim/synopsys64/icc
+SYNOPSYS=/sim/synopsys64/icc
+SSH_TTY=/dev/pts/3
+SSH_CONNECTION=160.39.10.245 52093 128.59.15.73 22
+SSH_CLIENT=160.39.10.245 52093 22
+SNPSLMD_LICENSE_FILE=28100@license.cs.columbia.edu:/sim/synopsys64/vcs/flexlm//license.dat
+SCRNAME=vcs
+SCRIPT_NAME=vcs
+SAED_PDK_32=/sim/synopsys64/saed_mc/etc/techs/SAED_PDK_32
+SAED_MC_32_28_PDK=/sim/synopsys64/saed_mc/etc/techs/SAED_PDK_32/
+PRIMETIME_HOME=/sim/synopsys64/primetime
+PERL5LIB=/sim/synopsys64/saed_mc/lib:
+OVA_UUM=0
+MC_HOME=/sim/synopsys64/saed_mc
+MCRAMLIBDIR=/tech
+MCLIBDIR=/tech
+MCENVDIR=/localadm:/adm
+MCBIN=/../linux/mc/bin
+LEDA_PATH=/sim/synopsys64/leda
+ICV_HOME_DIR=/sim/synopsys64/icv
+ICCOMPILER_HOME=/sim/synopsys/iccompiler
+HSPICE_HOME=/sim/synopsys/hspice/hspice
+FPGA_HOME=/sim/synopsys64/fpga
+FORMALITY_HOME=/sim/synopsys64/formality
+ENV=/home/kbhardwaj/.profile
+CDPATH=:/home/kbhardwaj
+0
+5
+1412868376 cam_synth.sdf
+1412693937 cam_test.sv
+1412833393 saed32nm.v
+1412868390 cam_synth.v
+1322023114 /sim/synopsys64/vcs/amd64/lib/vcsdp.tab
+4
+0 
+1322023672 /sim/synopsys64/vcs/amd64/lib/libvirsim.so
+1322023397 /sim/synopsys64/vcs/amd64/lib/liberrorinf.so
+1322023255 /sim/synopsys64/vcs/amd64/lib/libsnpsmalloc.so
+1412870124 test.daidir
