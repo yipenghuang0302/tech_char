@@ -18,9 +18,6 @@ set link_library [concat [concat "*" $target_library] $synthetic_library]
 set symbol_library [list generic.sdb]
 define_design_lib WORK -path ./WORK
 
-check_library saed90nm_typ > report/check_library.rpt
-report_lib saed90nm_typ > report/report_lib.rpt
-
 ##################################################################
 # DESIGN INFORMATION
 ##################################################################
@@ -33,7 +30,7 @@ set CLK "clk"; # The name of your clock
 set virtual 0; # 1 if virtual clock, 0 if real clock
 
 # Timing information
-set clkPeriodNS 2 ; # Desired clock period (in ns)
+set clkPeriodNS 2.5 ; # Desired clock period (in ns)
 # Input delay tells DC how long after the clock before an input becomes valid.
 set inDelayNS [expr $clkPeriodNS*.1]; # Delay from clock to inputs valid
 set outDelayNS [expr $clkPeriodNS*.1]; # Delay from clock to output valid
@@ -68,7 +65,6 @@ set writeSDC 1; # sdc constraint file for place and route
 set reportTiming 1; # Timing estimate
 set reportArea 1; # Area estimate
 set reportPower 1; # Power estimate
-
 
 set reportReference 1; #
 set reportDesign 1; #
@@ -154,6 +150,9 @@ if { $useUltra == 1 } {
 	}
 }
 
+check_library
+report_lib saed90nm_typ > report/report_lib.rpt
+
 ##################################################################
 # WRITE NETLIST & OTHER INFO FOR LAYOUT
 ##################################################################
@@ -179,12 +178,12 @@ if { $writeSDC == 1 } {
 }
 
 # Synopsys database format in case you want to read this synthesized result back in to synopsys later in XG mode (ddc format)
-if { $writeDDC == 1 } {
-	set filename [format "%s%s" $filebase ".ddc"]
-	write -format ddc -hierarchy -o $filename
-	set mw_filename [format "%s%s" $filebase "_DCT"]
-	write_milkyway -overwrite -o $mw_filename
-}
+# if { $writeDDC == 1 } {
+# 	set filename [format "%s%s" $filebase ".ddc"]
+# 	write -format ddc -hierarchy -o $filename
+# 	set mw_filename [format "%s%s" $filebase "_DCT"]
+# 	write_milkyway -overwrite -output $mw_filename
+# }
 
 ##################################################################
 # WRITE REPORTS ABOUT DESIGN AND COMPILATION

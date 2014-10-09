@@ -6,4 +6,4 @@ icc:
 	icc_shell -f psyn.tcl 2>&1 | tee log/icc_output.log
 	icc_shell -gui
 clean:
-	rm -rf WORK/ *_LIB/ *.svf log/*.log *.rep *.ref *.pow *_ICC *.ddc *.sdc *.sdf *_synth.v alib-52/
+	rm -rf WORK/ *_LIB/ *.svf log/*.log *.log report/*.rpt *.ddc *.sdc *.sdf *_synth.v alib-52/

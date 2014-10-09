@@ -1,0 +1,69 @@
+ 
+****************************************
+Report : reference
+Design : cam
+Version: F-2011.09-SP2
+Date   : Wed Oct  8 23:02:31 2014
+****************************************
+
+Attributes:
+    b - black box (unknown)
+   bo - allows boundary optimization
+    d - dont_touch
+   mo - map_only
+    h - hierarchical
+    n - noncombinational
+    r - removable
+    s - synthetic operator
+    u - contains unmapped logic
+
+Reference          Library       Unit Area   Count    Total Area   Attributes
+-----------------------------------------------------------------------------
+AND2X1             saed90nm_typ     7.372800       3    22.118400 
+AND4X1             saed90nm_typ    10.137600       1    10.137600 
+AO21X1             saed90nm_typ    10.137600      32   324.403198 
+AO22X1             saed90nm_typ    11.980800    1026 12292.300467 
+AO221X1            saed90nm_typ    12.902400      29   374.169600 
+AOI22X1            saed90nm_typ    12.902400      36   464.486401 
+DFFX1              saed90nm_typ    24.883200    1056 26276.658875 n
+IBUFFX4            saed90nm_typ    12.902400       4    51.609600 
+IBUFFX32           saed90nm_typ    56.217602       1    56.217602 
+INVX0              saed90nm_typ     5.529600     107   591.667215 
+MUX21X1            saed90nm_typ    11.059200     901  9964.339458 
+MUX41X1            saed90nm_typ    23.040001      10   230.400009 
+NAND2X0            saed90nm_typ     5.529600       5    27.648001 
+NAND2X1            saed90nm_typ     5.529600      14    77.414402 
+NAND3X0            saed90nm_typ     7.372800       8    58.982399 
+NAND3X1            saed90nm_typ    11.980800       1    11.980800 
+NAND4X0            saed90nm_typ     8.294400     225  1866.240048 
+NBUFFX2            saed90nm_typ     5.529600       2    11.059200 
+NOR2X0             saed90nm_typ     5.529600      55   304.128008 
+NOR2X1             saed90nm_typ     6.451200      28   180.633600 
+NOR3X0             saed90nm_typ     8.294400       1     8.294400 
+NOR4X0             saed90nm_typ     9.216000      98   903.167961 
+OA21X1             saed90nm_typ     9.216000       1     9.216000 
+OA22X1             saed90nm_typ    11.059200       2    22.118401 
+OA221X1            saed90nm_typ    12.902400      48   619.315201 
+OAI22X1            saed90nm_typ    12.902400      22   283.852800 
+OAI221X1           saed90nm_typ    14.745600       1    14.745600 
+OR2X1              saed90nm_typ     7.372800       4    29.491199 
+OR3X1              saed90nm_typ     9.216000       1     9.216000 
+mux                            7866.777395       1   7866.777395  h
+-----------------------------------------------------------------------------
+Total 30 references                                 62962.789840
+
+****************************************
+Design: mux 
+****************************************
+Reference          Library       Unit Area   Count    Total Area   Attributes
+-----------------------------------------------------------------------------
+AO22X1             saed90nm_typ    11.980800     512  6134.169434 
+INVX0              saed90nm_typ     5.529600       5    27.648001 
+NAND2X1            saed90nm_typ     5.529600       6    33.177601 
+NAND3X0            saed90nm_typ     7.372800       6    44.236799 
+NAND4X0            saed90nm_typ     8.294400      32   265.420807 
+NOR2X0             saed90nm_typ     5.529600      33   182.476805 
+NOR4X0             saed90nm_typ     9.216000     128  1179.647949 
+-----------------------------------------------------------------------------
+Total 7 references                                   7866.777395
+1

@@ -1,0 +1,15 @@
+ 
+****************************************
+check_design summary:
+Version:     F-2011.09-SP2
+Date:        Wed Oct  8 23:01:57 2014
+****************************************
+
+                   Name                                            Total
+--------------------------------------------------------------------------------
+Nets                                                                1
+    Net has multiple drivers (LINT-4)                               1
+--------------------------------------------------------------------------------
+
+Information: In design 'cam', net 'search_valid' has multiple drivers.  Wired AND assumed. (LINT-4)
+1
