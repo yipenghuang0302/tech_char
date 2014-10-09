@@ -8,7 +8,7 @@ Report : power
         -analysis_effort low
 Design : cam
 Version: F-2011.09-SP2
-Date   : Wed Oct  8 23:02:31 2014
+Date   : Thu Oct  9 00:09:29 2014
 ****************************************
 
 
@@ -35,12 +35,12 @@ Power-specific unit information :
     Leakage Power Units = 1pW
 
 
-  Cell Internal Power  = 590.3525 uW   (67%)
-  Net Switching Power  = 293.9730 uW   (33%)
+  Cell Internal Power  = 574.2373 uW   (66%)
+  Net Switching Power  = 301.4802 uW   (34%)
                          ---------
-Total Dynamic Power    = 884.3254 uW  (100%)
+Total Dynamic Power    = 875.7175 uW  (100%)
 
-Cell Leakage Power     = 294.9741 uW
+Cell Leakage Power     = 294.4132 uW
 
 
                  Internal         Switching           Leakage            Total
@@ -50,9 +50,9 @@ io_pad             0.0000            0.0000            0.0000            0.0000 
 memory             0.0000            0.0000            0.0000            0.0000  (   0.00%)
 black_box          0.0000            0.0000            0.0000            0.0000  (   0.00%)
 clock_network      0.0000            0.0000            0.0000            0.0000  (   0.00%)
-register       -2.4123e+01            9.3408        1.3275e+08          117.9624 (  10.00%)
+register       -2.4124e+01            9.3408        1.3275e+08          117.9623 (  10.08%)
 sequential         0.0000            0.0000            0.0000            0.0000  (   0.00%)
-combinational    614.4764          284.6328        1.6223e+08        1.0613e+03  (  90.00%)
+combinational    598.3611          292.1400        1.6167e+08        1.0522e+03  (  89.92%)
 --------------------------------------------------------------------------------------------------
-Total            590.3530 uW       293.9737 uW     2.9497e+08 pW     1.1793e+03 uW
+Total            574.2376 uW       301.4809 uW     2.9441e+08 pW     1.1701e+03 uW
 1

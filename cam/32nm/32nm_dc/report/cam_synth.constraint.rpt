@@ -5,16 +5,16 @@ Report : constraint
         -verbose
 Design : cam
 Version: F-2011.09-SP2
-Date   : Wed Oct  8 23:14:49 2014
+Date   : Thu Oct  9 00:09:24 2014
 ****************************************
 
 
     Design: cam
 
     max_area            0.00000
-  - Current Area       18517.43750
+  - Current Area       18583.55859
   ------------------------------
-    Slack              -18517.43750  (VIOLATED)
+    Slack              -18583.55859  (VIOLATED)
 
 
 1

@@ -73,9 +73,9 @@ set inDelayNS [expr $clkPeriodNS*.1]; # Delay from clock to inputs valid
 set outDelayNS [expr $clkPeriodNS*.1]; # Delay from clock to output valid
 0.25
 # Driving and loading information
-# We assume all inputs to the design are driven by a fanout 16 inverter
-set inputDrive INVX16
-INVX16
+# We assume all inputs to the design are driven by a fanout 8 inverter
+set inputDrive INVX8
+INVX8
 ##################################################################
 # SYNTHESIS SETTINGS
 ##################################################################
@@ -200,7 +200,7 @@ link
   Linking design 'cam'
   Using the following designs and libraries:
   --------------------------------------------------------------------------
-  * (7 designs)               /proj/castl/home/yipeng/eecs4340_14/lab3/tech_char/cam/ff/90nm/dc/cam.db, etc
+  * (7 designs)               /proj/castl/home/yipeng/eecs4340_14/lab3/tech_char/cam/90nm/90nm_dc/cam.db, etc
   saed90nm_typ (library)      /sim/synopsys/SAED_EDK90nm/Digital_Standard_Cell_Library/synopsys/models/saed90nm_typ.db
   dw_foundation.sldb (library)
                               /sim/synopsys64/icc/libraries/syn/dw_foundation.sldb
@@ -433,7 +433,8 @@ if { $useUltra == 1 } {
 		compile -incremental_mapping -map_effort $mapEffort2
 	}
 }
-Alib files are up-to-date.
+Analyzing: "/sim/synopsys/SAED_EDK90nm/Digital_Standard_Cell_Library/synopsys/models/saed90nm_typ.db"
+Library analysis succeeded.
 Information: Evaluating DesignWare library utilization. (UISN-27)
 
 ============================================================================
@@ -562,10 +563,10 @@ Information: Updating design information... (UID-85)
    ELAPSED            WORST NEG TOTAL NEG  DESIGN                             MIN DELAY
     TIME      AREA      SLACK     SLACK   RULE COST         ENDPOINT            COST   
   --------- --------- --------- --------- --------- ------------------------- ---------
-    0:00:24  101200.8      0.00       0.0       0.0                                0.00
-    0:00:24  101200.8      0.00       0.0       0.0                                0.00
-    0:00:24  101200.8      0.00       0.0       0.0                                0.00
-    0:00:24  101200.8      0.00       0.0       0.0                                0.00
+    0:00:24  101288.9      0.00       0.0       0.0                                0.00
+    0:00:24  101288.9      0.00       0.0       0.0                                0.00
+    0:00:24  101288.9      0.00       0.0       0.0                                0.00
+    0:00:24  101288.9      0.00       0.0       0.0                                0.00
   Re-synthesis Optimization (Phase 1)
   Re-synthesis Optimization (Phase 2)
   Global Optimization (Phase 1)
@@ -607,45 +608,45 @@ Information: Updating design information... (UID-85)
    ELAPSED            WORST NEG TOTAL NEG  DESIGN                             MIN DELAY
     TIME      AREA      SLACK     SLACK   RULE COST         ENDPOINT            COST   
   --------- --------- --------- --------- --------- ------------------------- ---------
-    0:00:27   67005.5      0.00       0.0       0.0                                0.00
-    0:00:27   67005.5      0.00       0.0       0.0                                0.00
-    0:00:27   67005.5      0.00       0.0       0.0                                0.00
-    0:00:27   67005.5      0.00       0.0       0.0                                0.00
-    0:00:27   67005.5      0.00       0.0       0.0                                0.00
-    0:00:27   67005.5      0.00       0.0       0.0                                0.00
-    0:00:27   67005.5      0.00       0.0       0.0                                0.00
-    0:00:27   67005.5      0.00       0.0       0.0                                0.00
-    0:00:27   67005.5      0.00       0.0       0.0                                0.00
-    0:00:27   67005.5      0.00       0.0       0.0                                0.00
-    0:00:27   67005.5      0.00       0.0       0.0                                0.00
-    0:00:27   67005.5      0.00       0.0       0.0                                0.00
-    0:00:27   67005.5      0.00       0.0       0.0                                0.00
+    0:00:28   66958.5      0.00       0.0       0.0                                0.00
+    0:00:28   66958.5      0.00       0.0       0.0                                0.00
+    0:00:28   66958.5      0.00       0.0       0.0                                0.00
+    0:00:28   66958.5      0.00       0.0       0.0                                0.00
+    0:00:28   66958.5      0.00       0.0       0.0                                0.00
+    0:00:28   66958.5      0.00       0.0       0.0                                0.00
+    0:00:28   66958.5      0.00       0.0       0.0                                0.00
+    0:00:28   66958.5      0.00       0.0       0.0                                0.00
+    0:00:28   66958.5      0.00       0.0       0.0                                0.00
+    0:00:28   66958.5      0.00       0.0       0.0                                0.00
+    0:00:28   66958.5      0.00       0.0       0.0                                0.00
+    0:00:28   66958.5      0.00       0.0       0.0                                0.00
+    0:00:28   66958.5      0.00       0.0       0.0                                0.00
 
   Beginning Delay Optimization
   ----------------------------
-    0:00:27   67005.5      0.00       0.0       0.0                                0.00
-    0:00:27   67005.5      0.00       0.0       0.0                                0.00
-    0:00:27   67005.5      0.00       0.0       0.0                                0.00
-    0:00:27   67005.5      0.00       0.0       0.0                                0.00
-    0:00:27   67005.5      0.00       0.0       0.0                                0.00
-    0:00:27   67005.5      0.00       0.0       0.0                                0.00
-    0:00:27   67005.5      0.00       0.0       0.0                                0.00
-    0:00:27   67005.5      0.00       0.0       0.0                                0.00
-    0:00:27   67005.5      0.00       0.0       0.0                                0.00
-    0:00:27   67005.5      0.00       0.0       0.0                                0.00
-    0:00:27   67005.5      0.00       0.0       0.0                                0.00
-    0:00:27   67005.5      0.00       0.0       0.0                                0.00
-    0:00:28   66983.1      0.00       0.0       0.0                                0.00
-    0:00:28   65948.6      0.01       0.0       0.0                                0.00
-    0:00:28   65948.6      0.01       0.0       0.0                                0.00
-    0:00:29   65955.1      0.00       0.0       0.0                                0.00
-    0:00:29   65955.1      0.00       0.0       0.0                                0.00
+    0:00:28   66958.5      0.00       0.0       0.0                                0.00
+    0:00:28   66958.5      0.00       0.0       0.0                                0.00
+    0:00:28   66958.5      0.00       0.0       0.0                                0.00
+    0:00:28   66958.5      0.00       0.0       0.0                                0.00
+    0:00:28   66958.5      0.00       0.0       0.0                                0.00
+    0:00:28   66958.5      0.00       0.0       0.0                                0.00
+    0:00:28   66958.5      0.00       0.0       0.0                                0.00
+    0:00:28   66958.5      0.00       0.0       0.0                                0.00
+    0:00:28   66958.5      0.00       0.0       0.0                                0.00
+    0:00:28   66958.5      0.00       0.0       0.0                                0.00
+    0:00:28   66958.5      0.00       0.0       0.0                                0.00
+    0:00:28   66958.5      0.00       0.0       0.0                                0.00
+    0:00:28   66936.2      0.00       0.0       0.0                                0.00
+    0:00:29   66190.9      0.00       0.0       0.0                                0.00
+    0:00:29   66190.9      0.00       0.0       0.0                                0.00
+    0:00:29   66190.9      0.00       0.0       0.0                                0.00
+    0:00:29   66190.9      0.00       0.0       0.0                                0.00
 
    ELAPSED            WORST NEG TOTAL NEG  DESIGN                             MIN DELAY
     TIME      AREA      SLACK     SLACK   RULE COST         ENDPOINT            COST   
   --------- --------- --------- --------- --------- ------------------------- ---------
-    0:00:29   65955.1      0.00       0.0       0.0                                0.00
-    0:00:30   65955.1      0.00       0.0       0.0                                0.00
+    0:00:29   66190.9      0.00       0.0       0.0                                0.00
+    0:00:30   66190.9      0.00       0.0       0.0                                0.00
 
 
   Beginning Area-Recovery Phase  (max_area 0)
@@ -654,7 +655,7 @@ Information: Updating design information... (UID-85)
    ELAPSED            WORST NEG TOTAL NEG  DESIGN                             MIN DELAY
     TIME      AREA      SLACK     SLACK   RULE COST         ENDPOINT            COST   
   --------- --------- --------- --------- --------- ------------------------- ---------
-    0:00:30   65942.3      0.00       0.0       0.0                                0.00
+    0:00:30   66178.1      0.00       0.0       0.0                                0.00
   Global Optimization (Phase 1)
   Global Optimization (Phase 2)
   Global Optimization (Phase 3)
@@ -674,26 +675,26 @@ Information: Updating design information... (UID-85)
   Global Optimization (Phase 12)
   Global Optimization (Phase 13)
   Global Optimization (Phase 14)
-    0:00:31   65731.0      0.00       0.0       0.0                                0.00
-    0:00:31   65731.0      0.00       0.0       0.0                                0.00
-    0:00:31   65731.0      0.00       0.0       0.0                                0.00
-    0:00:31   65731.0      0.00       0.0       0.0                                0.00
-    0:00:31   65731.0      0.00       0.0       0.0                                0.00
-    0:00:31   65731.0      0.00       0.0       0.0                                0.00
-    0:00:31   65731.0      0.00       0.0       0.0                                0.00
-    0:00:31   65731.0      0.00       0.0       0.0                                0.00
-    0:00:31   65731.0      0.00       0.0       0.0                                0.00
-    0:00:31   65731.0      0.00       0.0       0.0                                0.00
-    0:00:31   65731.0      0.00       0.0       0.0                                0.00
-    0:00:31   65731.0      0.00       0.0       0.0                                0.00
-    0:00:31   65731.0      0.00       0.0       0.0                                0.00
-    0:00:31   65731.0      0.00       0.0       0.0                                0.00
-    0:00:31   65731.0      0.00       0.0       0.0                                0.00
-    0:00:31   65731.0      0.00       0.0       0.0                                0.00
-    0:00:31   65731.0      0.00       0.0       0.0                                0.00
-    0:00:31   65731.0      0.00       0.0       0.0                                0.00
-    0:00:31   65731.0      0.00       0.0       0.0                                0.00
-    0:00:31   65731.0      0.00       0.0       0.0                                0.00
+    0:00:31   65714.3      0.00       0.0       0.0                                0.00
+    0:00:31   65714.3      0.00       0.0       0.0                                0.00
+    0:00:31   65714.3      0.00       0.0       0.0                                0.00
+    0:00:31   65714.3      0.00       0.0       0.0                                0.00
+    0:00:31   65714.3      0.00       0.0       0.0                                0.00
+    0:00:31   65714.3      0.00       0.0       0.0                                0.00
+    0:00:31   65714.3      0.00       0.0       0.0                                0.00
+    0:00:31   65714.3      0.00       0.0       0.0                                0.00
+    0:00:31   65714.3      0.00       0.0       0.0                                0.00
+    0:00:31   65714.3      0.00       0.0       0.0                                0.00
+    0:00:31   65714.3      0.00       0.0       0.0                                0.00
+    0:00:31   65714.3      0.00       0.0       0.0                                0.00
+    0:00:31   65714.3      0.00       0.0       0.0                                0.00
+    0:00:31   65714.3      0.00       0.0       0.0                                0.00
+    0:00:31   65714.3      0.00       0.0       0.0                                0.00
+    0:00:31   65714.3      0.00       0.0       0.0                                0.00
+    0:00:31   65714.3      0.00       0.0       0.0                                0.00
+    0:00:31   65714.3      0.00       0.0       0.0                                0.00
+    0:00:31   65714.3      0.00       0.0       0.0                                0.00
+    0:00:31   65714.3      0.00       0.0       0.0                                0.00
 Loading db file '/sim/synopsys/SAED_EDK90nm/Digital_Standard_Cell_Library/synopsys/models/saed90nm_typ.db'
 
   Optimization Complete
@@ -715,7 +716,7 @@ if { $writeV == 1 } {
 	set filename [format "%s%s" $filebase ".v"]
 	write -format verilog -hierarchy -output $filename
 }
-Writing verilog file '/proj/castl/home/yipeng/eecs4340_14/lab3/tech_char/cam/ff/90nm/dc/cam_synth.v'.
+Writing verilog file '/proj/castl/home/yipeng/eecs4340_14/lab3/tech_char/cam/90nm/90nm_dc/cam_synth.v'.
 1
 # Write out the sdf file for back-annotated verilog sim
 # This file can be large!
@@ -724,7 +725,7 @@ if { $writeSDF == 1 } {
 	write_sdf -version 1.0 $filename
 }
 Information: Annotated 'cell' delays are assumed to include load delay. (UID-282)
-Information: Writing timing information to file '/proj/castl/home/yipeng/eecs4340_14/lab3/tech_char/cam/ff/90nm/dc/cam_synth.sdf'. (WT-3)
+Information: Writing timing information to file '/proj/castl/home/yipeng/eecs4340_14/lab3/tech_char/cam/90nm/90nm_dc/cam_synth.sdf'. (WT-3)
 Information: Updating design information... (UID-85)
 Warning: Design 'cam' contains 1 high-fanout nets. A fanout number of 1000 will be used for delay calculations involving these nets. (TIM-134)
 1

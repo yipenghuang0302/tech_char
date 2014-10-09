@@ -1,7 +1,7 @@
 #@ # 
 #@ # Running dc_shell Version F-2011.09-SP2 for amd64 -- Nov 24, 2011
-#@ # Date:   Wed Oct  8 23:01:56 2014
-#@ # Run by: yipeng@amman
+#@ # Date:   Thu Oct  9 00:07:34 2014
+#@ # Run by: yipeng@lisbon
 #@ 
 
 source /sim/synopsys64/icc/admin/setup/.synopsys_dc.setup
@@ -4718,7 +4718,7 @@ source /sim/synopsys64/icc/admin/setup/.synopsys_dc.setup
 #@ 
 #@ # -- End source /sim/synopsys64/icc/admin/setup/.synopsys_dc.setup
 
-source -echo -verbose /proj/castl/home/yipeng/eecs4340_14/lab3/tech_char/cam/ff/90nm/dc/dsyn.tcl
+source -echo -verbose /proj/castl/home/yipeng/eecs4340_14/lab3/tech_char/cam/90nm/90nm_dc/dsyn.tcl
 #@ ##################################################################
 #@ # SYNTHESIS LIBRARIES
 #@ ##################################################################
@@ -4757,8 +4757,8 @@ source -echo -verbose /proj/castl/home/yipeng/eecs4340_14/lab3/tech_char/cam/ff/
 #@ set outDelayNS [expr $clkPeriodNS*.1]; # Delay from clock to output valid
 #@ 
 #@ # Driving and loading information
-#@ # We assume all inputs to the design are driven by a fanout 16 inverter
-#@ set inputDrive INVX16
+#@ # We assume all inputs to the design are driven by a fanout 8 inverter
+#@ set inputDrive INVX8
 #@ 
 #@ ##################################################################
 #@ # SYNTHESIS SETTINGS
