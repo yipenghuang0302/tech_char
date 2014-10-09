@@ -5,7 +5,7 @@
 set SynopsysInstall [getenv "SYNOPSYS"]
 #set stdcellhome /sim/synopsys/SAED_EDK90nm/Digital_Standard_Cell_Library/
 
-set design_db /proj/arcade/synopsys/SAED32_EDK/lib/stdcell_rvt/db_ccs/saed32rvt_tt1p05v25c.db
+set design_db /vlsidl/dk/TSMC/tcbn65lp/TSMCHOME/digital/Front_End/timing_power_noise/CCS/tcbn65lp_200a/tcbn65lptc_ccs.db
 
 
 #set design_db  $stdcellhome/synopsys/models/saed90nm_typ.db
@@ -50,7 +50,7 @@ set virtual 0                        ;# 1 if virtual clock, 0 if real clock
 # valid. 
 #set inDelay_ns [expr $clkPeriod_ns*.1]  ;# delay from clock to inputs valid
 #set outDelay_ns [expr $clkPeriod_ns*.1] ;# delay from clock to output valid
-set inputDrive INVX16_RVT
+set inputDrive GINVD8
 set LoadLib $design_db  ;# name of library the cell comes from
 set myLoadPin "IN"             ;# name of pin that the outputs drive
 set CLK_SKEW 0.10

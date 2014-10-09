@@ -4,6 +4,6 @@ module and_func ( a, b, y );
   output y;
 
 
-  AND2X1_RVT U2 ( .A1(b), .A2(a), .Y(y) );
+  AN2D0 U2 ( .A1(b), .A2(a), .Z(y) );
 endmodule
 

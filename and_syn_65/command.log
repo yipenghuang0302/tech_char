@@ -1,10 +1,12 @@
 #@ # 
-#@ # Running dc_shell Version F-2011.09-SP2 for amd64 -- Nov 24, 2011
-#@ # Date:   Thu Oct  9 01:15:58 2014
-#@ # Run by: kbhardwa@tripoli
+#@ # Running dc_shell Version I-2013.12-SP1 for amd64 -- Jan 20, 2014
+#@ # Date:   Thu Oct  9 14:34:15 2014
+#@ # Run by: yipeng@vlsidl4.ee.columbia.edu
 #@ 
 
-source /sim/synopsys64/icc/admin/setup/.synopsys_dc.setup
+source /usr/cad/syn/admin/setup/.synopsys_dc.setup
+#@ # -- Starting source /usr/cad/syn/admin/setup/.synopsys_dc.setup
+
 #@ #
 #@ #		".synopsys_dc.setup" Initialization File for
 #@ #
@@ -39,13 +41,23 @@ source /sim/synopsys64/icc/admin/setup/.synopsys_dc.setup
 #@ update_app_var -default true sh_enable_page_mode
 #@ set sh_source_uses_search_path   "true"
 #@ update_app_var -default true sh_source_uses_search_path
-#@ if {$synopsys_program_name == "dc_shell"} {
+#@ if {$synopsys_program_name == "dc_shell" ||     $synopsys_program_name == "dc_sms_shell" } {
 #@ set sh_new_variable_message	 "false"
 #@ update_app_var -default false sh_new_variable_message
 #@ } else {
 #@ set sh_new_variable_message	 "true"
 #@ update_app_var -default true sh_new_variable_message
 #@ }
+#@ 
+#@ if {$synopsys_program_name == "dc_shell"} {
+#@ set html_log_enable	     "false"
+#@ set html_log_filename	 "default.html"
+#@ }
+#@ 
+#@ if {$synopsys_program_name == "de_shell"} {
+#@ set de_log_html_filename	 "default.html"
+#@ }
+#@ 
 #@ if { [string compare $dc_shell_mode "tcl"] == 0 } {
 #@  set sh_enable_line_editing       "true"
 #@  set sh_line_editing_mode         "emacs"
@@ -67,8 +79,8 @@ source /sim/synopsys64/icc/admin/setup/.synopsys_dc.setup
 #@ array set auto_index {}
 #@ set auto_oldpath ""
 #@ 
-#@ # Enable debug output on fatal 
-#@ if { $sh_arch == "sparc"   || $sh_arch == "sparcOS5" ||      $sh_arch == "sparc64" || $sh_arch == "hpux10"   ||      $sh_arch == "hp700"   || $sh_arch == "hp32"     ||      $sh_arch == "hp64"    || $sh_arch == "linux" } {
+#@ # Enable customer support banner on fatal
+#@ if { $sh_arch == "linux"    || $sh_arch == "amd64"    ||      $sh_arch == "suse32"   || $sh_arch == "suse64"   ||      $sh_arch == "sparcOS5" || $sh_arch == "sparc64"  ||      $sh_arch == "x86sol32" || $sh_arch == "x86sol64" ||      $sh_arch == "rs6000"   || $sh_arch == "aix64" } {
 #@    setenv SYNOPSYS_TRACE ""
 #@ }
 #@ 
@@ -77,9 +89,13 @@ source /sim/synopsys64/icc/admin/setup/.synopsys_dc.setup
 #@ #
 #@ if { [string compare $dc_shell_mode "tcl"] == 0 } {
 #@   source $synopsys_root/auxx/syn/.dc_common_procs.tcl
-#@   source $synopsys_root/auxx/syn/.dc_procs.tcl
+#@   if {$synopsys_program_name != "dc_sms_shell"} {
+#@     source $synopsys_root/auxx/syn/.dc_procs.tcl
+#@   }
 #@   alias list_commands help
 #@ }
+#@ # -- Starting source /usr/cad/syn/auxx/syn/.dc_common_procs.tcl
+
 #@ ##############################################################################
 #@ #
 #@ #
@@ -276,7 +292,9 @@ source /sim/synopsys64/icc/admin/setup/.synopsys_dc.setup
 #@ }
 #@ define_proc_attributes _Variable_Groups_Get_Variables_Of_Group -hidden
 #@ 
-#@ # -- End source /sim/synopsys64/icc/auxx/syn/.dc_common_procs.tcl
+#@ # -- End source /usr/cad/syn/auxx/syn/.dc_common_procs.tcl
+
+#@ # -- Starting source /usr/cad/syn/auxx/syn/.dc_procs.tcl
 
 #@ ##############################################################################
 #@ #
@@ -1014,6 +1032,9 @@ source /sim/synopsys64/icc/admin/setup/.synopsys_dc.setup
 #@ #  PROCEDURE:   write_mw_lib_files
 #@ #
 #@ #  ABSTRACT:    Write technology or reference control file
+#@ #  History: Yun Zhang 2012/12/11, public option -stream_layer_map_file
+#@ #  History: Yun Zhang 2012/9/5. support new hidden option -vt_cell_placement_properties
+#@ #  History: Yun Zhang 2011/12/5. add new hidden option -stream_layer_map_file
 #@ #
 #@ ##############################################################################
 #@ proc write_mw_lib_files args {
@@ -1032,6 +1053,12 @@ source /sim/synopsys64/icc/admin/setup/.synopsys_dc.setup
 #@      } elseif {[info exists ra(-plib)]} {
 #@        echo "Error: Cannot specify '-reference_control_file' with '-plib'.(CMD-001)"
 #@        return 0
+#@      } elseif {[info exists ra(-vt_cell_placement_properties)]} {
+#@        echo "Error: Cannot specify '-reference_control_file' with '-vt_cell_placement_properties'.(CMD-001)"
+#@        return 0
+#@      } elseif {[info exists ra(-stream_layer_map_file)]} {
+#@        echo "Error: Cannot specify '-reference_control_file' with '-stream_layer_map_file'.(CMD-001)"
+#@        return 0
 #@      } else {
 #@        set cmd [format {report_mw_lib_ref_ctrl_file -output %s %s}                            $ra(-output)                            $ra() ]
 #@        return [uplevel #0 $cmd]
@@ -1042,6 +1069,12 @@ source /sim/synopsys64/icc/admin/setup/.synopsys_dc.setup
 #@      if {[info exists ra(-plib)]} {
 #@        echo "Error: Cannot specify '-technology' with '-plib'.(CMD-001)"
 #@        return 0
+#@      } elseif {[info exists ra(-vt_cell_placement_properties)]} {
+#@        echo "Error: Cannot specify '-technology' with '-vt_cell_placement_properties'.(CMD-001)"
+#@        return 0
+#@      } elseif {[info exists ra(-stream_layer_map_file)]} {
+#@        echo "Error: Cannot specify '-technology' with '-stream_layer_map_file'.(CMD-001)"
+#@        return 0
 #@      } else {
 #@        set cmd [format {org_report_mw_lib -output %s %s}                            $ra(-output)                            $ra() ]
 #@        return [uplevel #0 $cmd]
@@ -1049,12 +1082,36 @@ source /sim/synopsys64/icc/admin/setup/.synopsys_dc.setup
 #@   }
 #@ 
 #@   if {[info exists ra(-plib)]} {
-#@     set cmd [format {write_plib -lib_name %s %s}                         $ra()                         $ra(-output) ]
-#@     return [uplevel #0 $cmd]
+#@     if {[info exists ra(-stream_layer_map_file)]} {
+#@        echo "Error: Cannot specify '-plib' with '-stream_layer_map_file'.(CMD-001)"
+#@        return 0
+#@     } elseif {[info exists ra(-vt_cell_placement_properties)]} {
+#@        echo "Error: Cannot specify '-plib' with '-vt_cell_placement_properties'.(CMD-001)"
+#@        return 0
+#@     } else {
+#@ 	set cmd [format {write_plib -lib_name %s %s} 	$ra() 	$ra(-output) ]
+#@ 	return [uplevel #0 $cmd]
+#@     }
 #@   }
+#@ 
+#@   if {[info exists ra(-vt_cell_placement_properties)]} {
+#@     if {[info exists ra(-stream_layer_map_file)]} {
+#@        echo "Error: Cannot specify '-vt_cell_placement_properties' with '-stream_layer_map_file'.(CMD-001)"
+#@        return 0
+#@      } else {
+#@        set cmd [format {org_report_mw_lib -vt_cell_placement_properties  -output %s %s}        $ra(-output)        $ra() ]
+#@        return [uplevel #0 $cmd]
+#@      }
+#@   }
+#@ 
+#@   if {[info exists ra(-stream_layer_map_file)]} {
+#@        set cmd [format {org_report_mw_lib -stream_layer_map_file %s -output %s %s} 			$ra(-stream_layer_map_file)                         $ra(-output)                         $ra() ]
+#@        return [uplevel #0 $cmd]
+#@   }
+#@   
 #@ }
 #@ 
-#@ define_proc_attributes write_mw_lib_files -hide_body     -info " Write technology or reference control file "     -define_args       {{-technology "Dump technology file" "" boolean {optional}} 	  {-plib "Dump plib file" "" boolean {optional}}       {-reference_control_file "Dump reference control file" "" boolean {optional}}       {-output "Output file" "file_name" string {required}}       {"" "Library to be reported" "libName" string {required}}}
+#@ define_proc_attributes write_mw_lib_files -hide_body     -info " Write technology or reference control file "     -define_args       {{-technology "Dump technology file" "" boolean {optional}} 	  {-plib "Dump plib file" "" boolean {optional}}       {-vt_cell_placement_properties "Dump multi-VT cells' implant layer information of library" "" boolean {optional hidden}}       {-reference_control_file "Dump reference control file" "" boolean {optional}}       {-stream_layer_map_file "Dump layer map file during stream in/out" "" string {optional}}       {-output "Output file" "file_name" string {required}}       {"" "Library to be reported" "libName" string {required}}}
 #@ }
 #@ ##############################################################################
 #@ #
@@ -1414,9 +1471,10 @@ source /sim/synopsys64/icc/admin/setup/.synopsys_dc.setup
 #@    source $synopsys_root/auxx/syn/psyn/mcmm_utils.tcl.e
 #@ }
 #@ 
-#@ if { [string match -nocase {*de_shell*} $synopsys_program_name] && [shell_is_in_topographical_mode] }  {
+#@ if { $synopsys_program_name == "de_shell" }  {
 #@    source $synopsys_root/auxx/syn/psyn/create_qor_snapshot.tbc
 #@    source $synopsys_root/auxx/syn/psyn/report_qor_snapshot.tbc
+#@    source $synopsys_root/auxx/syn/psyn/mcmm_utils.tcl.e
 #@ }
 #@ 
 #@ ##############################################################################
@@ -1504,7 +1562,7 @@ source /sim/synopsys64/icc/admin/setup/.synopsys_dc.setup
 #@     return $ret;
 #@ }
 #@ define_proc_attributes _snps_array_peek -hidden
-#@ # -- End source /sim/synopsys64/icc/auxx/syn/.dc_procs.tcl
+#@ # -- End source /usr/cad/syn/auxx/syn/.dc_procs.tcl
 
 #@ 
 #@ # Temporary fix for the LMC_HOME variable- set it to an empty string 
@@ -1525,7 +1583,6 @@ source /sim/synopsys64/icc/admin/setup/.synopsys_dc.setup
 #@ #
 #@ 
 #@ # from the System Variable Group 
-#@ set link_force_case  "check_reference"
 #@ set link_library  { * your_library.db }
 #@ 
 #@ set search_path [list . ${synopsys_root}/libraries/syn ${synopsys_root}/minpower/syn ${synopsys_root}/dw/syn_ver ${synopsys_root}/dw/sim_ver]
@@ -1546,11 +1603,12 @@ source /sim/synopsys64/icc/admin/setup/.synopsys_dc.setup
 #@ # from the Schematic Variable Group 
 #@ 
 #@ # from the Plot Variable Group 
-#@ if { $sh_arch == "hp700" } {
-#@   set plot_command "lp -d" 
-#@ } else {
-#@   set plot_command "lpr -Plw" 
-#@ }
+#@ # [froi] 07/06/2012: Remove old Design Analyzer plot_command variable
+#@ #if { $sh_arch == "hp700" } {
+#@ #  set plot_command "lp -d" 
+#@ #} else {
+#@ #  set plot_command "lpr -Plw" 
+#@ #}
 #@ 
 #@ set view_command_log_file  "./view_command.log"
 #@ 
@@ -1593,6 +1651,7 @@ source /sim/synopsys64/icc/admin/setup/.synopsys_dc.setup
 #@ set compile_use_low_timing_effort   "false"
 #@ set compile_fix_cell_degradation   "false"
 #@ set compile_preserve_subdesign_interfaces   "false"
+#@ set compile_enable_constant_propagation_with_no_boundary_opt   "true"
 #@ set port_complement_naming_style   "%s_BAR"
 #@ set compile_implementation_selection   "true"
 #@ set compile_delete_unloaded_sequential_cells   "true"
@@ -1606,9 +1665,9 @@ source /sim/synopsys64/icc/admin/setup/.synopsys_dc.setup
 #@ set compile_hold_reduce_cell_count "false"
 #@ set compile_retime_license_behavior "wait"
 #@ set dont_touch_nets_with_size_only_cells "false"
-#@ set suppress_errors  {PWR-18 OPT-932 OPT-317}
 #@ if { $synopsys_program_name == "dc_shell" && [shell_is_in_topographical_mode] } {
 #@    set dct_prioritize_area_correlation "false"
+#@    set compile_error_on_missing_physical_cells "false"
 #@ }
 #@ 
 #@ set ldd_return_val 0
@@ -1618,9 +1677,13 @@ source /sim/synopsys64/icc/admin/setup/.synopsys_dc.setup
 #@ 
 #@ }
 #@ if { [string compare $dc_shell_mode "tcl"] == 0 } {
-#@   source ${synopsys_root}/auxx/syn/scripts/list_duplicate_designs.tcl
-#@   source ${synopsys_root}/auxx/syn/scripts/analyze_datapath.tbc
+#@   if {$synopsys_program_name != "dc_sms_shell"} {
+#@     source ${synopsys_root}/auxx/syn/scripts/list_duplicate_designs.tcl
+#@     source ${synopsys_root}/auxx/syn/scripts/analyze_datapath.tbc
+#@   }
 #@ }
+#@ # -- Starting source /usr/cad/syn/auxx/syn/scripts/list_duplicate_designs.tcl
+
 #@ ####################################################################### 
 #@ #
 #@ #  list_duplicate_designs.tcl		21 Sept. 2006
@@ -1674,7 +1737,9 @@ source /sim/synopsys64/icc/admin/setup/.synopsys_dc.setup
 #@ 
 #@ define_proc_attributes list_duplicate_designs     -info " List designs of same names"     -permanent     -define_args {
 #@     }
-#@ # -- End source /sim/synopsys64/icc/auxx/syn/scripts/list_duplicate_designs.tcl
+#@ # -- End source /usr/cad/syn/auxx/syn/scripts/list_duplicate_designs.tcl
+
+#@ # -- Starting source /usr/cad/syn/auxx/syn/scripts/analyze_datapath.tbc
 
 #@ #!/bin/csh -f
 #@ # the next line restarts using tclshexec tclsh "$0" "$*"
@@ -1782,23 +1847,26 @@ source /sim/synopsys64/icc/admin/setup/.synopsys_dc.setup
 #@ 7
 #@ n*Z8Ays_-
 #@ p
-#@ 56 0 494 28 3 3 252 1 9 56 60 -1 -1
-#@ 494
+#@ 68 0 612 29 4 4 304 1 9 68 72 -1 -1
+#@ 612
 #@ w0E<!-BW<!9&0s!9Vbt!8tVH&+B`W!;KW<!5G^3w.)Ppv8Gtpv'Ho7-PZw4w02PUv?D|s!8S
 #@ UNw4#|Tv=&B=!F7@S#G^8I&ph-(!e2xi6zNEaZ!<131%NeL3wn^_E0hRig%ysm<v<_L3wlO;
-#@ *0hRig%xpm<v<_L3w6,f=!I(x4wCJCm#yu.p+hxO7,rTwZqBt2-&uAv!!Q;|Q#5#tl#A%%8#
-#@ 0iA=!:uS=!Anp3w?F&I&>YUR#3lxN6v*<<!e!!!!XLqC*1;L3w>,f=!I(x4wBJCm#NeL3wn^
-#@ _E0hRig%ysm<v<_L3wlO;*0hRig%xpm<v<_L3w6,f=!I(x4wCJCm#yu.p+yR4q+Tmr<!Iq-C
-#@ D>>'v!=>Ks!=QW<!8oJ=!=G^3w9&#pvCJfs!VBPe&g@#!!gk6(!I/=3-1(fI&R@_Z!>Cig%0
-#@ Q58-S3#J&LSa<!JCig%.H,8-S3#J&KSa<!@>YUv@.mf%Idig%EUAI&aji`^U9n<v<_L3wE,f
-#@ =!I(x4w6JCm#StL3wSqPH/mdJE':Ce`'K&X<!YD/p+Jfi<!GyY>!Hbb>!Ihk>!@#fTvY`Lb'
-#@ ?nt>!`I.rvMC2u!Wf^Z)7oyX!<5>:vMnk6#z
-#@ 56
-#@ 2,,Uv=yC7#N!5J&:VUm#T#/6,N!5J&<kp7#:lr!!Z1EH&B2Y6#:lr!!Qkp7#0TW!!Dc/v!
-#@ 60
-#@ 7&,Uv1E3<!En,Zw=FTAvJON-&LUmOwH3cBvRvu:vQR`1%Dj@(:>yt:vQR`1%p,1>vVu-c'U0
-#@ o.&
-#@ 28
+#@ *0hRig%xpm<v<_L3w6,f=!I(x4wCJCm#yu.p+hxO7,>%-<EBt2-&<GBH!4H<<!C1`H&65:3w
+#@ :_piw8V:7#8)PpvGPL3wM%Zt!d!!!!fC#!!01LX4DH&s!X6Th%GId4w.5VU#O.);vUS60%GI
+#@ d4w,2VU#N%ct!US60%4fi<!@2o=!Mq1VvE%DVv|lfP!Q5v!!-5(qv2o5S-H-OiH4u&v!3uJs
+#@ !=QW<!8oJ=!=G^3w9&#pvCJfs!VBPe&g@#!!gk6(!I/=3-49O<!<A|=!@2o=!Lk(VvO*Th%G
+#@ Id4w.5VU#O.);vUS60%GId4w,2VU#N%ct!US60%4fi<!@2o=!Mq1VvE%DVvR*XO!'xm?wg'8
+#@ J/tt2*'@1JE'A%%8#0iA=!:uS=!Anp3w?F&I&>YUR#7#yN6w<rr!e!!!!<^|9wQtPt!DH&s!
+#@ HY>:v4t%4wgJ8p+68>t!GP#t!3t%4wfD/p+68>t!?_QK%@(RK%DD,UvC8Ks!g6=0%US60%Ev
+#@ Z>!@2o=!@#fTvVig((1TN<!2(KL&:&sr!`D.D(8tVH&i#k5w6,f=!H,f=!I,f=!S(x4w:bgm
+#@ #M,X<!a!'6wR4`H&VpB?)Hy'v!:)#t!P9CC(.6!!!
+#@ 68
+#@ 2,,Uv=yC7#N!5J&:VUm#Q|29+N!5J&:VUm#T#/6,N!5J&<kp7#:lr!!Z1EH&B2Y6#:lr!!Qk
+#@ p7#0TW!!Dc/v!
+#@ 72
+#@ 7&,Uv1E3<!f6_fw=FTAvJON-&LUmOw=FTAvJON-&LUmOwH3cBvRvu:vQR`1%Dj@(:>yt:vQR
+#@ `1%p,1>vVu-c'U0o.&
+#@ 29
 #@ x
 #@ 6
 #@ q'-W@Dhw
@@ -1816,13 +1884,14 @@ source /sim/synopsys64/icc/admin/setup/.synopsys_dc.setup
 #@ 2
 #@ &Tv
 #@ x
-#@ 175
+#@ 230
 #@ %?!%=%TsiC.<TKDNwf*F(c|N@q^>r@Q'P>+K3Xj6eJt_F+-0CF>wf*F(c|N@q^>r@Q'P>+>#
 #@ V<+R/v%=P%o-DBFVE+?NfCFvg,<@&8>D+PwO@w%WTW?#*oCFC!xQH91VE+pQIID@@^E1')um
-#@ #9mMaEw<,DFC!xQH91VE+pQIID@@^E1')um#|(j:@BFVE+PT)!F(c|N@q^>r@P!G>+>N<:+,
-#@ CEw
+#@ #9mMaEw<,DFC!xQH91VE+pQIID@@^E1')um#+D&7A+<K^FIBxQH91VE+pQIIDAIwa1')um#+
+#@ D&7A*30CF>wf*F(c|N@q^>r@S3b>+kTi-Anly^FHExQH:tJTA5/gaEgpbOB|BW<+>#V<+a,v
+#@ 
 #@ i
-#@ 3
+#@ 4
 #@ x
 #@ 14
 #@ u;J9>`mow?|6cT>h-v
@@ -1847,6 +1916,8 @@ source /sim/synopsys64/icc/admin/setup/.synopsys_dc.setup
 #@ x
 #@ 1
 #@ L!
+#@ i
+#@ 3
 #@ i
 #@ 2
 #@ i
@@ -1880,11 +1951,12 @@ source /sim/synopsys64/icc/admin/setup/.synopsys_dc.setup
 #@ x
 #@ 27
 #@ ^M;L/n=KE+dCKE+c05#Fe7Oa1JeV<+Dv:-
-#@ 3
+#@ 4
 #@ L 1 90 56 149 83 -1
-#@ L 1 211 67 281 204 -1
-#@ L 1 337 56 396 330 -1
-#@ 3
+#@ L 1 208 56 267 201 -1
+#@ L 1 329 67 399 322 -1
+#@ L 1 455 56 514 448 -1
+#@ 4
 #@ F
 #@ 1 9 10
 #@ 4
@@ -1895,9 +1967,13 @@ source /sim/synopsys64/icc/admin/setup/.synopsys_dc.setup
 #@ 11 12 13 14
 #@ F
 #@ 1 18 19
+#@ 4
+#@ 11 12 13 14
+#@ F
+#@ 1 20 21
 #@ 3
 #@ 11 12 13
-#@ 2 22
+#@ 2 24
 #@ 9
 #@ 'NB,E(^mID@v
 #@ 0 0 257
@@ -1958,12 +2034,18 @@ source /sim/synopsys64/icc/admin/setup/.synopsys_dc.setup
 #@ 0
 #@ 
 #@ 19 0 521
+#@ 0
+#@ 
+#@ 20 0 521
+#@ 0
+#@ 
+#@ 21 0 521
 #@ 10
 #@ )FV5B,QffDX(%
-#@ 20 0 9
+#@ 22 0 9
 #@ 3
 #@ ^=g+
-#@ 21 0 9
+#@ 23 0 9
 #@ x
 #@ 17
 #@ lj|Z?.30bE_%vY?0*|CF4v
@@ -2623,10 +2705,11 @@ source /sim/synopsys64/icc/admin/setup/.synopsys_dc.setup
 #@ 28
 #@ <!57@sXo;@pXTB;.o5cE6,:eDHFcd:*OjV?
 #@ x
-#@ 164
+#@ 185
 #@ sZce0U+T7AbXUN0EnU`F?0v%=KSWjBWu,m696OS?nteC+*;`p@cG-m696OS??)q21bXUN0@J
-#@ t_FfS-m6eJt_F,6K^FgP-m6eJt_F+-0CF@0v%=C`(:@a/-m696OS?*h>D+37UgC*#)*FE0v%
-#@ =nB)5B/9JQBR/v%=l!L;@<WTW?3;TC+<WTW?&UIQB<WTW?!XIQB<WTW?'XIQB
+#@ t_FfS-m6PR1kB0<TKDP0v%=oJk%G#MfC+4@p-D,+^Z?CFME+4@p-D,+^Z?|u,m696OS?)h>D
+#@ +sZce0iWIQB<WTW?#*oCFa/-m6^QxlB.))*FcU*m6br`iC>0v%=rE-<@R/v%=r)'(FE0v%=m
+#@ r/(FE0v%=s/0(F4v
 #@ x
 #@ 7
 #@ n*Z8Ays_-
@@ -2876,7 +2959,7 @@ source /sim/synopsys64/icc/admin/setup/.synopsys_dc.setup
 #@ 0
 #@ 0
 #@ }
-#@ # -- End source /sim/synopsys64/icc/auxx/syn/scripts/analyze_datapath.tbc
+#@ # -- End source /usr/cad/syn/auxx/syn/scripts/analyze_datapath.tbc
 
 #@ 
 #@ 
@@ -2890,7 +2973,7 @@ source /sim/synopsys64/icc/admin/setup/.synopsys_dc.setup
 #@ #  commands.
 #@ #
 #@ set enable_recovery_removal_arcs  "false"
-#@ set timing_report_attributes {dont_touch dont_use map_only size_only ideal_net}
+#@ set timing_report_attributes {dont_touch dont_use map_only size_only ideal_net infeasible_paths}
 #@ 
 #@ #
 #@ #       Multibit Variable Group:
@@ -2931,6 +3014,7 @@ source /sim/synopsys64/icc/admin/setup/.synopsys_dc.setup
 #@ set synlib_dont_get_license  {}
 #@ set synlib_library_list   {DW01 DW02 DW03 DW04 DW05 DW06 DW07}
 #@ set synlib_wait_for_design_license {}
+#@ set synlib_dwhomeip {}
 #@ 
 #@ #
 #@ #       Insert_DFT Variable Group:
@@ -3304,6 +3388,7 @@ source /sim/synopsys64/icc/admin/setup/.synopsys_dc.setup
 #@ #       These variables are for controlling hdl reading, writing,
 #@ #       and optimizing.
 #@ #
+#@ set hdlin_enable_upf_compatible_naming	"FALSE"
 #@ set hdlin_auto_save_templates		"FALSE"
 #@ set hdlin_generate_naming_style   	"%s_%d"
 #@ set hdlin_enable_relative_placement     "rb"
@@ -3317,7 +3402,6 @@ source /sim/synopsys64/icc/admin/setup/.synopsys_dc.setup
 #@ set hdlin_presto_net_name_prefix	"N"
 #@ set hdlin_presto_cell_name_prefix	"C"
 #@ set hdlin_strict_verilog_reader		"FALSE"
-#@ set hdlin_sv_ieee_assignment_patterns   1
 #@ set hdlin_prohibit_nontri_multiple_drivers  "TRUE"
 #@ if { $synopsys_program_name == "de_shell" } { 
 #@   set hdlin_elab_errors_deep		"TRUE"
@@ -3328,10 +3412,14 @@ source /sim/synopsys64/icc/admin/setup/.synopsys_dc.setup
 #@ set hdlin_subprogram_default_values	"FALSE"
 #@ set hdlin_field_naming_style		"" 
 #@ set hdlin_upcase_names            	"FALSE"
-#@ set hdlin_vhdl_std		        1993
+#@ set hdlin_sv_union_member_naming        "FALSE"
+#@ set hdlin_optimize_pla_max_branch       256
+#@ set hdlin_vhdl_std		        2008
+#@ set hdlin_vhdl93_concat				"TRUE"
 #@ set hdlin_vhdl_syntax_extensions	"FALSE"
+#@ set hdlin_analyze_verbose_mode		0
 #@ set hdlin_vrlg_std                	2005
-#@ set hdlin_sverilog_std                	2005
+#@ set hdlin_sverilog_std                	2012
 #@ set hdlin_while_loop_iterations   	1024
 #@ set hdlin_reporting_level        	"basic"
 #@ set hdlin_autoread_verilog_extensions ".v"
@@ -3357,6 +3445,7 @@ source /sim/synopsys64/icc/admin/setup/.synopsys_dc.setup
 #@ set hdlin_module_name_limit 256
 #@ set hdlin_enable_assertions "FALSE"
 #@ set hdlin_enable_configurations "FALSE"
+#@ set hdlin_sv_blackbox_modules ""
 #@ set hdlin_sv_tokens "FALSE"
 #@ set hdlin_sv_packages "enable"
 #@ set hdlin_verification_priority "FALSE"
@@ -3396,6 +3485,7 @@ source /sim/synopsys64/icc/admin/setup/.synopsys_dc.setup
 #@ set verilogout_equation "false" 
 #@ set verilogout_ignore_case   "false"
 #@ set verilogout_no_tri   "false"
+#@ set verilogout_inout_is_in   "false"
 #@ set verilogout_single_bit   "false"
 #@ set verilogout_higher_designs_first   "FALSE"
 #@ # set verilogout_levelize   "FALSE"
@@ -3542,9 +3632,11 @@ source /sim/synopsys64/icc/admin/setup/.synopsys_dc.setup
 #@ #        set_annotated_delay, compile, create_wire_load and reoptimize_design
 #@ #        commands.
 #@ #
+#@ if {$synopsys_program_name != "dc_sms_shell"} {
+#@   set auto_wire_load_selection   "true" 
+#@   set compile_create_wire_load_table   "false" 
+#@ }
 #@ set rtl_load_resistance_factor 0.0
-#@ set auto_wire_load_selection   "true" 
-#@ set compile_create_wire_load_table   "false" 
 #@ 
 #@ #      power Variable Group:
 #@ #
@@ -3657,7 +3749,7 @@ source /sim/synopsys64/icc/admin/setup/.synopsys_dc.setup
 #@ set rc_slew_upper_threshold_pct_rise 80.000000
 #@ set timing_disable_cond_default_arcs "false"
 #@ set timing_enable_multiple_clocks_per_reg "false"
-#@ set timing_report_attributes {dont_touch dont_use map_only size_only ideal_net}
+#@ set timing_report_attributes {dont_touch dont_use map_only size_only ideal_net infeasible_paths}
 #@ set timing_self_loops_no_skew "false"
 #@ set when_analysis_permitted "true"
 #@ set when_analysis_without_case_analysis "false"
@@ -3769,6 +3861,7 @@ source /sim/synopsys64/icc/admin/setup/.synopsys_dc.setup
 #@   group_variable  compile  "compile_use_low_timing_effort"  
 #@   group_variable  compile  "compile_fix_cell_degradation"  
 #@   group_variable  compile  "compile_preserve_subdesign_interfaces" 
+#@   group_variable  compile  "compile_enable_constant_propagation_with_no_boundary_opt"
 #@   group_variable  compile  "compile_delete_unloaded_sequential_cells" 
 #@   group_variable  compile  "enable_recovery_removal_arcs" 
 #@   group_variable  compile  "compile_checkpoint_phases"
@@ -3783,6 +3876,7 @@ source /sim/synopsys64/icc/admin/setup/.synopsys_dc.setup
 #@ 
 #@   if { $synopsys_program_name == "dc_shell" && [shell_is_in_topographical_mode] } {
 #@     group_variable  compile  "dct_prioritize_area_correlation"
+#@     group_variable  compile  "compile_error_on_missing_physical_cells"
 #@   }
 #@ 
 #@   # "multibit" variables are used by the the multibit mapping functionality 
@@ -4095,6 +4189,7 @@ source /sim/synopsys64/icc/admin/setup/.synopsys_dc.setup
 #@   group_variable hdl "verilogout_equation"
 #@   group_variable hdl "verilogout_ignore_case"
 #@   group_variable hdl "verilogout_no_tri"
+#@   group_variable hdl "verilogout_inout_is_in"
 #@   group_variable hdl "verilogout_single_bit"
 #@   group_variable hdl "verilogout_higher_designs_first"
 #@ #  group_variable hdl "verilogout_levelize"
@@ -4103,6 +4198,7 @@ source /sim/synopsys64/icc/admin/setup/.synopsys_dc.setup
 #@   group_variable hdl "verilogout_show_unconnected_pins"
 #@   group_variable hdl "verilogout_no_negative_index"
 #@   group_variable hdl "hdlin_enable_rtldrc_info"
+#@   group_variable hdl "hdlin_sv_blackbox_modules"
 #@   group_variable hdl "hdlin_infer_function_local_latches"
 #@   group_variable hdl "hdlin_module_arch_name_splitting"
 #@   group_variable hdl "hdlin_mux_size_min"
@@ -4110,6 +4206,7 @@ source /sim/synopsys64/icc/admin/setup/.synopsys_dc.setup
 #@   group_variable hdl "hdlin_subprogram_default_values"
 #@   group_variable hdl "hdlin_upcase_names"
 #@   group_variable hdl "hdlin_vhdl_std"
+#@   group_variable hdl "hdlin_vhdl93_concat"
 #@   group_variable hdl "hdlin_vhdl_syntax_extensions"
 #@   group_variable hdl "hdlin_vrlg_std"
 #@   group_variable hdl "hdlin_while_loop_iterations"
@@ -4131,7 +4228,6 @@ source /sim/synopsys64/icc/admin/setup/.synopsys_dc.setup
 #@   group_variable hdl "hdlin_presto_net_name_prefix"
 #@   group_variable hdl "hdlin_strict_verilog_reader"
 #@   group_variable hdl "hdlin_shorten_long_module_name"
-#@   group_variable hdl "hdlin_sv_ieee_assignment_patterns"
 #@   group_variable hdl "hdlin_sv_packages"
 #@   group_variable hdl "hdlin_sv_tokens"
 #@   group_variable hdl "hdlin_enable_elaborate_ref_linking"
@@ -4140,6 +4236,7 @@ source /sim/synopsys64/icc/admin/setup/.synopsys_dc.setup
 #@   group_variable hdl "hdlin_autoread_sverilog_extensions"
 #@   group_variable hdl "hdlin_autoread_vhdl_extensions"
 #@   group_variable hdl "hdlin_autoread_exclude_extensions"
+#@   group_variable hdl "hdlin_enable_upf_compatible_naming"
 #@ 
 #@   # "vhdlio" variables are variables pertaining to VHDL generation 
 #@   group_variable vhdlio "vhdllib_timing_mesg"
@@ -4553,11 +4650,15 @@ source /sim/synopsys64/icc/admin/setup/.synopsys_dc.setup
 #@   # setup the default layer settings 
 #@   #source ${synopsys_root}/admin/setup/.dc_layers
 #@ 
-#@   source ${synopsys_root}/admin/setup/.dc_name_rules
+#@   if {$synopsys_program_name != "dc_sms_shell"} {
+#@     source ${synopsys_root}/admin/setup/.dc_name_rules
+#@   }
 #@ } else {
 #@   #for read_lib -html	
 #@   source ${synopsys_root}/auxx/syn/lc/read_lib_html_msg_list.tcl
 #@ }
+#@ # -- Starting source /usr/cad/syn/admin/setup/.dc_name_rules
+
 #@ #
 #@ 
 #@ #	.dc_name_rules Initialization file for
@@ -4606,7 +4707,7 @@ source /sim/synopsys64/icc/admin/setup/.synopsys_dc.setup
 #@ define_name_rules vhdl -map { {{"__","_"},{"_$",""}} }
 #@ 
 #@ ####/* Name rule for VHDL */
-#@ # -- End source /sim/synopsys64/icc/admin/setup/.dc_name_rules
+#@ # -- End source /usr/cad/syn/admin/setup/.dc_name_rules
 
 #@ 
 #@ if { $synopsys_program_name == "psyn_gui"} {
@@ -4652,8 +4753,10 @@ source /sim/synopsys64/icc/admin/setup/.synopsys_dc.setup
 #@ set fp_snap_type(route_shape) wiretrack
 #@ set fp_snap_type(none) litho
 #@ 
-#@ # 6/24/05 cpark requested to add to GA image
-#@ set suppress_errors "$suppress_errors RCCALC-010 RCCALC-011"
+#@ # STAR 9000615813.  PWR-18 is no longer internally suppressed.
+#@ # Instead call tcl suppress_message so that it can be unsuppressed by users in
+#@ # command line if needed
+#@ suppress_message PWR-18
 #@ 
 #@ # alias for write_sge is always the last line of the setup file
 #@ #if { [string compare $dc_shell_mode "tcl"] == 0 } {
@@ -4716,9 +4819,11 @@ source /sim/synopsys64/icc/admin/setup/.synopsys_dc.setup
 #@ 
 #@ }
 #@ 
-#@ # -- End source /sim/synopsys64/icc/admin/setup/.synopsys_dc.setup
+#@ # -- End source /usr/cad/syn/admin/setup/.synopsys_dc.setup
 
-source -echo -verbose /home/kbhardwaj/4340_files/synthesis_results_32/dcam.tcl
+source -echo -verbose /q/vlsidl5/p1/vlsidl/projects/hcdc/dc/tech_char/and_syn_65/dcam.tcl
+#@ # -- Starting source /q/vlsidl5/p1/vlsidl/projects/hcdc/dc/tech_char/and_syn_65/dcam.tcl
+
 #@ # ######### Boilerplate ##########################################
 #@ # Standard System Level Settings. Do not change.
 #@ #################################################################
@@ -4726,7 +4831,7 @@ source -echo -verbose /home/kbhardwaj/4340_files/synthesis_results_32/dcam.tcl
 #@ set SynopsysInstall [getenv "SYNOPSYS"]
 #@ #set stdcellhome /sim/synopsys/SAED_EDK90nm/Digital_Standard_Cell_Library/
 #@ 
-#@ set design_db /proj/arcade/synopsys/SAED32_EDK/lib/stdcell_rvt/db_ccs/saed32rvt_tt1p05v25c.db
+#@ set design_db /vlsidl/dk/TSMC/tcbn65lp/TSMCHOME/digital/Front_End/timing_power_noise/CCS/tcbn65lp_200a/tcbn65lptc_ccs.db
 #@ 
 #@ 
 #@ #set design_db  $stdcellhome/synopsys/models/saed90nm_typ.db
@@ -4771,7 +4876,7 @@ source -echo -verbose /home/kbhardwaj/4340_files/synthesis_results_32/dcam.tcl
 #@ # valid. 
 #@ #set inDelay_ns [expr $clkPeriod_ns*.1]  ;# delay from clock to inputs valid
 #@ #set outDelay_ns [expr $clkPeriod_ns*.1] ;# delay from clock to output valid
-#@ set inputDrive INVX16_RVT
+#@ set inputDrive GINVD8
 #@ set LoadLib $design_db  ;# name of library the cell comes from
 #@ set myLoadPin "IN"             ;# name of pin that the outputs drive
 #@ set CLK_SKEW 0.10
