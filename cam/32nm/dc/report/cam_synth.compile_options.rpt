@@ -1,0 +1,26 @@
+ 
+****************************************
+Report : compile_options
+Design : cam
+Version: F-2011.09-SP2
+Date   : Wed Oct  8 23:14:49 2014
+****************************************
+
+Design                                   Compile Option         Value
+--------------------------------------------------------------------------------
+cam                                      flatten                false
+                                         structure              true
+                                         structure_boolean      false
+                                         structure_timing       true
+                                         fix_multiple_port_nets feedthroughs
+                                                                constants
+                                                                outputs
+                                                                buffer_constants
+                                         isolate_port           disabled
+
+mux                                      flatten                false
+                                         structure              true
+                                         structure_boolean      false
+                                         structure_timing       true
+--------------------------------------------------------------------------------
+1

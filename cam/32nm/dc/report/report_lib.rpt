@@ -1,0 +1,1170 @@
+
+****************************************
+Report : library
+Library: saed32rvt_tt1p05v25c
+Version: F-2011.09-SP2
+Date   : Wed Oct  8 23:14:48 2014
+****************************************
+
+Library Type            : Technology, PG pin Based
+Tool Created            : F-2011.09-SP1
+Date Created            : [2012 JAN 31]
+Library Version         : updated 6.FEB.2012
+Time Unit               : 1ns
+
+Capacitive Load Unit    : 1.000000ff
+Pulling Resistance Unit : 1kilo-ohm
+Voltage Unit            : 1V
+Current Unit            : 1uA
+Dynamic Energy Unit     : 0.001000pJ   (derived from V,C units)
+Leakage Power Unit      : 1pW
+Bus Naming Style        : %s[%d] (default)
+
+Default Threshold Voltage Group : "saed32cell_svt"
+
+Operating Conditions:
+
+
+    Operating Condition Name : tt1p05v25c
+    Library : saed32rvt_tt1p05v25c
+    Process :   1.00
+    Temperature :  25.00
+    Voltage :  1.050
+    Interconnect Model : balanced_tree
+
+Input Voltages:
+
+    No input_voltage groups specified.
+
+Output Voltages:
+
+    Name                Vol         Voh         Vomin       Vomax
+    -----------------------------------------------------------------
+    DC_0                0.05        1.00        0.00        1.05
+
+nom_voltage : 1.05
+Voltage Map: Voltage Name   : Voltage Value
+             VDD              1.05
+             VDDG             1.05
+             VSS              0
+
+default_wire_load_capacitance:	0.026724
+default_wire_load_resistance:	0.002067
+default_wire_load_area:	0.010000
+
+
+Wire Loading Model:
+
+Name           :   ForQA
+Location       :   saed32rvt_tt1p05v25c
+Resistance     :   0.002067
+Capacitance    :   0.026724
+Area           :   0.01
+Slope          :   30.2854
+Fanout   Length   Points Average Cap Std Deviation
+--------------------------------------------------------------
+     1     8.28
+     2    18.49
+     3    29.35
+     4    40.92
+     5    53.23
+     6    66.36
+     7    80.36
+     8    95.27
+     9   111.17
+    10   128.09
+    11   146.10
+    12   165.26
+    13   185.61
+    14   207.22
+    15   230.13
+    16   254.41
+    17   280.11
+    18   307.28
+    19   335.98
+    20   366.27
+
+Name           :   8000
+Location       :   saed32rvt_tt1p05v25c
+Resistance     :   0.0015727
+Capacitance    :   0.000312
+Area           :   0.01
+Slope          :   90.6464
+Fanout   Length   Points Average Cap Std Deviation
+--------------------------------------------------------------
+     1    13.94
+     2    31.80
+     3    51.61
+     4    73.61
+     5    98.05
+     6   125.17
+     7   155.23
+     8   188.46
+     9   225.12
+    10   265.45
+    11   309.71
+    12   358.13
+    13   410.96
+    14   468.46
+    15   530.86
+    16   598.42
+    17   671.38
+    18   749.98
+    19   834.49
+    20   925.13
+
+Name           :   16000
+Location       :   saed32rvt_tt1p05v25c
+Resistance     :   0.001282
+Capacitance    :   0.000569
+Area           :   0.01
+Slope          :   108.438
+Fanout   Length   Points Average Cap Std Deviation
+--------------------------------------------------------------
+     1    15.10
+     2    34.61
+     3    56.42
+     4    80.84
+     5   108.20
+     6   138.79
+     7   172.92
+     8   210.91
+     9   253.07
+    10   299.71
+    11   351.13
+    12   407.64
+    13   469.57
+    14   537.20
+    15   610.87
+    16   690.86
+    17   777.51
+    18   871.11
+    19   971.97
+    20  1080.41
+
+Name           :   35000
+Location       :   saed32rvt_tt1p05v25c
+Resistance     :   0.001187
+Capacitance    :   0.00027
+Area           :   0.01
+Slope          :   140.36
+Fanout   Length   Points Average Cap Std Deviation
+--------------------------------------------------------------
+     1    16.92
+     2    39.03
+     3    64.09
+     4    92.51
+     5   124.73
+     6   161.17
+     7   202.25
+     8   248.42
+     9   300.09
+    10   357.68
+    11   421.63
+    12   492.37
+    13   570.31
+    14   655.89
+    15   749.54
+    16   851.67
+    17   962.72
+    18  1083.11
+    19  1213.28
+    20  1353.64
+
+Name           :   70000
+Location       :   saed32rvt_tt1p05v25c
+Resistance     :   0.01
+Capacitance    :   0.000143
+Area           :   0.01
+Slope          :   170.996
+Fanout   Length   Points Average Cap Std Deviation
+--------------------------------------------------------------
+     1    18.44
+     2    42.77
+     3    70.64
+     4   102.58
+     5   139.15
+     6   180.88
+     7   228.32
+     8   282.00
+     9   342.48
+    10   410.29
+    11   485.98
+    12   570.09
+    13   663.16
+    14   765.74
+    15   878.36
+    16  1001.57
+    17  1135.91
+    18  1281.93
+    19  1440.17
+    20  1611.17
+
+Name           :   140000
+Location       :   saed32rvt_tt1p05v25c
+Resistance     :   0.01
+Capacitance    :   0.000143
+Area           :   0.01
+Slope          :   211.204
+Fanout   Length   Points Average Cap Std Deviation
+--------------------------------------------------------------
+     1    20.20
+     2    47.15
+     3    78.39
+     4   114.63
+     5   156.57
+     6   204.90
+     7   260.33
+     8   323.54
+     9   395.25
+    10   476.14
+    11   566.92
+    12   668.29
+    13   780.94
+    14   905.58
+    15  1042.89
+    16  1193.59
+    17  1358.37
+    18  1537.92
+    19  1732.95
+    20  1944.15
+
+Name           :   280000
+Location       :   saed32rvt_tt1p05v25c
+Resistance     :   0.01
+Capacitance    :   0.000143
+Area           :   0.01
+Slope          :   266.705
+Fanout   Length   Points Average Cap Std Deviation
+--------------------------------------------------------------
+     1    22.32
+     2    52.49
+     3    87.98
+     4   129.72
+     5   178.62
+     6   235.60
+     7   301.59
+     8   377.49
+     9   464.24
+    10   562.75
+    11   673.94
+    12   798.74
+    13   938.05
+    14  1092.80
+    15  1263.92
+    16  1452.31
+    17  1658.90
+    18  1884.61
+    19  2130.35
+    20  2397.06
+
+Name           :   540000
+Location       :   saed32rvt_tt1p05v25c
+Resistance     :   0.01
+Capacitance    :   0.000143
+Area           :   0.01
+Slope          :   331.292
+Fanout   Length   Points Average Cap Std Deviation
+--------------------------------------------------------------
+     1    24.47
+     2    57.99
+     3    98.00
+     4   145.68
+     5   202.21
+     6   268.78
+     7   346.57
+     8   436.76
+     9   540.54
+    10   659.09
+    11   793.58
+    12   945.21
+    13  1115.16
+    14  1304.61
+    15  1514.74
+    16  1746.74
+    17  2001.79
+    18  2281.07
+    19  2585.76
+    20  2917.05
+
+Name           :   1000000
+Location       :   saed32rvt_tt1p05v25c
+Resistance     :   0.01
+Capacitance    :   0.000143
+Area           :   0.01
+Slope          :   401.5
+Fanout   Length   Points Average Cap Std Deviation
+--------------------------------------------------------------
+     1    26.53
+     2    63.36
+     3   107.90
+     4   161.65
+     5   226.06
+     6   302.63
+     7   392.82
+     8   498.11
+     9   619.97
+    10   759.88
+    11   919.31
+    12  1099.73
+    13  1302.63
+    14  1529.48
+    15  1781.75
+    16  2060.91
+    17  2368.45
+    18  2705.83
+    19  3074.54
+    20  3476.04
+
+Name           :   2000000
+Location       :   saed32rvt_tt1p05v25c
+Resistance     :   0.01
+Capacitance    :   0.000143
+Area           :   0.01
+Slope          :   509.815
+Fanout   Length   Points Average Cap Std Deviation
+--------------------------------------------------------------
+     1    29.34
+     2    70.76
+     3   121.76
+     4   184.28
+     5   260.25
+     6   351.61
+     7   460.30
+     8   588.23
+     9   737.36
+    10   909.60
+    11  1106.91
+    12  1331.20
+    13  1584.41
+    14  1868.48
+    15  2185.34
+    16  2536.93
+    17  2925.17
+    18  3352.00
+    19  3819.36
+    20  4329.17
+
+Name           :   4000000
+Location       :   saed32rvt_tt1p05v25c
+Resistance     :   0.01
+Capacitance    :   0.000143
+Area           :   0.01
+Slope          :   641.917
+Fanout   Length   Points Average Cap Std Deviation
+--------------------------------------------------------------
+     1    32.33
+     2    78.77
+     3   137.01
+     4   209.56
+     5   298.91
+     6   407.58
+     7   538.07
+     8   692.87
+     9   874.49
+    10  1085.45
+    11  1328.23
+    12  1605.34
+    13  1919.30
+    14  2272.59
+    15  2667.73
+    16  3107.22
+    17  3593.56
+    18  4129.25
+    19  4716.81
+    20  5358.72
+
+Name           :   8000000
+Location       :   saed32rvt_tt1p05v25c
+Resistance     :   0.01
+Capacitance    :   0.000143
+Area           :   0.01
+Slope          :   815.176
+Fanout   Length   Points Average Cap Std Deviation
+--------------------------------------------------------------
+     1    35.74
+     2    88.12
+     3   155.14
+     4   240.05
+     5   346.13
+     6   476.63
+     7   634.82
+     8   823.97
+     9  1047.34
+    10  1308.18
+    11  1609.78
+    12  1955.38
+    13  2348.25
+    14  2791.67
+    15  3288.88
+    16  3843.16
+    17  4457.77
+    18  5135.97
+    19  5881.02
+    20  6696.20
+
+Name           :   tcForQA
+Location       :   saed32rvt_tt1p05v25c
+Resistance     :   0.002067
+Capacitance    :   0.026724
+Area           :   0.832926
+Slope          :   30.2854
+Fanout   Length   Points Average Cap Std Deviation
+--------------------------------------------------------------
+     1     8.28
+     2    18.49
+     3    29.35
+     4    40.92
+     5    53.23
+     6    66.36
+     7    80.36
+     8    95.27
+     9   111.17
+    10   128.09
+    11   146.10
+    12   165.26
+    13   185.61
+    14   207.22
+    15   230.13
+    16   254.41
+    17   280.11
+    18   307.28
+    19   335.98
+    20   366.27
+
+Name           :   tc8000
+Location       :   saed32rvt_tt1p05v25c
+Resistance     :   0.0015727
+Capacitance    :   0.000312
+Area           :   0.720503
+Slope          :   90.6464
+Fanout   Length   Points Average Cap Std Deviation
+--------------------------------------------------------------
+     1    13.94
+     2    31.80
+     3    51.61
+     4    73.61
+     5    98.05
+     6   125.17
+     7   155.23
+     8   188.46
+     9   225.12
+    10   265.45
+    11   309.71
+    12   358.13
+    13   410.96
+    14   468.46
+    15   530.86
+    16   598.42
+    17   671.38
+    18   749.98
+    19   834.49
+    20   925.13
+
+Name           :   tc16000
+Location       :   saed32rvt_tt1p05v25c
+Resistance     :   0.001282
+Capacitance    :   0.000569
+Area           :   0.410482
+Slope          :   108.438
+Fanout   Length   Points Average Cap Std Deviation
+--------------------------------------------------------------
+     1    15.10
+     2    34.61
+     3    56.42
+     4    80.84
+     5   108.20
+     6   138.79
+     7   172.92
+     8   210.91
+     9   253.07
+    10   299.71
+    11   351.13
+    12   407.64
+    13   469.57
+    14   537.20
+    15   610.87
+    16   690.86
+    17   777.51
+    18   871.11
+    19   971.97
+    20  1080.41
+
+Name           :   tc35000
+Location       :   saed32rvt_tt1p05v25c
+Resistance     :   0.001187
+Capacitance    :   0.00027
+Area           :   0.310533
+Slope          :   140.36
+Fanout   Length   Points Average Cap Std Deviation
+--------------------------------------------------------------
+     1    16.92
+     2    39.03
+     3    64.09
+     4    92.51
+     5   124.73
+     6   161.17
+     7   202.25
+     8   248.42
+     9   300.09
+    10   357.68
+    11   421.63
+    12   492.37
+    13   570.31
+    14   655.89
+    15   749.54
+    16   851.67
+    17   962.72
+    18  1083.11
+    19  1213.28
+    20  1353.64
+
+Name           :   tc70000
+Location       :   saed32rvt_tt1p05v25c
+Resistance     :   0.01
+Capacitance    :   0.000143
+Area           :   0.21
+Slope          :   170.996
+Fanout   Length   Points Average Cap Std Deviation
+--------------------------------------------------------------
+     1    18.44
+     2    42.77
+     3    70.64
+     4   102.58
+     5   139.15
+     6   180.88
+     7   228.32
+     8   282.00
+     9   342.48
+    10   410.29
+    11   485.98
+    12   570.09
+    13   663.16
+    14   765.74
+    15   878.36
+    16  1001.57
+    17  1135.91
+    18  1281.93
+    19  1440.17
+    20  1611.17
+
+Name           :   tc140000
+Location       :   saed32rvt_tt1p05v25c
+Resistance     :   0.01
+Capacitance    :   0.000143
+Area           :   0.15
+Slope          :   211.204
+Fanout   Length   Points Average Cap Std Deviation
+--------------------------------------------------------------
+     1    20.20
+     2    47.15
+     3    78.39
+     4   114.63
+     5   156.57
+     6   204.90
+     7   260.33
+     8   323.54
+     9   395.25
+    10   476.14
+    11   566.92
+    12   668.29
+    13   780.94
+    14   905.58
+    15  1042.89
+    16  1193.59
+    17  1358.37
+    18  1537.92
+    19  1732.95
+    20  1944.15
+
+Name           :   tc280000
+Location       :   saed32rvt_tt1p05v25c
+Resistance     :   0.01
+Capacitance    :   0.000143
+Area           :   0.1
+Slope          :   266.705
+Fanout   Length   Points Average Cap Std Deviation
+--------------------------------------------------------------
+     1    22.32
+     2    52.49
+     3    87.98
+     4   129.72
+     5   178.62
+     6   235.60
+     7   301.59
+     8   377.49
+     9   464.24
+    10   562.75
+    11   673.94
+    12   798.74
+    13   938.05
+    14  1092.80
+    15  1263.92
+    16  1452.31
+    17  1658.90
+    18  1884.61
+    19  2130.35
+    20  2397.06
+
+Name           :   tc540000
+Location       :   saed32rvt_tt1p05v25c
+Resistance     :   0.01
+Capacitance    :   0.000143
+Area           :   0.07
+Slope          :   331.292
+Fanout   Length   Points Average Cap Std Deviation
+--------------------------------------------------------------
+     1    24.47
+     2    57.99
+     3    98.00
+     4   145.68
+     5   202.21
+     6   268.78
+     7   346.57
+     8   436.76
+     9   540.54
+    10   659.09
+    11   793.58
+    12   945.21
+    13  1115.16
+    14  1304.61
+    15  1514.74
+    16  1746.74
+    17  2001.79
+    18  2281.07
+    19  2585.76
+    20  2917.05
+
+Name           :   tc1000000
+Location       :   saed32rvt_tt1p05v25c
+Resistance     :   0.01
+Capacitance    :   0.000143
+Area           :   0.05
+Slope          :   401.5
+Fanout   Length   Points Average Cap Std Deviation
+--------------------------------------------------------------
+     1    26.53
+     2    63.36
+     3   107.90
+     4   161.65
+     5   226.06
+     6   302.63
+     7   392.82
+     8   498.11
+     9   619.97
+    10   759.88
+    11   919.31
+    12  1099.73
+    13  1302.63
+    14  1529.48
+    15  1781.75
+    16  2060.91
+    17  2368.45
+    18  2705.83
+    19  3074.54
+    20  3476.04
+
+Name           :   tc2000000
+Location       :   saed32rvt_tt1p05v25c
+Resistance     :   0.01
+Capacitance    :   0.000143
+Area           :   0.04
+Slope          :   509.815
+Fanout   Length   Points Average Cap Std Deviation
+--------------------------------------------------------------
+     1    29.34
+     2    70.76
+     3   121.76
+     4   184.28
+     5   260.25
+     6   351.61
+     7   460.30
+     8   588.23
+     9   737.36
+    10   909.60
+    11  1106.91
+    12  1331.20
+    13  1584.41
+    14  1868.48
+    15  2185.34
+    16  2536.93
+    17  2925.17
+    18  3352.00
+    19  3819.36
+    20  4329.17
+
+Name           :   tc4000000
+Location       :   saed32rvt_tt1p05v25c
+Resistance     :   0.01
+Capacitance    :   0.000143
+Area           :   0.02
+Slope          :   641.917
+Fanout   Length   Points Average Cap Std Deviation
+--------------------------------------------------------------
+     1    32.33
+     2    78.77
+     3   137.01
+     4   209.56
+     5   298.91
+     6   407.58
+     7   538.07
+     8   692.87
+     9   874.49
+    10  1085.45
+    11  1328.23
+    12  1605.34
+    13  1919.30
+    14  2272.59
+    15  2667.73
+    16  3107.22
+    17  3593.56
+    18  4129.25
+    19  4716.81
+    20  5358.72
+
+Name           :   tc8000000
+Location       :   saed32rvt_tt1p05v25c
+Resistance     :   0.01
+Capacitance    :   0.000143
+Area           :   0.02
+Slope          :   815.176
+Fanout   Length   Points Average Cap Std Deviation
+--------------------------------------------------------------
+     1    35.74
+     2    88.12
+     3   155.14
+     4   240.05
+     5   346.13
+     6   476.63
+     7   634.82
+     8   823.97
+     9  1047.34
+    10  1308.18
+    11  1609.78
+    12  1955.38
+    13  2348.25
+    14  2791.67
+    15  3288.88
+    16  3843.16
+    17  4457.77
+    18  5135.97
+    19  5881.02
+    20  6696.20
+
+
+Wire Loading Model Selection Group:
+
+   Name           : predcaps
+
+        Selection             Wire load name
+    min area   max area
+   -------------------------------------------
+        0.00     200.00          ForQA
+      200.00    8000.00          8000
+     8000.00   16000.00          16000
+    16000.00   35000.00          35000
+    35000.00   70000.00          70000
+    70000.00   140000.00         140000
+    140000.00  280000.00         280000
+    280000.00  540000.00         540000
+    540000.00  1000000.00        1000000
+    1000000.00 2000000.00        2000000
+    2000000.00 4000000.00        4000000
+    4000000.00 8000000.00        8000000
+
+
+Wire Loading Model Mode: enclosed.
+
+
+Wire Loading Model Selection Group: predcaps.
+
+Porosity information:
+
+    No porosity information specified.
+
+In_place optimization mode:  no_swapping (in_place optimization disabled)
+
+Timing Ranges:
+
+    No timing ranges specified.
+
+
+Delay Threshold Trip-Points:
+
+	input_threshold_pct_rise:	50
+	output_threshold_pct_rise:	50
+	input_threshold_pct_fall:	50
+	output_threshold_pct_fall:	50
+
+
+Slew Threshold Trip-Points:
+
+	slew_lower_threshold_pct_rise:	49
+	slew_upper_threshold_pct_rise:	80
+	slew_lower_threshold_pct_fall:	20
+	slew_upper_threshold_pct_fall:	51
+
+	slew_derate_from_library:	1
+
+
+Components:
+
+    Attributes:
+       af - active falling
+       ah - active high
+       al - active low
+       ar - active rising
+        b - black box (function unknown)
+       ce - clock enable
+       cg - clock gating integrated cell
+       ub - unbuffered
+      pgt - pass gate
+      ctl - has CTL test model
+        d - dont_touch
+      iso - isolation cell
+       ls - level shifter
+      dls - differential level shifter
+       mo - map_only
+        p - preferred
+      pad - pad cell
+       hp - hold_preferred
+     pwrg - power gating cell
+        r - removable
+        s - statetable
+      sa0 - dont_fault stuck-at-0
+      sa1 - dont_fault stuck-at-1
+     sa01 - dont_fault both stuck-at-0 and stuck-at-1
+       sz - use_for_size_only
+        t - test cell. t(scan_type) as
+          t(mux_ff) - muxed flip-flop
+          t(mux_ld) - muxed latch
+          t(clk_scan) - clocked scan
+          t(clk_scan_ld) - clocked scan latch
+          t(lssd_dld) - double latch LSSD
+          t(lssd_sld) - single latch LSSD
+          t(lssd_clk) - clocked LSSD
+          t(lssd_auxclk) - auxiliary clock LSSD
+          t(lssd_se) - scan enabled LSSD
+        u - dont_use
+      udp - usable for datapath generators
+      ufc - user_function_class. ufc(type) as
+          ufc(u) - user-defined
+          ufc(a) - automatically generated
+      imc - macro cell 
+switch_cg - switch cell (coarse grain)
+      ret - retention cell
+       ao - always on cell
+     gicg - generic integrated clock gating
+       va - variation-aware ccs timing modeling
+      val - variation-aware ccs leakage power modeling
+      fil - filler cell
+      tap - tap cell
+    decap - decap cell
+      pll - pll cell
+      mem - memory cell
+
+
+Pin Attributes:
+       ao - always on pin
+      lse - level shifter enable pin
+     isoe - isolation cell enable pin
+     scmr - standard cell main rail
+
+
+   Cell                Vth Group    Attributes
+   -------------------------------------------
+   AND2X1_RVT                           
+   AND2X2_RVT                           
+   AND2X4_RVT                           
+   AND3X1_RVT                           
+   AND3X2_RVT                           
+   AND3X4_RVT                           
+   AND4X1_RVT                           
+   AND4X2_RVT                           
+   AND4X4_RVT                           
+   ANTENNA_RVT                          b, d, u
+   AO21X1_RVT                           
+   AO21X2_RVT                           
+   AO22X1_RVT                           
+   AO22X2_RVT                           
+   AO221X1_RVT                          
+   AO221X2_RVT                          
+   AO222X1_RVT                          
+   AO222X2_RVT                          
+   AOBUFX1_RVT                          d, u, ao
+   AOBUFX2_RVT                          d, u, ao
+   AOBUFX4_RVT                          d, u, ao
+   AODFFARX1_RVT                        d, s, u, ao
+   AODFFARX2_RVT                        d, s, u, ao
+   AODFFNARX1_RVT                       d, s, u, ao
+   AODFFNARX2_RVT                       d, s, u, ao
+   AOI21X1_RVT                          
+   AOI21X2_RVT                          
+   AOI22X1_RVT                          
+   AOI22X2_RVT                          
+   AOI221X1_RVT                         
+   AOI221X2_RVT                         
+   AOI222X1_RVT                         
+   AOI222X2_RVT                         
+   AOINVX1_RVT                          d, u, ao
+   AOINVX2_RVT                          d, u, ao
+   AOINVX4_RVT                          d, u, ao
+   BSLEX1_RVT                           b, ufc(a)
+   BSLEX2_RVT                           b, ufc(a)
+   BSLEX4_RVT                           b, ufc(a)
+   BUSKP_RVT                            b, d, u
+   CGLNPRX2_RVT                         b, d, s, u, cg
+   CGLNPRX8_RVT                         b, d, s, u, cg
+   CGLNPSX2_RVT                         b, d, s, u, cg
+   CGLNPSX4_RVT                         b, d, s, u, cg
+   CGLNPSX8_RVT                         b, d, s, u, cg
+   CGLNPSX16_RVT                        b, d, s, u, cg
+   CGLPPRX2_RVT                         b, s, cg
+   CGLPPRX8_RVT                         b, s, cg
+   CGLPPSX2_RVT                         b, d, s, u, cg
+   CGLPPSX4_RVT                         b, d, s, u, cg
+   CGLPPSX8_RVT                         b, d, s, u, cg
+   CGLPPSX16_RVT                        b, d, s, u, cg
+   CLOAD1_RVT                           b, d, u
+   DCAP_RVT                             b, d, u, decap
+   DEC24X1_RVT                          r, udp
+   DEC24X2_RVT                          r, udp
+   DELLN1X2_RVT                         
+   DELLN2X2_RVT                         
+   DELLN3X2_RVT                         
+   DFFARX1_RVT                          s
+   DFFARX2_RVT                          s
+   DFFASRX1_RVT                         s
+   DFFASRX2_RVT                         s
+   DFFASX1_RVT                          s
+   DFFASX2_RVT                          s
+   DFFNARX1_RVT                         s
+   DFFNARX2_RVT                         s
+   DFFNASRNX1_RVT                       s
+   DFFNASRNX2_RVT                       s
+   DFFNASRQX1_RVT                       s
+   DFFNASRQX2_RVT                       s
+   DFFNASRX1_RVT                        s
+   DFFNASRX2_RVT                        s
+   DFFNASX1_RVT                         s
+   DFFNASX2_RVT                         s
+   DFFNX1_RVT                           s
+   DFFNX2_RVT                           s
+   DFFSSRX1_RVT                         s
+   DFFSSRX2_RVT                         s
+   DFFX1_RVT                            s
+   DFFX2_RVT                            s
+   DHFILLH2_RVT                         b, d, u, fil
+   DHFILLHL2_RVT                        b, d, u, fil
+   DHFILLHLHLS11_RVT                    b, d, u, fil
+   FADDX1_RVT                           r
+   FADDX2_RVT                           r
+   HADDX1_RVT                           r
+   HADDX2_RVT                           r
+   IBUFFX2_RVT                          
+   IBUFFX4_RVT                          
+   IBUFFX8_RVT                          
+   IBUFFX16_RVT                         
+   IBUFFX32_RVT                         
+   INVX0_RVT                            
+   INVX1_RVT                            
+   INVX2_RVT                            
+   INVX4_RVT                            
+   INVX8_RVT                            
+   INVX16_RVT                           
+   INVX32_RVT                           
+   ISOLANDAOX1_RVT                      d, u, iso
+   ISOLANDAOX2_RVT                      d, u, iso
+   ISOLANDAOX4_RVT                      d, u, iso
+   ISOLANDAOX8_RVT                      d, u, iso
+   ISOLANDX1_RVT                        d, u, iso
+   ISOLANDX2_RVT                        d, u, iso
+   ISOLANDX4_RVT                        d, u, iso
+   ISOLANDX8_RVT                        d, u, iso
+   ISOLORAOX1_RVT                       d, u, iso
+   ISOLORAOX2_RVT                       d, u, iso
+   ISOLORAOX4_RVT                       d, u, iso
+   ISOLORAOX8_RVT                       d, u, iso
+   ISOLORX1_RVT                         d, u, iso
+   ISOLORX2_RVT                         d, u, iso
+   ISOLORX4_RVT                         d, u, iso
+   ISOLORX8_RVT                         d, u, iso
+   LARX1_RVT                            s
+   LARX2_RVT                            s
+   LASRNX1_RVT                          s
+   LASRNX2_RVT                          s
+   LASRQX1_RVT                          s
+   LASRQX2_RVT                          s
+   LASRX1_RVT                           s
+   LASRX2_RVT                           s
+   LASX1_RVT                            s
+   LASX2_RVT                            s
+   LATCHX1_RVT                          s
+   LATCHX2_RVT                          s
+   LNANDX1_RVT                          s
+   LNANDX2_RVT                          s
+   MUX21X1_RVT                          
+   MUX21X2_RVT                          
+   MUX41X1_RVT                          
+   MUX41X2_RVT                          
+   NAND2X0_RVT                          
+   NAND2X1_RVT                          
+   NAND2X2_RVT                          
+   NAND2X4_RVT                          
+   NAND3X0_RVT                          
+   NAND3X1_RVT                          
+   NAND3X2_RVT                          
+   NAND3X4_RVT                          
+   NAND4X0_RVT                          
+   NAND4X1_RVT                          
+   NBUFFX2_RVT                          
+   NBUFFX4_RVT                          
+   NBUFFX8_RVT                          
+   NBUFFX16_RVT                         
+   NBUFFX32_RVT                         
+   NMT1_RVT                             b
+   NMT2_RVT                             b
+   NMT3_RVT                             b
+   NOR2X0_RVT                           
+   NOR2X1_RVT                           
+   NOR2X2_RVT                           
+   NOR2X4_RVT                           
+   NOR3X0_RVT                           
+   NOR3X1_RVT                           
+   NOR3X2_RVT                           
+   NOR3X4_RVT                           
+   NOR4X0_RVT                           
+   NOR4X1_RVT                           
+   OA21X1_RVT                           
+   OA21X2_RVT                           
+   OA22X1_RVT                           
+   OA22X2_RVT                           
+   OA221X1_RVT                          
+   OA221X2_RVT                          
+   OA222X1_RVT                          
+   OA222X2_RVT                          
+   OAI21X1_RVT                          
+   OAI21X2_RVT                          
+   OAI22X1_RVT                          
+   OAI22X2_RVT                          
+   OAI221X1_RVT                         
+   OAI221X2_RVT                         
+   OAI222X1_RVT                         
+   OAI222X2_RVT                         
+   OR2X1_RVT                            
+   OR2X2_RVT                            
+   OR2X4_RVT                            
+   OR3X1_RVT                            
+   OR3X2_RVT                            
+   OR3X4_RVT                            
+   OR4X1_RVT                            
+   OR4X2_RVT                            
+   OR4X4_RVT                            
+   PGX1_RVT                             b, ufc(a)
+   PGX2_RVT                             b, ufc(a)
+   PGX4_RVT                             b, ufc(a)
+   PMT1_RVT                             b
+   PMT2_RVT                             b
+   PMT3_RVT                             b
+   RDFFARX1_RVT                         s, ret
+   RDFFARX2_RVT                         s, ret
+   RDFFNARX1_RVT                        s, ret
+   RDFFNARX2_RVT                        s, ret
+   RDFFNSRARX1_RVT                      s, ret
+   RDFFNSRARX2_RVT                      s, ret
+   RDFFNSRASRNX1_RVT                    s, ret
+   RDFFNSRASRNX2_RVT                    s, ret
+   RDFFNSRASRQX1_RVT                    s, ret
+   RDFFNSRASRQX2_RVT                    s, ret
+   RDFFNSRASRX1_RVT                     s, ret
+   RDFFNSRASRX2_RVT                     s, ret
+   RDFFNSRASX1_RVT                      s, ret
+   RDFFNSRASX2_RVT                      s, ret
+   RDFFNSRX1_RVT                        s, ret
+   RDFFNSRX2_RVT                        s, ret
+   RDFFNX1_RVT                          s, ret
+   RDFFNX2_RVT                          s, ret
+   RDFFSRARX1_RVT                       s, ret
+   RDFFSRARX2_RVT                       s, ret
+   RDFFSRASRX1_RVT                      s, ret
+   RDFFSRASRX2_RVT                      s, ret
+   RDFFSRASX1_RVT                       s, ret
+   RDFFSRASX2_RVT                       s, ret
+   RDFFSRSSRX1_RVT                      s, ret
+   RDFFSRSSRX2_RVT                      d, s, u, ret
+   RDFFSRX1_RVT                         s, ret
+   RDFFSRX2_RVT                         s, ret
+   RDFFX1_RVT                           s, ret
+   RDFFX2_RVT                           s, ret
+   RSDFFARX1_RVT                        s, ret, t(mux_ff)
+   RSDFFARX2_RVT                        s, ret, t(mux_ff)
+   RSDFFNARX1_RVT                       s, ret, t(mux_ff)
+   RSDFFNARX2_RVT                       s, ret, t(mux_ff)
+   RSDFFNSRARX1_RVT                     s, ret, t(mux_ff)
+   RSDFFNSRARX2_RVT                     s, ret, t(mux_ff)
+   RSDFFNSRASRNX1_RVT                   s, ret, t(mux_ff)
+   RSDFFNSRASRNX2_RVT                   s, ret, t(mux_ff)
+   RSDFFNSRASRQX1_RVT                   s, ret, t(mux_ff)
+   RSDFFNSRASRQX2_RVT                   s, ret, t(mux_ff)
+   RSDFFNSRASRX1_RVT                    s, ret, t(mux_ff)
+   RSDFFNSRASRX2_RVT                    s, ret, t(mux_ff)
+   RSDFFNSRASX1_RVT                     s, ret, t(mux_ff)
+   RSDFFNSRASX2_RVT                     s, ret, t(mux_ff)
+   RSDFFNSRX1_RVT                       s, ret, t(mux_ff)
+   RSDFFNSRX2_RVT                       s, ret, t(mux_ff)
+   RSDFFNX1_RVT                         s, ret, t(mux_ff)
+   RSDFFNX2_RVT                         s, ret, t(mux_ff)
+   RSDFFSRARX1_RVT                      s, ret, t(mux_ff)
+   RSDFFSRARX2_RVT                      s, ret, t(mux_ff)
+   RSDFFSRASRX1_RVT                     s, ret, t(mux_ff)
+   RSDFFSRASRX2_RVT                     s, ret, t(mux_ff)
+   RSDFFSRASX1_RVT                      s, ret, t(mux_ff)
+   RSDFFSRASX2_RVT                      s, ret, t(mux_ff)
+   RSDFFSRSSRX1_RVT                     s, ret, t(mux_ff)
+   RSDFFSRSSRX2_RVT                     s, ret, t(mux_ff)
+   RSDFFSRX1_RVT                        s, ret, t(mux_ff)
+   RSDFFSRX2_RVT                        s, ret, t(mux_ff)
+   RSDFFX1_RVT                          s, ret, t(mux_ff)
+   RSDFFX2_RVT                          s, ret, t(mux_ff)
+   SDFFARX1_RVT                         s
+   SDFFARX2_RVT                         s
+   SDFFASRSX1_RVT                       s
+   SDFFASRSX2_RVT                       s
+   SDFFASRX1_RVT                        s
+   SDFFASRX2_RVT                        s
+   SDFFASX1_RVT                         s
+   SDFFASX2_RVT                         s
+   SDFFNARX1_RVT                        s
+   SDFFNARX2_RVT                        s
+   SDFFNASRX1_RVT                       s
+   SDFFNASRX2_RVT                       s
+   SDFFNASX1_RVT                        s
+   SDFFNASX2_RVT                        s
+   SDFFNX1_RVT                          s
+   SDFFNX2_RVT                          s
+   SDFFSSRX1_RVT                        s
+   SDFFSSRX2_RVT                        s
+   SDFFX1_RVT                           s
+   SDFFX2_RVT                           s
+   SHFILL1_RVT                          b, d, u, fil
+   SHFILL2_RVT                          b, d, u, fil
+   SHFILL3_RVT                          b, d, u, fil
+   SHFILL64_RVT                         b, d, u, fil
+   SHFILL128_RVT                        b, d, u, fil
+   TIEH_RVT                             d, u
+   TIEL_RVT                             d, u
+   TNBUFFX1_RVT                         
+   TNBUFFX2_RVT                         
+   TNBUFFX4_RVT                         
+   TNBUFFX8_RVT                         
+   TNBUFFX16_RVT                        
+   TNBUFFX32_RVT                        
+   XNOR2X1_RVT                          
+   XNOR2X2_RVT                          
+   XNOR3X1_RVT                          
+   XNOR3X2_RVT                          
+   XOR2X1_RVT                           
+   XOR2X2_RVT                           
+   XOR3X1_RVT                           
+   XOR3X2_RVT                           
+1

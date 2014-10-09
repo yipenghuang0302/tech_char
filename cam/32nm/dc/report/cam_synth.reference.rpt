@@ -1,0 +1,69 @@
+ 
+****************************************
+Report : reference
+Design : cam
+Version: F-2011.09-SP2
+Date   : Wed Oct  8 23:14:49 2014
+****************************************
+
+Attributes:
+    b - black box (unknown)
+   bo - allows boundary optimization
+    d - dont_touch
+   mo - map_only
+    h - hierarchical
+    n - noncombinational
+    r - removable
+    s - synthetic operator
+    u - contains unmapped logic
+
+Reference          Library       Unit Area   Count    Total Area   Attributes
+-----------------------------------------------------------------------------
+AND2X1_RVT         saed32rvt_tt1p05v25c     2.033152      29    58.961411
+AND3X1_RVT         saed32rvt_tt1p05v25c     2.287296       3     6.861888
+AND4X1_RVT         saed32rvt_tt1p05v25c     2.541440      18    45.745920
+AO21X1_RVT         saed32rvt_tt1p05v25c     2.541440      43   109.281920
+AO22X1_RVT         saed32rvt_tt1p05v25c     2.541440    1093  2777.793931
+AO221X1_RVT        saed32rvt_tt1p05v25c     3.049728       7    21.348095
+AOI22X1_RVT        saed32rvt_tt1p05v25c     3.049728     419  1277.835997
+DFFX1_RVT          saed32rvt_tt1p05v25c     6.607744    1056  6977.777893 n
+IBUFFX8_RVT        saed32rvt_tt1p05v25c     4.320448       2     8.640896
+IBUFFX16_RVT       saed32rvt_tt1p05v25c     6.607744       1     6.607744
+INVX0_RVT          saed32rvt_tt1p05v25c     1.270720      13    16.519360
+INVX1_RVT          saed32rvt_tt1p05v25c     1.270720      69    87.679680
+NAND2X0_RVT        saed32rvt_tt1p05v25c     1.524864      55    83.867518
+NAND3X0_RVT        saed32rvt_tt1p05v25c     1.779008       8    14.232064
+NAND4X0_RVT        saed32rvt_tt1p05v25c     2.033152     139   282.608142
+NBUFFX2_RVT        saed32rvt_tt1p05v25c     2.033152      40    81.326084
+NBUFFX4_RVT        saed32rvt_tt1p05v25c     2.541440      16    40.663040
+NBUFFX8_RVT        saed32rvt_tt1p05v25c     3.812160       7    26.685120
+NOR2X0_RVT         saed32rvt_tt1p05v25c     2.541440       2     5.082880
+NOR2X1_RVT         saed32rvt_tt1p05v25c     2.541440       1     2.541440
+NOR3X1_RVT         saed32rvt_tt1p05v25c     2.795584       1     2.795584
+NOR4X0_RVT         saed32rvt_tt1p05v25c     3.049728       1     3.049728
+NOR4X1_RVT         saed32rvt_tt1p05v25c     3.049728      24    73.193470
+OA22X1_RVT         saed32rvt_tt1p05v25c     2.541440       8    20.331520
+OA221X1_RVT        saed32rvt_tt1p05v25c     3.049728     554  1689.549266
+OAI21X1_RVT        saed32rvt_tt1p05v25c     3.049728       1     3.049728
+OR2X1_RVT          saed32rvt_tt1p05v25c     2.033152       5    10.165761
+OR3X1_RVT          saed32rvt_tt1p05v25c     2.541440       1     2.541440
+OR4X1_RVT          saed32rvt_tt1p05v25c     3.558016      11    39.138177
+mux                            1854.234626       1   1854.234626  h
+-----------------------------------------------------------------------------
+Total 30 references                                 15630.110324
+
+****************************************
+Design: mux 
+****************************************
+Reference          Library       Unit Area   Count    Total Area   Attributes
+-----------------------------------------------------------------------------
+AND2X1_RVT         saed32rvt_tt1p05v25c     2.033152      32    65.060867
+AND3X1_RVT         saed32rvt_tt1p05v25c     2.287296       7    16.011072
+AND4X1_RVT         saed32rvt_tt1p05v25c     2.541440       4    10.165760
+AO22X1_RVT         saed32rvt_tt1p05v25c     2.541440     512  1301.217285
+INVX1_RVT          saed32rvt_tt1p05v25c     1.270720       5     6.353600
+NAND4X0_RVT        saed32rvt_tt1p05v25c     2.033152      32    65.060867
+NOR4X1_RVT         saed32rvt_tt1p05v25c     3.049728     128   390.365173
+-----------------------------------------------------------------------------
+Total 7 references                                   1854.234626
+1
