@@ -1,0 +1,5 @@
+/sim/synopsys64/icc/auxx/gui/dv/dv_setup.tcl
+/sim/synopsys64/icc/auxx/gui/syn/snpsSynProcs.tcl
+/sim/synopsys64/icc/auxx/tcllib/lib/tcl8.4/package.tcl
+/sim/synopsys64/icc/auxx/gui/syn/layout/pkgIndex.tcl
+/sim/synopsys64/icc/auxx/gui/common/view/pkgIndex.tcl
