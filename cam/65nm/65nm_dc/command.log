@@ -1,6 +1,6 @@
 #@ # 
 #@ # Running dc_shell Version I-2013.12-SP1 for amd64 -- Jan 20, 2014
-#@ # Date:   Wed Oct  8 23:59:16 2014
+#@ # Date:   Thu Oct  9 14:10:05 2014
 #@ # Run by: yipeng@vlsidl4.ee.columbia.edu
 #@ 
 
@@ -4821,19 +4821,19 @@ source /usr/cad/syn/admin/setup/.synopsys_dc.setup
 #@ 
 #@ # -- End source /usr/cad/syn/admin/setup/.synopsys_dc.setup
 
-source -echo -verbose /q/vlsidl5/p1/vlsidl/projects/hcdc/dc/yh_cam/tech_char/cam/65nm/65nm_dc/dsyn.tcl
-#@ # -- Starting source /q/vlsidl5/p1/vlsidl/projects/hcdc/dc/yh_cam/tech_char/cam/65nm/65nm_dc/dsyn.tcl
+source -echo -verbose /q/vlsidl5/p1/vlsidl/projects/hcdc/dc/tech_char/cam/65nm/65nm_dc/dsyn.tcl
+#@ # -- Starting source /q/vlsidl5/p1/vlsidl/projects/hcdc/dc/tech_char/cam/65nm/65nm_dc/dsyn.tcl
 
 #@ ##################################################################
 #@ # SYNTHESIS LIBRARIES
 #@ ##################################################################
 #@ set SynopsysInstall [getenv "SYNOPSYS"]
 #@ # set designDB /sim/synopsys/SAED_EDK90nm/Digital_Standard_Cell_Library/synopsys/models/saed90nm_typ.db
-#@ set designDB /vlsidl/dk/TSMC/tcbn65gplus/TSMCHOME/digital/Front_End/timing_power_noise/CCS/tcbn65gplus_200a/tcbn65gplustc_ccs.db
+#@ set designDB /vlsidl/dk/TSMC/tcbn65lp/TSMCHOME/digital/Front_End/timing_power_noise/CCS/tcbn65lp_200a/tcbn65lptc_ccs.db
 #@ # set designDB /proj/arcade/synopsys/SAED32_EDK/lib/stdcell_rvt/db_ccs/saed32rvt_tt1p05v25c.db
 #@ 
 #@ # This parameter is used to specify the synthesis tool all the paths that it should search when looking for a synthesis technology library for reference during synthesis.
-#@ set search_path [list . [format "%s%s" $SynopsysInstall /dw/sim_ver]]
+#@ set search_path [list "." "/tools4/syn2007.12/libraries/syn/"]
 #@ # The parameter specifies the file that contains all the logic cells that should used for mapping during synthesis. In other words, the tool during synthesis maps a design to the logic cells present in this library.
 #@ set target_library $designDB
 #@ # Implementation for standard operators, such as +, *

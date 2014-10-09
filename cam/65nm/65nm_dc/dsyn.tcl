@@ -3,11 +3,11 @@
 ##################################################################
 set SynopsysInstall [getenv "SYNOPSYS"]
 # set designDB /sim/synopsys/SAED_EDK90nm/Digital_Standard_Cell_Library/synopsys/models/saed90nm_typ.db
-set designDB /vlsidl/dk/TSMC/tcbn65gplus/TSMCHOME/digital/Front_End/timing_power_noise/CCS/tcbn65gplus_200a/tcbn65gplustc_ccs.db
+set designDB /vlsidl/dk/TSMC/tcbn65lp/TSMCHOME/digital/Front_End/timing_power_noise/CCS/tcbn65lp_200a/tcbn65lptc_ccs.db
 # set designDB /proj/arcade/synopsys/SAED32_EDK/lib/stdcell_rvt/db_ccs/saed32rvt_tt1p05v25c.db
 
 # This parameter is used to specify the synthesis tool all the paths that it should search when looking for a synthesis technology library for reference during synthesis.
-set search_path [list . [format "%s%s" $SynopsysInstall /dw/sim_ver]]
+set search_path [list "." "/tools4/syn2007.12/libraries/syn/"]
 # The parameter specifies the file that contains all the logic cells that should used for mapping during synthesis. In other words, the tool during synthesis maps a design to the logic cells present in this library.
 set target_library $designDB
 # Implementation for standard operators, such as +, *

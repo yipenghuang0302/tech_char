@@ -1,12 +1,12 @@
 ###################################################################
 
-# Created by write_sdc on Thu Oct  9 00:01:00 2014
+# Created by write_sdc on Thu Oct  9 14:15:05 2014
 
 ###################################################################
 set sdc_version 2.0
 
 set_units -time ns -resistance kOhm -capacitance pF -voltage V -current mA
-set_wire_load_model -name TSMC8K_Lowk_Conservative -library tcbn65gplustc_ccs
+set_wire_load_model -name TSMC8K_Lowk_Conservative -library tcbn65lptc_ccs
 set_max_area 0
 set_driving_cell -lib_cell GINVD8 [get_ports reset]
 set_driving_cell -lib_cell GINVD8 [get_ports clk]

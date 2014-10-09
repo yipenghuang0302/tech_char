@@ -3,18 +3,18 @@
 Report : design
 Design : cam
 Version: I-2013.12-SP1
-Date   : Thu Oct  9 00:01:10 2014
+Date   : Thu Oct  9 14:15:19 2014
 ****************************************
 
 Design allows ideal nets on clock nets.
 
 Library(s) Used:
 
-    tcbn65gplustc_ccs (File: /vlsidl/dk/TSMC/tcbn65gplus/TSMCHOME/digital/Front_End/timing_power_noise/CCS/tcbn65gplus_200a/tcbn65gplustc_ccs.db)
+    tcbn65lptc_ccs (File: /vlsidl/dk/TSMC/tcbn65lp/TSMCHOME/digital/Front_End/timing_power_noise/CCS/tcbn65lp_200a/tcbn65lptc_ccs.db)
 
 Local Link Library:
 
-    {/vlsidl/dk/TSMC/tcbn65gplus/TSMCHOME/digital/Front_End/timing_power_noise/CCS/tcbn65gplus_200a/tcbn65gplustc_ccs.db}
+    {/vlsidl/dk/TSMC/tcbn65lp/TSMCHOME/digital/Front_End/timing_power_noise/CCS/tcbn65lp_200a/tcbn65lptc_ccs.db}
 
 Flip-Flop Types:
 
@@ -28,10 +28,10 @@ Operating Conditions:
 
 
     Operating Condition Name : NCCOM
-    Library : tcbn65gplustc_ccs
+    Library : tcbn65lptc_ccs
     Process :   1.00
     Temperature :  25.00
-    Voltage :   1.00
+    Voltage :   1.20
     Interconnect Model : balanced_tree
 
 Wire Loading Model:
@@ -39,7 +39,7 @@ Wire Loading Model:
     Selected manually by the user.
 
 Name           :   TSMC8K_Lowk_Conservative
-Location       :   tcbn65gplustc_ccs
+Location       :   tcbn65lptc_ccs
 Resistance     :   1e-05
 Capacitance    :   1
 Area           :   0

@@ -27,21 +27,21 @@ Initializing...
 set SynopsysInstall [getenv "SYNOPSYS"]
 /usr/cad/syn
 # set designDB /sim/synopsys/SAED_EDK90nm/Digital_Standard_Cell_Library/synopsys/models/saed90nm_typ.db
-set designDB /vlsidl/dk/TSMC/tcbn65gplus/TSMCHOME/digital/Front_End/timing_power_noise/CCS/tcbn65gplus_200a/tcbn65gplustc_ccs.db
-/vlsidl/dk/TSMC/tcbn65gplus/TSMCHOME/digital/Front_End/timing_power_noise/CCS/tcbn65gplus_200a/tcbn65gplustc_ccs.db
+set designDB /vlsidl/dk/TSMC/tcbn65lp/TSMCHOME/digital/Front_End/timing_power_noise/CCS/tcbn65lp_200a/tcbn65lptc_ccs.db
+/vlsidl/dk/TSMC/tcbn65lp/TSMCHOME/digital/Front_End/timing_power_noise/CCS/tcbn65lp_200a/tcbn65lptc_ccs.db
 # set designDB /proj/arcade/synopsys/SAED32_EDK/lib/stdcell_rvt/db_ccs/saed32rvt_tt1p05v25c.db
 # This parameter is used to specify the synthesis tool all the paths that it should search when looking for a synthesis technology library for reference during synthesis.
-set search_path [list . [format "%s%s" $SynopsysInstall /dw/sim_ver]]
-. /usr/cad/syn/dw/sim_ver
+set search_path [list "." "/tools4/syn2007.12/libraries/syn/"]
+. /tools4/syn2007.12/libraries/syn/
 # The parameter specifies the file that contains all the logic cells that should used for mapping during synthesis. In other words, the tool during synthesis maps a design to the logic cells present in this library.
 set target_library $designDB
-/vlsidl/dk/TSMC/tcbn65gplus/TSMCHOME/digital/Front_End/timing_power_noise/CCS/tcbn65gplus_200a/tcbn65gplustc_ccs.db
+/vlsidl/dk/TSMC/tcbn65lp/TSMCHOME/digital/Front_End/timing_power_noise/CCS/tcbn65lp_200a/tcbn65lptc_ccs.db
 # Implementation for standard operators, such as +, *
 set synthetic_library [list dw_foundation.sldb]
 dw_foundation.sldb
 # This parameter points to the library that contains information on the logic gates in the synthesis technology library. The tool uses this library solely for reference but does not use the cells present in it for mapping as in the case of target_library.
 set link_library [concat [concat "*" $target_library] $synthetic_library]
-* /vlsidl/dk/TSMC/tcbn65gplus/TSMCHOME/digital/Front_End/timing_power_noise/CCS/tcbn65gplus_200a/tcbn65gplustc_ccs.db dw_foundation.sldb
+* /vlsidl/dk/TSMC/tcbn65lp/TSMCHOME/digital/Front_End/timing_power_noise/CCS/tcbn65lp_200a/tcbn65lptc_ccs.db dw_foundation.sldb
 # This parameter points to the library that contains the “visual” information on the logic cells in the synthesis technology library. All logic cells have a symbolic representation and information about the symbols is stored in this library.
 set symbol_library [list generic.sdb]
 generic.sdb
@@ -130,9 +130,9 @@ Compiling source file ../../cam.sv
 Compiling source file ../../cam_word.sv
 Compiling source file ../../decoder_5_32.sv
 Presto compilation completed successfully.
-Loading db file '/vlsidl/dk/TSMC/tcbn65gplus/TSMCHOME/digital/Front_End/timing_power_noise/CCS/tcbn65gplus_200a/tcbn65gplustc_ccs.db'
+Loading db file '/vlsidl/dk/TSMC/tcbn65lp/TSMCHOME/digital/Front_End/timing_power_noise/CCS/tcbn65lp_200a/tcbn65lptc_ccs.db'
 Information: Using CCS timing libraries. (TIM-024)
-Loading db file '/usr/cad/syn/libraries/syn/dw_foundation.sldb'
+Loading db file '/tools4/syn2007.12/libraries/syn/dw_foundation.sldb'
 1
 elaborate $basename -lib WORK -update
 Warning: Detected use of obsolete/unsupported feature.  The following
@@ -140,7 +140,7 @@ Warning: Detected use of obsolete/unsupported feature.  The following
 	elaborate -update. Use plain elaborate instead (CMD-100)
 Loading db file '/usr/cad/syn/libraries/syn/gtech.db'
 Loading db file '/usr/cad/syn/libraries/syn/standard.sldb'
-  Loading link library 'tcbn65gplustc_ccs'
+  Loading link library 'tcbn65lptc_ccs'
   Loading link library 'gtech'
 Running PRESTO HDLC
 Presto compilation completed successfully.
@@ -217,10 +217,10 @@ link
   Linking design 'cam'
   Using the following designs and libraries:
   --------------------------------------------------------------------------
-  * (7 designs)               /q/vlsidl5/p1/vlsidl/projects/hcdc/dc/yh_cam/tech_char/cam/65nm/65nm_dc/cam.db, etc
-  tcbn65gplustc_ccs (library) /vlsidl/dk/TSMC/tcbn65gplus/TSMCHOME/digital/Front_End/timing_power_noise/CCS/tcbn65gplus_200a/tcbn65gplustc_ccs.db
+  * (7 designs)               /q/vlsidl5/p1/vlsidl/projects/hcdc/dc/tech_char/cam/65nm/65nm_dc/cam.db, etc
+  tcbn65lptc_ccs (library)    /vlsidl/dk/TSMC/tcbn65lp/TSMCHOME/digital/Front_End/timing_power_noise/CCS/tcbn65lp_200a/tcbn65lptc_ccs.db
   dw_foundation.sldb (library)
-                              /usr/cad/syn/libraries/syn/dw_foundation.sldb
+                              /tools4/syn2007.12/libraries/syn/dw_foundation.sldb
 
 1
 # The uniquify command makes unique copies of replicated modules.
@@ -450,19 +450,20 @@ if { $useUltra == 1 } {
 		compile -incremental_mapping -map_effort $mapEffort2
 	}
 }
-Alib files are up-to-date.
+Analyzing: "/vlsidl/dk/TSMC/tcbn65lp/TSMCHOME/digital/Front_End/timing_power_noise/CCS/tcbn65lp_200a/tcbn65lptc_ccs.db"
+Library analysis succeeded.
 Information: Evaluating DesignWare library utilization. (UISN-27)
 
 ============================================================================
 | DesignWare Building Block Library  |         Version         | Available |
 ============================================================================
 | Basic DW Building Blocks           | I-2013.12-DWBB_201312.1 |     *     |
-| Licensed DW Building Blocks        | I-2013.12-DWBB_201312.1 |     *     |
+| Licensed DW Building Blocks        | A-2007.12-DWBB_0803     |     *     |
 ============================================================================
 
 Information: Sequential output inversion is enabled.  SVF file must be used for formal verification. (OPT-1208)
 
-Loaded alib file './alib-52/tcbn65gplustc_ccs.db.alib'
+Loaded alib file './alib-52/tcbn65lptc_ccs.db.alib'
 Information: Ungrouping hierarchy words[31]/data_ff before Pass 1 (OPT-776)
 Information: Ungrouping hierarchy words[31]/valid_ff before Pass 1 (OPT-776)
 Information: Ungrouping hierarchy words[0]/data_ff before Pass 1 (OPT-776)
@@ -611,10 +612,10 @@ Information: Updating design information... (UID-85)
    ELAPSED            WORST NEG   SETUP    DESIGN                             MIN DELAY
     TIME      AREA      SLACK     COST    RULE COST         ENDPOINT            COST   
   --------- --------- --------- --------- --------- ------------------------- ---------
-    0:00:38   24233.4      0.00       0.0       3.5                                0.00
-    0:00:39   24233.4      0.00       0.0       3.5                                0.00
-    0:00:39   24233.4      0.00       0.0       3.5                                0.00
-    0:00:40   24233.4      0.00       0.0       3.5                                0.00
+    0:00:41   23541.1      0.00       0.0       0.5                                0.00
+    0:00:42   23541.1      0.00       0.0       0.5                                0.00
+    0:00:42   23541.1      0.00       0.0       0.5                                0.00
+    0:00:42   23541.1      0.00       0.0       0.5                                0.00
   Re-synthesis Optimization (Phase 1)
   Re-synthesis Optimization (Phase 2)
   Global Optimization (Phase 1)
@@ -657,28 +658,28 @@ Information: Updating design information... (UID-85)
    ELAPSED            WORST NEG   SETUP    DESIGN                             MIN DELAY
     TIME      AREA      SLACK     COST    RULE COST         ENDPOINT            COST   
   --------- --------- --------- --------- --------- ------------------------- ---------
-    0:00:45   17050.0      0.00       0.0       0.7                                0.00
-    0:00:45   17050.0      0.00       0.0       0.7                                0.00
-    0:00:45   17050.0      0.00       0.0       0.7                                0.00
-    0:00:45   17050.0      0.00       0.0       0.7                                0.00
-    0:00:45   17050.0      0.00       0.0       0.7                                0.00
-    0:00:45   17050.0      0.00       0.0       0.7                                0.00
-    0:00:45   17050.0      0.00       0.0       0.7                                0.00
-    0:00:45   17050.0      0.00       0.0       0.7                                0.00
-    0:00:45   17050.0      0.00       0.0       0.7                                0.00
-    0:00:45   17050.0      0.00       0.0       0.7                                0.00
-    0:00:45   17050.0      0.00       0.0       0.7                                0.00
+    0:00:48   17044.2      0.00       0.0       2.9                                0.00
+    0:00:48   17044.2      0.00       0.0       2.9                                0.00
+    0:00:48   17044.2      0.00       0.0       2.9                                0.00
+    0:00:48   17044.2      0.00       0.0       2.9                                0.00
+    0:00:48   17044.2      0.00       0.0       2.9                                0.00
+    0:00:48   17044.2      0.00       0.0       2.9                                0.00
+    0:00:48   17044.2      0.00       0.0       2.9                                0.00
+    0:00:48   17044.2      0.00       0.0       2.9                                0.00
+    0:00:48   17044.2      0.00       0.0       2.9                                0.00
+    0:00:48   17044.2      0.00       0.0       2.9                                0.00
+    0:00:48   17044.2      0.00       0.0       2.9                                0.00
 
   Beginning Delay Optimization
   ----------------------------
-    0:00:45   17050.0      0.00       0.0       0.7                                0.00
-    0:00:45   17050.0      0.00       0.0       0.7                                0.00
-    0:00:45   17050.0      0.00       0.0       0.7                                0.00
-    0:00:45   17050.0      0.00       0.0       0.7                                0.00
-    0:00:45   17050.0      0.00       0.0       0.7                                0.00
-    0:00:45   17050.0      0.00       0.0       0.7                                0.00
-    0:00:45   17050.0      0.00       0.0       0.7                                0.00
-    0:00:45   17050.0      0.00       0.0       0.7                                0.00
+    0:00:48   17044.2      0.00       0.0       2.9                                0.00
+    0:00:48   17044.2      0.00       0.0       2.9                                0.00
+    0:00:48   17044.2      0.00       0.0       2.9                                0.00
+    0:00:48   17044.2      0.00       0.0       2.9                                0.00
+    0:00:48   17044.2      0.00       0.0       2.9                                0.00
+    0:00:48   17044.2      0.00       0.0       2.9                                0.00
+    0:00:48   17044.2      0.00       0.0       2.9                                0.00
+    0:00:48   17044.2      0.00       0.0       2.9                                0.00
 
 
   Beginning Design Rule Fixing  (max_transition)  (max_capacitance)
@@ -688,22 +689,22 @@ Information: Updating design information... (UID-85)
    ELAPSED            WORST NEG   SETUP    DESIGN                             MIN DELAY
     TIME      AREA      SLACK     COST    RULE COST         ENDPOINT            COST   
   --------- --------- --------- --------- --------- ------------------------- ---------
-    0:00:45   17050.0      0.00       0.0       0.7                                0.00
+    0:00:48   17044.2      0.00       0.0       2.9                                0.00
   Global Optimization (Phase 31)
   Global Optimization (Phase 32)
   Global Optimization (Phase 33)
-    0:00:46   17089.9      0.00       0.0       0.0                                0.00
-    0:00:48   17338.3      0.00       0.0       0.0                                0.00
-    0:00:48   17338.3      0.00       0.0       0.0                                0.00
-    0:00:57   17338.3      0.00       0.0       0.0                                0.00
-    0:00:57   17338.3      0.00       0.0       0.0                                0.00
+    0:00:50   17075.5      0.00       0.0       0.0                                0.00
+    0:00:52   17336.5      0.00       0.0       0.0                                0.00
+    0:00:52   17336.5      0.00       0.0       0.0                                0.00
+    0:01:01   17336.5      0.00       0.0       0.0                                0.00
+    0:01:01   17336.5      0.00       0.0       0.0                                0.00
 
                                   TOTAL                                                
    ELAPSED            WORST NEG   SETUP    DESIGN                             MIN DELAY
     TIME      AREA      SLACK     COST    RULE COST         ENDPOINT            COST   
   --------- --------- --------- --------- --------- ------------------------- ---------
-    0:00:57   17338.3      0.00       0.0       0.0                                0.00
-    0:00:58   17338.3      0.00       0.0       0.0                                0.00
+    0:01:01   17336.5      0.00       0.0       0.0                                0.00
+    0:01:02   17336.5      0.00       0.0       0.0                                0.00
 
 
   Beginning Area-Recovery Phase  (max_area 0)
@@ -713,7 +714,7 @@ Information: Updating design information... (UID-85)
    ELAPSED            WORST NEG   SETUP    DESIGN                             MIN DELAY
     TIME      AREA      SLACK     COST    RULE COST         ENDPOINT            COST   
   --------- --------- --------- --------- --------- ------------------------- ---------
-    0:01:01   17338.3      0.00       0.0       0.0                                0.00
+    0:01:03   17336.5      0.00       0.0       0.0                                0.00
   Global Optimization (Phase 34)
   Global Optimization (Phase 35)
   Global Optimization (Phase 36)
@@ -732,26 +733,28 @@ Information: Updating design information... (UID-85)
   Global Optimization (Phase 49)
   Global Optimization (Phase 50)
   Global Optimization (Phase 51)
-    0:01:12   17025.8      0.00       0.0       0.0                                0.00
-    0:01:12   17025.8      0.00       0.0       0.0                                0.00
-    0:01:12   17025.8      0.00       0.0       0.0                                0.00
-    0:01:12   17025.8      0.00       0.0       0.0                                0.00
-    0:01:12   17025.8      0.00       0.0       0.0                                0.00
-    0:01:12   17025.8      0.00       0.0       0.0                                0.00
-    0:01:12   17025.8      0.00       0.0       0.0                                0.00
-    0:01:12   17025.8      0.00       0.0       0.0                                0.00
-    0:01:12   17025.8      0.00       0.0       0.0                                0.00
-    0:01:12   17025.8      0.00       0.0       0.0                                0.00
-    0:01:12   17025.8      0.00       0.0       0.0                                0.00
-    0:01:12   17025.8      0.00       0.0       0.0                                0.00
-    0:01:12   17025.8      0.00       0.0       0.0                                0.00
-    0:01:12   17025.8      0.00       0.0       0.0                                0.00
-    0:01:12   17025.8      0.00       0.0       0.0                                0.00
-    0:01:12   17025.8      0.00       0.0       0.0                                0.00
-    0:01:12   17025.8      0.00       0.0       0.0                                0.00
-    0:01:12   17025.8      0.00       0.0       0.0                                0.00
-    0:01:12   17025.8      0.00       0.0       0.0                                0.00
-    0:01:12   17025.8      0.00       0.0       0.0                                0.00
+  Global Optimization (Phase 52)
+  Global Optimization (Phase 53)
+    0:01:14   17021.5      0.00       0.0       0.0                                0.00
+    0:01:14   17021.5      0.00       0.0       0.0                                0.00
+    0:01:14   17021.5      0.00       0.0       0.0                                0.00
+    0:01:14   17021.5      0.00       0.0       0.0                                0.00
+    0:01:14   17021.5      0.00       0.0       0.0                                0.00
+    0:01:14   17021.5      0.00       0.0       0.0                                0.00
+    0:01:14   17021.5      0.00       0.0       0.0                                0.00
+    0:01:14   17021.5      0.00       0.0       0.0                                0.00
+    0:01:14   17021.5      0.00       0.0       0.0                                0.00
+    0:01:14   17021.5      0.00       0.0       0.0                                0.00
+    0:01:14   17021.5      0.00       0.0       0.0                                0.00
+    0:01:14   17021.5      0.00       0.0       0.0                                0.00
+    0:01:14   17021.5      0.00       0.0       0.0                                0.00
+    0:01:14   17021.5      0.00       0.0       0.0                                0.00
+    0:01:14   17021.5      0.00       0.0       0.0                                0.00
+    0:01:14   17021.5      0.00       0.0       0.0                                0.00
+    0:01:14   17021.5      0.00       0.0       0.0                                0.00
+    0:01:14   17021.5      0.00       0.0       0.0                                0.00
+    0:01:14   17021.5      0.00       0.0       0.0                                0.00
+    0:01:14   17021.5      0.00       0.0       0.0                                0.00
 
   Optimization Complete
   ---------------------
@@ -763,24 +766,24 @@ check_library
 #BEGIN_XCHECK_LIBRARY
 
 Logic Library #1:
-    Library name              tcbn65gplustc_ccs
-    File name                 /vlsidl/dk/TSMC/tcbn65gplus/TSMCHOME/digital/Front_End/timing_power_noise/CCS/tcbn65gplus_200a/tcbn65gplustc_ccs.db
+    Library name              tcbn65lptc_ccs
+    File name                 /vlsidl/dk/TSMC/tcbn65lp/TSMCHOME/digital/Front_End/timing_power_noise/CCS/tcbn65lp_200a/tcbn65lptc_ccs.db
     Library type              pg_pin based db
     Library Version           200
-    Tool Created              B-2008.09
-    Data Created              Wed Mar 17 03:23:40 CST 2010 
+    Tool Created              A-2007.12-SP1
+    Data Created              Tue Nov 17 20:24:59 CST 2009 
     Time unit                 1ns
     Capacitance unit          1000ff
     Leakage power unit        1nW
     Current unit              1mA
 check_library options         
 Version                       I-2013.12-SP1
-Check date and time           Thu Oct  9 00:00:57 2014
+Check date and time           Thu Oct  9 14:15:02 2014
 
 
 #BEGIN_LIBSCREEN_UPF
 
-Library#1 (tcbn65gplustc_ccs):
+Library#1 (tcbn65lptc_ccs):
 PG checking passed.
 No power management cells in library#1.
 
@@ -823,7 +826,7 @@ if { $writeV == 1 } {
 	set filename [format "%s%s" $filebase ".v"]
 	write -format verilog -hierarchy -output $filename
 }
-Writing verilog file '/q/vlsidl5/p1/vlsidl/projects/hcdc/dc/yh_cam/tech_char/cam/65nm/65nm_dc/cam_synth.v'.
+Writing verilog file '/q/vlsidl5/p1/vlsidl/projects/hcdc/dc/tech_char/cam/65nm/65nm_dc/cam_synth.v'.
 1
 # Write out the sdf file for back-annotated verilog sim
 # This file can be large!
@@ -832,7 +835,7 @@ if { $writeSDF == 1 } {
 	write_sdf -version 1.0 $filename
 }
 Information: Annotated 'cell' delays are assumed to include load delay. (UID-282)
-Information: Writing timing information to file '/q/vlsidl5/p1/vlsidl/projects/hcdc/dc/yh_cam/tech_char/cam/65nm/65nm_dc/cam_synth.sdf'. (WT-3)
+Information: Writing timing information to file '/q/vlsidl5/p1/vlsidl/projects/hcdc/dc/tech_char/cam/65nm/65nm_dc/cam_synth.sdf'. (WT-3)
 Information: Updating design information... (UID-85)
 Warning: Design 'cam' contains 1 high-fanout nets. A fanout number of 1000 will be used for delay calculations involving these nets. (TIM-134)
 1
