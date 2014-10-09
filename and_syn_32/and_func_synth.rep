@@ -1,0 +1,63 @@
+ 
+****************************************
+Report : timing
+        -path full
+        -delay max
+        -max_paths 1
+Design : and_func
+Version: F-2011.09-SP2
+Date   : Thu Oct  9 01:16:04 2014
+****************************************
+
+Operating Conditions: tt1p05v25c   Library: saed32rvt_tt1p05v25c
+Wire Load Model Mode: enclosed
+
+  Startpoint: b (input port)
+  Endpoint: y (output port)
+  Path Group: (none)
+  Path Type: max
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  and_func           ForQA                 saed32rvt_tt1p05v25c
+
+  Point                                    Incr       Path
+  -----------------------------------------------------------
+  input external delay                     0.00       0.00 r
+  b (in)                                   0.00       0.00 r
+  U2/Y (AND2X1_RVT)                        0.06       0.06 r
+  y (out)                                  0.00       0.06 r
+  data arrival time                                   0.06
+  -----------------------------------------------------------
+  (Path is unconstrained)
+
+
+1
+ 
+****************************************
+Report : area
+Design : and_func
+Version: F-2011.09-SP2
+Date   : Thu Oct  9 01:16:04 2014
+****************************************
+
+Library(s) Used:
+
+    saed32rvt_tt1p05v25c (File: /proj/arcade/synopsys/SAED32_EDK/lib/stdcell_rvt/db_ccs/saed32rvt_tt1p05v25c.db)
+
+Number of ports:                            3
+Number of nets:                             3
+Number of cells:                            1
+Number of combinational cells:              1
+Number of sequential cells:                 0
+Number of macros:                           0
+Number of buf/inv:                          0
+Number of references:                       1
+
+Combinational area:          2.033152
+Noncombinational area:       0.000000
+Net Interconnect area:       0.248251  
+
+Total cell area:             2.033152
+Total area:                  2.281403
+1

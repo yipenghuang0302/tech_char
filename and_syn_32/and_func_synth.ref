@@ -1,0 +1,25 @@
+ 
+****************************************
+Report : reference
+Design : and_func
+Version: F-2011.09-SP2
+Date   : Thu Oct  9 01:16:04 2014
+****************************************
+
+Attributes:
+    b - black box (unknown)
+   bo - allows boundary optimization
+    d - dont_touch
+   mo - map_only
+    h - hierarchical
+    n - noncombinational
+    r - removable
+    s - synthetic operator
+    u - contains unmapped logic
+
+Reference          Library       Unit Area   Count    Total Area   Attributes
+-----------------------------------------------------------------------------
+AND2X1_RVT         saed32rvt_tt1p05v25c     2.033152       1     2.033152
+-----------------------------------------------------------------------------
+Total 1 references                                      2.033152
+1
