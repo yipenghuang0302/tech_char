@@ -1,0 +1,18 @@
+To build, use the command:
+
+make
+
+To clean up, use the command:
+
+make clean
+
+When you make, this will bring up the ICC gui.  To open the design you
+built, click:
+
+File -> Open Design
+
+Choose your design (YOUR_DESIGN_NAME_ICC)
+
+To see timing information, click:
+
+Timing -> New Timing Analysis Window
