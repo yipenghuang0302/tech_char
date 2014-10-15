@@ -1,18 +1,43 @@
-To build, use the command:
+*********ICC Commands*******************
 
-make
+**************Running ICC GUI***************
+icc_shell -gui -f psyn_setup.tcl
+********************************************
 
-To clean up, use the command:
+**********power ground ports************
+derive_pg_connection -power_net "VDD" -power_pin "VDD" -ground_net "VSS" -ground_pin "VSS" -create_ports "top"
+****************************************
 
-make clean
+********floorplan***********************
+create_floorplan -control_type "aspect_ratio" -core_aspect_ratio "1" -core_utilization "0.7" -left_io2core "30" -bottom_io2core "30" -right_io2core "30" -top_io2core "30"  -start_first_row
+****************************************
 
-When you make, this will bring up the ICC gui.  To open the design you
-built, click:
+****************Power plan**************
+synthesize_fp_rail -power_budget "1000" -voltage_supply "1.2" -target_voltage_drop "250" -nets "VDD VSS" -create_virtual_rails "M1" -synthesize_power_plan -synthesize_power_pads -use_strap_ends_as_pad
 
-File -> Open Design
+commit_fp_rail
+***************************************
 
-Choose your design (YOUR_DESIGN_NAME_ICC)
+*********Placement*********************
+create_fp_placement
+***************************************
 
-To see timing information, click:
+*************Clock tree synthesis and routing*********************
+clock_opt -only_cts -no_clock_route
+report_clock_tree
+route_zrt_group -all_clock_nets -reuse_existing_global_route true
+******************************************************************
 
-Timing -> New Timing Analysis Window
+******************Routing (different iterations to make sure no violations)********
+route_opt -initial_route_only
+
+route_opt -skip_initial_route -effort low
+**********************************************************************************
+
+*******************Fill any empty spaces in the core using Poly******************
+insert_stdcell_filler -cell_with_metal "SHFILL1 SHFILL2 SHFILL3"
+********************************************************************************
+
+***********************Final routing iteration*********************
+route_opt -incremental -size_only
+*******************************************************************

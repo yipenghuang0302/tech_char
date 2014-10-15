@@ -6,6 +6,8 @@ set designDB /sim/synopsys/SAED_EDK90nm/Digital_Standard_Cell_Library/synopsys/m
 # set designDB /vlsidl/dk/TSMC/tcbn65gplus/TSMCHOME/digital/Front_End/timing_power_noise/CCS/tcbn65gplus_140b/tcbn65gplustc.db
 # set designDB /proj/arcade/synopsys/SAED32_EDK/lib/stdcell_rvt/db_ccs/saed32rvt_tt1p05v25c.db
 
+set stdcellhome /sim/synopsys/SAED_EDK90nm/Digital_Standard_Cell_Library/
+
 # This parameter is used to specify the synthesis tool all the paths that it should search when looking for a synthesis technology library for reference during synthesis.
 set search_path [list . [format "%s%s" $SynopsysInstall /dw/sim_ver]]
 # The parameter specifies the file that contains all the logic cells that should used for mapping during synthesis. In other words, the tool during synthesis maps a design to the logic cells present in this library.
@@ -150,6 +152,11 @@ if { $useUltra == 1 } {
 	}
 }
 
+set astro_tf /sim/synopsys/SAED_EDK90nm/Technology_Kit/techfile/saed90nm_icc_1p9m.tf
+set mw_ref_lib $stdcellhome/process/astro/gds-as/saed90nm_dv
+set MW_LIB_NAME [format "%s%s" $basename "_LIB"]
+create_mw_lib -technology $astro_tf -mw_reference_library $mw_ref_lib $MW_LIB_NAME
+open_mw_lib $MW_LIB_NAME
 check_library
 report_lib saed90nm_typ > report/report_lib.rpt
 
@@ -178,12 +185,12 @@ if { $writeSDC == 1 } {
 }
 
 # Synopsys database format in case you want to read this synthesized result back in to synopsys later in XG mode (ddc format)
-# if { $writeDDC == 1 } {
-# 	set filename [format "%s%s" $filebase ".ddc"]
-# 	write -format ddc -hierarchy -o $filename
-# 	set mw_filename [format "%s%s" $filebase "_DCT"]
-# 	write_milkyway -overwrite -output $mw_filename
-# }
+ if { $writeDDC == 1 } {
+ 	set filename [format "%s%s" $filebase ".ddc"]
+ 	write -format ddc -hierarchy -o $filename
+ 	set mw_filename [format "%s%s" $filebase "_DCT"]
+ 	write_milkyway -overwrite -output $mw_filename
+ }
 
 ##################################################################
 # WRITE REPORTS ABOUT DESIGN AND COMPILATION
